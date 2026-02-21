@@ -22,13 +22,11 @@ const LONDON_DEFAULT = {
 const AddLocationScreen = ({ route, navigation }) => {
   
   const theme = useTheme();
-  const { photos, category } = route.params || {};
+   const { photos, category, title = '', description = '', location: savedLocation } = route.params || {};
   const [address, setAddress] = useState('');
   const [manualAddress, setManualAddress] = useState('');
   const mapRef = useRef(null); 
-  const [pin, setPin] = useState({
-    ...LONDON_DEFAULT,   
-  });   
+  const [pin, setPin] = useState(savedLocation || { ...LONDON_DEFAULT }); 
   const [manualAddressValid, setManualAddressValid] = useState(false);
 
   const [loading, setLoading] = useState(true);
@@ -56,6 +54,13 @@ const AddLocationScreen = ({ route, navigation }) => {
     updateAddressFromPin();
   }, [pin]);
 
+  useEffect(() => {
+  if (!savedLocation) {
+      getCurrentLocation();
+    } else {
+      setLoading(false);
+    }
+  }, []);
 
   // Get current location with retries
   const getCurrentLocation = async () => {
@@ -138,6 +143,8 @@ const updatePinFromManualAddress = async () => {
 // Continue to next screen with selected location
 const continueHandler = async () => {
 
+  const goToReview = route.params?.goToReview || false;
+
   if (manualAddress.trim() && !manualAddressValid) {
 
     await updatePinFromManualAddress();
@@ -152,8 +159,17 @@ const continueHandler = async () => {
     );
     return;
   }
-  navigation.navigate('AddDetails', {photos, category, location: pin, address: address });
-};
+
+  const { photos, category, title = '', description = '' } = route.params || {};
+
+  const params = { photos, category, location: pin, address: address, title, description };
+
+  if (goToReview) {
+      navigation.navigate('ReviewSubmit', params);
+    } else {
+      navigation.navigate('AddDetails', params);
+    }
+  };
 return (
   <ScreenContainer scrollable edges={[]}>
     {/* Category Icon */}
