@@ -59,8 +59,7 @@ const SignInScreen = ({ navigation }) => {
   };
 
   const handleForgotPassword = () => {
-    // US-104: Reset Password (placeholder for now)
-    alert('Password reset feature coming soon!');
+    navigation.navigate('ForgotPassword');
   };
 
   const handleGoogleSignIn = async (user) => {
