@@ -29,7 +29,7 @@ const ProfileScreen = ({ navigation }) => {
   // Menu options
     const menuItems = [
   { label: 'Edit Profile',  icon: icons.edit, onPress: () => navigation.navigate('EditProfile') },
-  { label: 'My Reports', icon: 'file-document', onPress: () => navigation.navigate('Home') },
+  { label: 'My Reports', icon: 'file-document', onPress: () => navigation.navigate('MyReports') },
   { label: 'Settings', icon: icons.settings, onPress: () => navigation.navigate('Settings') },
   { label: 'Help & Support', icon: icons.help, onPress: () => navigation.navigate('Help') },
 ];

@@ -19,6 +19,7 @@ import TransitScreen from '../screens/TransitScreen';
 // import SearchTransitScreen from '../screens/Transit/SearchTransitScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import ReportDetailsScreen from '../screens/ReportDetailsScreen';
+import MyReportsScreen from '../screens/MyReportsScreen';
 
 
 const Tab = createBottomTabNavigator();
@@ -191,6 +192,22 @@ const MainNavigator = () => {
         component={ReportDetailsScreen}
         options={{
           title: 'Report Details',
+          headerStyle: {
+            backgroundColor: theme.colors.neutral[0],
+          },
+          headerTintColor: theme.colors.text.primary,
+          headerTitleStyle: {
+            ...theme.typography.h3,
+            fontWeight: theme.fontWeight.semibold,
+          },
+          headerShadowVisible: false,
+        }}
+      />
+      <Stack.Screen
+        name="MyReports"
+        component={MyReportsScreen}
+        options={{
+          title: 'My Reports',
           headerStyle: {
             backgroundColor: theme.colors.neutral[0],
           },
