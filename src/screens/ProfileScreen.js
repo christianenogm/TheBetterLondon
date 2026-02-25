@@ -21,8 +21,7 @@ const ProfileScreen = ({ navigation }) => {
   const theme = useTheme();
   const { user, signOut } = useAuth();
 
-   // Mock stats  
-  const totalReports = user?.reports || 0;
+  const totalReports = user?.reportsCount || 0;
   const points = user?.points || 0;
   const badges = user?.badges || [];
 

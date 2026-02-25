@@ -138,7 +138,7 @@ const MyReportsScreen = ({ navigation }) => {
             </Text>
           </View>
 
-          {/* Footer: timestamp + upvotes */}
+          {/* Footer: timestamp + upvotes (own reports can't be upvoted) */}
           <View style={styles.cardFooter}>
             <View style={styles.metaRow}>
               <Icon
@@ -148,14 +148,14 @@ const MyReportsScreen = ({ navigation }) => {
               />
               <Text style={styles.metaText}>{formatTimeAgo(item.createdAt)}</Text>
             </View>
-            <View style={styles.metaRow}>
+            <View style={[styles.metaRow, styles.upvoteCount]}>
               <Icon
                 name="arrow-up-bold"
                 size={theme.iconSize.sm}
-                color={theme.colors.primary[500]}
+                color={theme.colors.neutral[400]}
               />
-              <Text style={[styles.metaText, { color: theme.colors.primary[500] }]}>
-                {item.upvotes ?? 0}
+              <Text style={[styles.metaText, { color: theme.colors.neutral[400] }]}>
+                {item.upvotes ?? 0} upvotes
               </Text>
             </View>
           </View>
@@ -264,6 +264,12 @@ const MyReportsScreen = ({ navigation }) => {
       flexDirection: 'row',
       alignItems: 'center',
       gap: theme.spacing[1],
+    },
+    upvoteCount: {
+      paddingVertical: theme.spacing[1],
+      paddingHorizontal: theme.spacing[2],
+      backgroundColor: theme.colors.neutral[100],
+      borderRadius: theme.borderRadius.full,
     },
     metaText: {
       ...theme.typography.caption,

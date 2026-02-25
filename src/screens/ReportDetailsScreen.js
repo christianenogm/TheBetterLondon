@@ -42,12 +42,37 @@ const ReportDetailsScreen = ({ route, navigation }) => {
     }
   };
 
+  const isOwnReport = report && report.userId === user?.id;
+  const hasUpvoted = report?.upvotedBy?.includes(user?.id) ?? false;
+
   const handleUpvote = async () => {
+    if (isOwnReport) {
+      Alert.alert("Can't Upvote", 'You cannot upvote your own report.');
+      return;
+    }
+    if (hasUpvoted) {
+      Alert.alert('Already Upvoted', 'You have already upvoted this report.');
+      return;
+    }
+
+    // Optimistic update
+    setReport(prev => ({
+      ...prev,
+      upvotes: (prev.upvotes || 0) + 1,
+      upvotedBy: [...(prev.upvotedBy || []), user.id],
+    }));
+
     try {
-      const updatedReport = await upvoteReport(reportId);
+      const updatedReport = await upvoteReport(reportId, user.id);
       setReport(updatedReport);
     } catch (error) {
       console.error('Error upvoting report:', error);
+      // Revert optimistic update
+      setReport(prev => ({
+        ...prev,
+        upvotes: Math.max((prev.upvotes || 1) - 1, 0),
+        upvotedBy: (prev.upvotedBy || []).filter(id => id !== user.id),
+      }));
     }
   };
 
@@ -212,6 +237,12 @@ const ReportDetailsScreen = ({ route, navigation }) => {
     upvoteButton: {
       backgroundColor: theme.colors.primary.light,
     },
+    upvoteButtonVoted: {
+      backgroundColor: theme.colors.primary[100],
+    },
+    upvoteButtonDisabled: {
+      backgroundColor: theme.colors.neutral[100],
+    },
     shareButton: {
       backgroundColor: theme.colors.neutral[100],
     },
@@ -369,17 +400,35 @@ const ReportDetailsScreen = ({ route, navigation }) => {
           {/* Actions */}
           <View style={styles.actionsRow}>
             <TouchableOpacity
-              style={[styles.actionButton, styles.upvoteButton]}
+              style={[
+                styles.actionButton,
+                styles.upvoteButton,
+                hasUpvoted && styles.upvoteButtonVoted,
+                isOwnReport && styles.upvoteButtonDisabled,
+              ]}
               onPress={handleUpvote}
+              disabled={isOwnReport || hasUpvoted}
             >
               <Icon
-                name="arrow-up-bold"
+                name={hasUpvoted ? 'arrow-up-bold' : 'arrow-up-bold-outline'}
                 size={theme.iconSize.md}
-                color={theme.colors.primary.main}
+                color={
+                  isOwnReport
+                    ? theme.colors.neutral[400]
+                    : hasUpvoted
+                    ? theme.colors.primary[500]
+                    : theme.colors.primary.main
+                }
                 style={styles.actionIcon}
               />
-              <Text style={[styles.actionText, styles.upvoteText]}>
-                {report.upvotes} Upvotes
+              <Text
+                style={[
+                  styles.actionText,
+                  styles.upvoteText,
+                  (isOwnReport || hasUpvoted) && { color: isOwnReport ? theme.colors.neutral[400] : theme.colors.primary[500] },
+                ]}
+              >
+                {report.upvotes ?? 0} {hasUpvoted ? 'Upvoted' : 'Upvotes'}
               </Text>
             </TouchableOpacity>
 

@@ -14,11 +14,13 @@ import {
   orderBy, 
   updateDoc,
   increment,
+  arrayUnion,
   serverTimestamp,
   Timestamp
 } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { db, storage } from '../config/firebase';
+import { updateUserStats } from './userService';
 
 const REPORTS_COLLECTION = 'reports';
 
@@ -98,12 +100,16 @@ export const createReport = async (reportData) => {
       photos: photoURLs,
       status: 'pending',
       upvotes: 0,
+      upvotedBy: [],
       createdAt: serverTimestamp(),
       updatedAt: serverTimestamp(),
     };
     
     const docRef = await addDoc(reportsRef, reportDoc);
-    
+
+    // Award points for submitting a report
+    await updateUserStats(reportData.userId, { points: 10, reportsCount: 1 });
+
     // Return the created report with ID
     return {
       id: docRef.id,
@@ -209,18 +215,28 @@ export const getUserReports = async (userId) => {
 
 /**
  * US-304: Upvote a report
+ * - A user cannot upvote their own report
+ * - A user can only upvote each report once
  */
-export const upvoteReport = async (reportId) => {
+export const upvoteReport = async (reportId, userId) => {
+  if (!userId) throw new Error('User must be logged in to upvote');
+
   try {
+    const current = await getReportById(reportId);
+    if (!current) throw new Error('Report not found');
+    if (current.userId === userId) throw new Error('You cannot upvote your own report');
+    if (current.upvotedBy?.includes(userId)) throw new Error('You have already upvoted this report');
+
     const reportRef = doc(db, REPORTS_COLLECTION, reportId);
-    
-    // Increment upvotes using Firestore increment
     await updateDoc(reportRef, {
       upvotes: increment(1),
+      upvotedBy: arrayUnion(userId),
       updatedAt: serverTimestamp(),
     });
-    
-    // Fetch and return updated report
+
+    // Award +5 points to the report author for receiving an upvote
+    await updateUserStats(current.userId, { points: 5 });
+
     const updatedReport = await getReportById(reportId);
     return updatedReport;
   } catch (error) {
