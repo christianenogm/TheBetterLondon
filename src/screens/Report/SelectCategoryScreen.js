@@ -12,13 +12,25 @@ import { ISSUE_CATEGORIES } from '../../utils/constants';
 
 const CARD_SIZE = 70;
 
-const SelectCategoryScreen = ({ navigation }) => {
+const SelectCategoryScreen = ({ navigation, route }) => {
   const theme = useTheme();
   const [selected, setSelected] = React.useState(null);
 
   const handleSelect = (category) => {
     setSelected(category.id);
-    navigation.navigate('TakePhotos', { category });
+    // navigation.navigate('TakePhotos', { category });
+     if (route.params?.fromReview) {
+    navigation.navigate('ReviewSubmit', {
+      ...route.params,
+      category,       
+    });
+  } else {
+    navigation.navigate('TakePhotos', {
+      ...route.params,
+      category,
+      fromReview: true
+    });
+  }
   };
 
   return (
