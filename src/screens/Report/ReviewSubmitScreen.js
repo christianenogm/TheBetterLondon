@@ -10,6 +10,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useTheme } from '../../context/ThemeContext';
 import { useAuth } from '../../context/AuthContext';
 import { ScreenContainer, PrimaryButton, SecondaryButton, Card, Loading } from '../../components';
+import { createReport } from '../../services/reportsService';
 
 
 const POINTS_REWARD = 10;
@@ -34,18 +35,59 @@ const ReviewSubmitScreen = ({ route, navigation }) => {
     setSubmitting(true);
 
     try {
-      await new Promise((res) => setTimeout(res, 2000));
+
+
+
+      // await new Promise((res) => setTimeout(res, 2000));
+
+      // Alert.alert(
+      //   'Report Submitted!',
+      //   `You earned ${POINTS_REWARD} points.`,
+      //   [{ 
+      //     text: 'OK', 
+      //     onPress: () => navigation.reset({
+      //       index: 0,
+      //       routes: [{ name: 'Home' }],
+      //     }) 
+      //   }]
+      // );
+
+      const reportData = {
+        userId: user.id,
+        userName: user.name,
+        category: category.id,
+        categoryLabel: category.label,
+        title,
+        description,
+        location,
+        photos: photos.map(photo => photo.uri),
+      };
+
+      const newReport = await createReport(reportData);
 
       Alert.alert(
         'Report Submitted!',
-        `You earned ${POINTS_REWARD} points.`,
-        [{ 
-          text: 'OK', 
-          onPress: () => navigation.reset({
-            index: 0,
-            routes: [{ name: 'Home' }],
-          }) 
-        }]
+        `Thank you for helping improve London! You've earned ${POINTS_REWARD} points.`,
+        [
+          {
+            text: 'View Reports',
+            onPress: () => {
+              navigation.reset({
+                index: 0,
+                routes: [{ name: 'MainTabs', params: { screen: 'Home' } }],
+              });
+            },
+          },
+          {
+            text: 'Report Another',
+            onPress: () => {
+              navigation.reset({
+                index: 0,
+                routes: [{ name: 'MainTabs', params: { screen: 'Report' } }],
+              });
+            },
+          },
+        ]
       );
 
     } catch (error) {
