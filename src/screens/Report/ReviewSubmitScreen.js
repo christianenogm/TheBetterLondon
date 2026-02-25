@@ -17,7 +17,7 @@ const POINTS_REWARD = 10;
 
 const ReviewSubmitScreen = ({ route, navigation }) => {
   const theme = useTheme();
-  const { user } = useAuth();
+  const { user, updateUser } = useAuth();
   
    const { 
     photos = [], 
@@ -64,6 +64,12 @@ const ReviewSubmitScreen = ({ route, navigation }) => {
       };
 
       const newReport = await createReport(reportData);
+
+      // Keep in-memory user context in sync with Firestore
+      updateUser({
+        points: (user.points || 0) + POINTS_REWARD,
+        reportsCount: (user.reportsCount || 0) + 1,
+      });
 
       Alert.alert(
         'Report Submitted!',

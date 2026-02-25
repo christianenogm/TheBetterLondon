@@ -4,7 +4,7 @@
  * Display community-reported issues
  */
 import React, { useState, useEffect, useCallback } from 'react';
-import { View, Text, StyleSheet, FlatList, TouchableOpacity, RefreshControl, Image } from 'react-native';
+import { View, Text, StyleSheet, FlatList, TouchableOpacity, RefreshControl, Image, Alert } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
@@ -23,7 +23,9 @@ const HomeScreen = ({ navigation }) => {
   const loadReports = async () => {
     try {
       const data = await getAllReports();
-      setReports(data);
+      // Sort by upvotes descending so popular reports rise to the top
+      const sorted = [...data].sort((a, b) => (b.upvotes || 0) - (a.upvotes || 0));
+      setReports(sorted);
     } catch (error) {
       console.error('Error loading reports:', error);
     } finally {
@@ -42,11 +44,39 @@ const HomeScreen = ({ navigation }) => {
   }, []);
 
   const handleUpvote = async (reportId) => {
+    const report = reports.find(r => r.id === reportId);
+    if (!report) return;
+
+    if (report.userId === user?.id) {
+      Alert.alert("Can't Upvote", 'You cannot upvote your own report.');
+      return;
+    }
+    if (report.upvotedBy?.includes(user?.id)) {
+      Alert.alert('Already Upvoted', 'You have already upvoted this report.');
+      return;
+    }
+
+    // Optimistic update
+    setReports(prev =>
+      prev.map(r =>
+        r.id === reportId
+          ? { ...r, upvotes: (r.upvotes || 0) + 1, upvotedBy: [...(r.upvotedBy || []), user.id] }
+          : r
+      )
+    );
+
     try {
-      const updatedReport = await upvoteReport(reportId);
-      setReports(reports.map(r => r.id === reportId ? updatedReport : r));
+      await upvoteReport(reportId, user.id);
     } catch (error) {
       console.error('Error upvoting report:', error);
+      // Revert on failure
+      setReports(prev =>
+        prev.map(r =>
+          r.id === reportId
+            ? { ...r, upvotes: Math.max((r.upvotes || 1) - 1, 0), upvotedBy: (r.upvotedBy || []).filter(id => id !== user.id) }
+            : r
+        )
+      );
     }
   };
 
@@ -67,6 +97,14 @@ const HomeScreen = ({ navigation }) => {
   const renderReportCard = ({ item }) => {
     const categoryColor = getCategoryColor(item.category);
     const categoryIcon = getCategoryIcon(item.category);
+    const isOwnReport = item.userId === user?.id;
+    const hasUpvoted = item.upvotedBy?.includes(user?.id) ?? false;
+    const upvoteDisabled = isOwnReport || hasUpvoted;
+    const upvoteColor = hasUpvoted
+      ? theme.colors.primary[500]
+      : isOwnReport
+      ? theme.colors.neutral[400]
+      : theme.colors.primary.main;
 
     return (
       <TouchableOpacity
@@ -130,15 +168,20 @@ const HomeScreen = ({ navigation }) => {
             </View>
 
             <TouchableOpacity
-              style={styles.upvoteButton}
+              style={[
+                styles.upvoteButton,
+                hasUpvoted && styles.upvoteButtonVoted,
+                isOwnReport && styles.upvoteButtonDisabled,
+              ]}
               onPress={() => handleUpvote(item.id)}
+              disabled={upvoteDisabled}
             >
               <Icon
-                name="arrow-up-bold"
+                name={hasUpvoted ? 'arrow-up-bold' : 'arrow-up-bold-outline'}
                 size={theme.iconSize.sm}
-                color={theme.colors.primary.main}
+                color={upvoteColor}
               />
-              <Text style={styles.upvoteText}>{item.upvotes}</Text>
+              <Text style={[styles.upvoteText, { color: upvoteColor }]}>{item.upvotes ?? 0}</Text>
             </TouchableOpacity>
           </View>
         </Card>
@@ -236,6 +279,12 @@ const HomeScreen = ({ navigation }) => {
       paddingVertical: theme.spacing[1],
       paddingHorizontal: theme.spacing[2],
       borderRadius: theme.borderRadius.full,
+    },
+    upvoteButtonVoted: {
+      backgroundColor: theme.colors.primary[100],
+    },
+    upvoteButtonDisabled: {
+      backgroundColor: theme.colors.neutral[100],
     },
     upvoteText: {
       ...theme.typography.caption,

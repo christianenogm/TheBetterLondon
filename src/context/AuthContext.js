@@ -6,6 +6,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../config/firebase';
+import { getUserProfile, initUserProfile } from '../services/userService';
 
 const AuthContext = createContext(null);
 
@@ -15,16 +16,24 @@ export const AuthProvider = ({ children }) => {
 
   // Listen to Firebase auth state changes
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
+    const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
       if (firebaseUser) {
-        // User is signed in
+        // Ensure a Firestore profile exists (no-op if already there)
+        await initUserProfile(firebaseUser.uid, {
+          name: firebaseUser.displayName || 'User',
+          email: firebaseUser.email,
+        });
+
+        // Fetch persisted stats
+        const profile = await getUserProfile(firebaseUser.uid);
+
         setUser({
           id: firebaseUser.uid,
           name: firebaseUser.displayName || 'User',
           email: firebaseUser.email,
           photoURL: firebaseUser.photoURL,
-          points: 0, // TODO: Fetch from Firestore
-          reportsCount: 0, // TODO: Fetch from Firestore
+          points: profile?.points ?? 0,
+          reportsCount: profile?.reportsCount ?? 0,
         });
       } else {
         // User is signed out
