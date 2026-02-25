@@ -18,6 +18,7 @@ import TransitScreen from '../screens/TransitScreen';
 // import NearbyStopsScreen from '../screens/Transit/NearbyStopsScreen';
 // import SearchTransitScreen from '../screens/Transit/SearchTransitScreen';
 import ProfileScreen from '../screens/ProfileScreen';
+import ReportDetailsScreen from '../screens/ReportDetailsScreen';
 
 
 const Tab = createBottomTabNavigator();
@@ -185,7 +186,7 @@ const MainNavigator = () => {
         component={TabNavigator}
         options={{ headerShown: false }}
       />
-      {/* <Stack.Screen
+      <Stack.Screen
         name="ReportDetails"
         component={ReportDetailsScreen}
         options={{
@@ -200,7 +201,7 @@ const MainNavigator = () => {
           },
           headerShadowVisible: false,
         }}
-      /> */}
+      />
     </Stack.Navigator>
   );
 };
