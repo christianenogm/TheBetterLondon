@@ -175,6 +175,10 @@ export const getReportById = async (reportId) => {
  * Get user's reports
  */
 export const getUserReports = async (userId) => {
+  if (!userId) {
+    console.error('getUserReports called with undefined userId');
+    return [];
+  }
   try {
     const reportsRef = collection(db, REPORTS_COLLECTION);
     const q = query(
