@@ -12,7 +12,7 @@ import { useTheme } from '../context/ThemeContext';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import HomeScreen from '../screens/HomeScreen';
-import MapScreen from '../screens/MapScreen';
+import IssuesMapScreen from '../screens/IssuesMapScreen';
 import ReportScreen from '../screens/ReportScreen';
 import TransitScreen from '../screens/TransitScreen';
 // import NearbyStopsScreen from '../screens/Transit/NearbyStopsScreen';
@@ -89,7 +89,7 @@ const TabNavigator = () => {
             case 'Home':
               iconName = theme.icons.home;
               break;
-            case 'Map':
+            case 'Issues Map':
               iconName = theme.icons.map;
               break;
             case 'Report':
@@ -142,10 +142,10 @@ const TabNavigator = () => {
         }}
       />
       <Tab.Screen 
-        name="Map" 
-        component={MapScreen}
+        name="Issues Map" 
+        component={IssuesMapScreen}
         options={{
-          title: 'Map',
+          title: 'Issues Map',
           headerTitle: 'Issues Map',
         }}
       />
@@ -192,6 +192,7 @@ const MainNavigator = () => {
         component={ReportDetailsScreen}
         options={{
           title: 'Report Details',
+          headerBackTitle: 'Back',
           headerStyle: {
             backgroundColor: theme.colors.neutral[0],
           },
