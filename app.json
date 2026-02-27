@@ -13,17 +13,35 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "ca.thebetterlondon",
+      "supportsTablet": true,
+      "config": {
+        "googleMapsApiKey": "$(GOOGLE_MAPS_API_KEY)"
+      }
     },
     "android": {
+      "package": "ca.thebetterlondon",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "config": {
+        "googleMaps": {
+          "apiKey": "$(GOOGLE_MAPS_API_KEY)"
+        }
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-font"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "9633f05d-2d9e-48d8-b6d1-c3b675d164d6"
+      }
     }
   }
 }
