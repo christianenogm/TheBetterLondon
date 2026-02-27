@@ -92,6 +92,11 @@ const ReportDetailsScreen = ({ route, navigation }) => {
     return category || { color: theme.colors.neutral[500], icon: 'alert-circle' };
   };
 
+  const getCategoryLabel = (categoryId) => {
+    const category = ISSUE_CATEGORIES.find(c => c.id === categoryId);
+    return category ? category.label : 'Other';
+  }
+
   const styles = StyleSheet.create({
     scrollContainer: {
       flex: 1,
@@ -335,7 +340,7 @@ const ReportDetailsScreen = ({ route, navigation }) => {
                   style={styles.categoryIcon}
                 />
                 <Text style={[styles.categoryText, { color: categoryInfo.color, textTransform: 'capitalize' }]}>
-                  {report.category}
+                  {getCategoryLabel(report.category)}
                 </Text>
               </View>
               <Badge variant={report.status} />
