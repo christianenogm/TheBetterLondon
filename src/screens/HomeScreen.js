@@ -3,18 +3,21 @@
  * Epic 3: View Reports Feed (US-301)
  * Display community-reported issues
  */
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableOpacity, RefreshControl, Image, Alert } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import * as Location from 'expo-location';
 import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
-import { ScreenContainer, Card, Badge, EmptyState, Loading, FilterSheet } from '../components';
+import { ScreenContainer, Card, Badge, EmptyState, Loading, FilterSheet, SortSheet } from '../components';
 import { getAllReports, upvoteReport } from '../services/reportsService';
-import { formatTimeAgo } from '../utils/helpers';
+import { formatTimeAgo, haversineDistance } from '../utils/helpers';
 import { ISSUE_CATEGORIES } from '../utils/constants';
+import { SORT_OPTIONS } from '../components/SortSheet/SortSheet';
 
 const FILTER_STORAGE_KEY = '@home_category_filters';
+const SORT_STORAGE_KEY = '@home_sort_option';
 
 const HomeScreen = ({ navigation }) => {
   const theme = useTheme();
@@ -24,13 +27,17 @@ const HomeScreen = ({ navigation }) => {
   const [refreshing, setRefreshing] = useState(false);
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [filterSheetVisible, setFilterSheetVisible] = useState(false);
+  const [sortOption, setSortOption] = useState('recent');
+  const [sortSheetVisible, setSortSheetVisible] = useState(false);
+  const [userLocation, setUserLocation] = useState(null);
 
   // Load persisted filters on mount
   useEffect(() => {
     AsyncStorage.getItem(FILTER_STORAGE_KEY)
-      .then(stored => {
-        if (stored) setSelectedCategories(JSON.parse(stored));
-      })
+      .then(stored => { if (stored) setSelectedCategories(JSON.parse(stored)); })
+      .catch(() => {});
+    AsyncStorage.getItem(SORT_STORAGE_KEY)
+      .then(stored => { if (stored) setSortOption(stored); })
       .catch(() => {});
   }, []);
 
@@ -39,17 +46,59 @@ const HomeScreen = ({ navigation }) => {
     AsyncStorage.setItem(FILTER_STORAGE_KEY, JSON.stringify(selectedCategories)).catch(() => {});
   }, [selectedCategories]);
 
-  const filteredReports =
-    selectedCategories.length === 0
-      ? reports
-      : reports.filter(r => selectedCategories.includes(r.category));
+  // Persist sort whenever it changes; fetch location when nearest is selected
+  useEffect(() => {
+    AsyncStorage.setItem(SORT_STORAGE_KEY, sortOption).catch(() => {});
+    if (sortOption === 'nearest') {
+      (async () => {
+        const { status } = await Location.requestForegroundPermissionsAsync();
+        if (status !== 'granted') {
+          Alert.alert(
+            'Location Required',
+            'Please grant location permission to sort by distance.',
+            [{ text: 'OK', onPress: () => setSortOption('recent') }]
+          );
+          return;
+        }
+        const loc = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.Balanced });
+        setUserLocation(loc.coords);
+      })();
+    }
+  }, [sortOption]);
+
+  // Derived: filter then sort
+  const displayedReports = useMemo(() => {
+    let list =
+      selectedCategories.length === 0
+        ? reports
+        : reports.filter(r => selectedCategories.includes(r.category));
+
+    switch (sortOption) {
+      case 'upvotes':
+        return [...list].sort((a, b) => (b.upvotes || 0) - (a.upvotes || 0));
+      case 'nearest':
+        if (!userLocation) return list;
+        return [...list].sort((a, b) => {
+          const distA = haversineDistance(
+            userLocation.latitude, userLocation.longitude,
+            a.location?.latitude ?? 0, a.location?.longitude ?? 0
+          );
+          const distB = haversineDistance(
+            userLocation.latitude, userLocation.longitude,
+            b.location?.latitude ?? 0, b.location?.longitude ?? 0
+          );
+          return distA - distB;
+        });
+      case 'recent':
+      default:
+        return [...list].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+    }
+  }, [reports, selectedCategories, sortOption, userLocation]);
 
   const loadReports = async () => {
     try {
       const data = await getAllReports();
-      // Sort by upvotes descending so popular reports rise to the top
-      const sorted = [...data].sort((a, b) => (b.upvotes || 0) - (a.upvotes || 0));
-      setReports(sorted);
+      setReports(data);
     } catch (error) {
       console.error('Error loading reports:', error);
     } finally {
@@ -74,6 +123,12 @@ const HomeScreen = ({ navigation }) => {
   const removeFilter = (id) => {
     setSelectedCategories(prev => prev.filter(c => c !== id));
   };
+
+  const handleSelectSort = (key) => {
+    setSortOption(key);
+  };
+
+  const activeSortOption = SORT_OPTIONS.find(o => o.key === sortOption);
 
   const handleUpvote = async (reportId) => {
     const report = reports.find(r => r.id === reportId);
@@ -240,8 +295,9 @@ const HomeScreen = ({ navigation }) => {
       borderBottomWidth: 1,
       borderBottomColor: theme.colors.border.default,
       backgroundColor: theme.colors.neutral[0],
+      gap: theme.spacing[2],
     },
-    filterButton: {
+    toolbarButton: {
       flexDirection: 'row',
       alignItems: 'center',
       paddingVertical: theme.spacing[2],
@@ -250,27 +306,26 @@ const HomeScreen = ({ navigation }) => {
       borderWidth: 1,
       borderColor: theme.colors.border.default,
       backgroundColor: theme.colors.neutral[0],
-      marginRight: theme.spacing[2],
     },
-    filterButtonActive: {
+    toolbarButtonActive: {
       backgroundColor: theme.colors.primary[500],
       borderColor: theme.colors.primary[500],
     },
-    filterButtonText: {
+    toolbarButtonText: {
       ...theme.typography.body2,
       color: theme.colors.text.primary,
       fontWeight: theme.fontWeight.semibold,
       marginLeft: theme.spacing[1],
     },
-    filterButtonTextActive: {
+    toolbarButtonTextActive: {
       color: theme.colors.neutral[0],
     },
     clearAllButton: {
-      marginRight: theme.spacing[2],
+      marginLeft: theme.spacing[1],
     },
     clearAllText: {
       ...theme.typography.body2,
-      color: theme.colors.primary[500],
+      color: theme.colors.error?.main || '#EF5350',
       fontWeight: theme.fontWeight.semibold,
     },
     countText: {
@@ -405,12 +460,12 @@ const HomeScreen = ({ navigation }) => {
 
   return (
     <ScreenContainer edges={['left', 'right']}>
-      {/* Filter toolbar */}
+      {/* Filter + Sort toolbar */}
       <View style={styles.toolbar}>
         <TouchableOpacity
           style={[
-            styles.filterButton,
-            selectedCategories.length > 0 && styles.filterButtonActive,
+            styles.toolbarButton,
+            selectedCategories.length > 0 && styles.toolbarButtonActive,
           ]}
           onPress={() => setFilterSheetVisible(true)}
           activeOpacity={0.7}
@@ -426,13 +481,40 @@ const HomeScreen = ({ navigation }) => {
           />
           <Text
             style={[
-              styles.filterButtonText,
-              selectedCategories.length > 0 && styles.filterButtonTextActive,
+              styles.toolbarButtonText,
+              selectedCategories.length > 0 && styles.toolbarButtonTextActive,
             ]}
           >
             {selectedCategories.length > 0
-              ? `Filtered (${selectedCategories.length})`
+              ? `Filter (${selectedCategories.length})`
               : 'Filter'}
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={[
+            styles.toolbarButton,
+            sortOption !== 'recent' && styles.toolbarButtonActive,
+          ]}
+          onPress={() => setSortSheetVisible(true)}
+          activeOpacity={0.7}
+        >
+          <Icon
+            name="sort"
+            size={theme.iconSize.sm}
+            color={
+              sortOption !== 'recent'
+                ? theme.colors.neutral[0]
+                : theme.colors.text.primary
+            }
+          />
+          <Text
+            style={[
+              styles.toolbarButtonText,
+              sortOption !== 'recent' && styles.toolbarButtonTextActive,
+            ]}
+          >
+            {activeSortOption?.label ?? 'Sort'}
           </Text>
         </TouchableOpacity>
 
@@ -441,12 +523,12 @@ const HomeScreen = ({ navigation }) => {
             style={styles.clearAllButton}
             onPress={() => setSelectedCategories([])}
           >
-            <Text style={styles.clearAllText}>Clear All</Text>
+            <Text style={styles.clearAllText}>Clear</Text>
           </TouchableOpacity>
         )}
 
         <Text style={styles.countText}>
-          {filteredReports.length} report{filteredReports.length !== 1 ? 's' : ''}
+          {displayedReports.length} report{displayedReports.length !== 1 ? 's' : ''}
         </Text>
       </View>
 
@@ -469,7 +551,7 @@ const HomeScreen = ({ navigation }) => {
         </View>
       )}
 
-      {filteredReports.length === 0 ? (
+      {displayedReports.length === 0 ? (
         <EmptyState
           icon="clipboard-search-outline"
           title="No Reports Found"
@@ -487,7 +569,7 @@ const HomeScreen = ({ navigation }) => {
         />
       ) : (
         <FlatList
-          data={filteredReports}
+          data={displayedReports}
           renderItem={renderReportCard}
           keyExtractor={(item) => item.id}
           contentContainerStyle={styles.container}
@@ -507,6 +589,13 @@ const HomeScreen = ({ navigation }) => {
         selectedCategories={selectedCategories}
         onApply={handleApplyFilters}
         onClose={() => setFilterSheetVisible(false)}
+      />
+
+      <SortSheet
+        visible={sortSheetVisible}
+        selectedSort={sortOption}
+        onSelect={handleSelectSort}
+        onClose={() => setSortSheetVisible(false)}
       />
     </ScreenContainer>
   );

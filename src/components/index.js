@@ -23,3 +23,4 @@ export { default as Badge } from './Badge/Badge';
 
 // Filters
 export { default as FilterSheet } from './FilterSheet/FilterSheet';
+export { default as SortSheet } from './SortSheet/SortSheet';
