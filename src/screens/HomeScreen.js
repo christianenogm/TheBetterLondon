@@ -6,12 +6,15 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableOpacity, RefreshControl, Image, Alert } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
-import { ScreenContainer, Card, Badge, EmptyState, Loading } from '../components';
+import { ScreenContainer, Card, Badge, EmptyState, Loading, FilterSheet } from '../components';
 import { getAllReports, upvoteReport } from '../services/reportsService';
 import { formatTimeAgo } from '../utils/helpers';
 import { ISSUE_CATEGORIES } from '../utils/constants';
+
+const FILTER_STORAGE_KEY = '@home_category_filters';
 
 const HomeScreen = ({ navigation }) => {
   const theme = useTheme();
@@ -19,6 +22,27 @@ const HomeScreen = ({ navigation }) => {
   const [reports, setReports] = useState([]);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
+  const [selectedCategories, setSelectedCategories] = useState([]);
+  const [filterSheetVisible, setFilterSheetVisible] = useState(false);
+
+  // Load persisted filters on mount
+  useEffect(() => {
+    AsyncStorage.getItem(FILTER_STORAGE_KEY)
+      .then(stored => {
+        if (stored) setSelectedCategories(JSON.parse(stored));
+      })
+      .catch(() => {});
+  }, []);
+
+  // Persist filters whenever they change
+  useEffect(() => {
+    AsyncStorage.setItem(FILTER_STORAGE_KEY, JSON.stringify(selectedCategories)).catch(() => {});
+  }, [selectedCategories]);
+
+  const filteredReports =
+    selectedCategories.length === 0
+      ? reports
+      : reports.filter(r => selectedCategories.includes(r.category));
 
   const loadReports = async () => {
     try {
@@ -42,6 +66,14 @@ const HomeScreen = ({ navigation }) => {
     setRefreshing(true);
     loadReports();
   }, []);
+
+  const handleApplyFilters = (categories) => {
+    setSelectedCategories(categories);
+  };
+
+  const removeFilter = (id) => {
+    setSelectedCategories(prev => prev.filter(c => c !== id));
+  };
 
   const handleUpvote = async (reportId) => {
     const report = reports.find(r => r.id === reportId);
@@ -94,6 +126,11 @@ const HomeScreen = ({ navigation }) => {
     return category ? category.icon : 'alert-circle';
   };
 
+  const getCategoryLabel = (categoryId) => {
+    const category = ISSUE_CATEGORIES.find(c => c.id === categoryId);
+    return category ? category.label : 'Other';
+  }
+
   const renderReportCard = ({ item }) => {
     const categoryColor = getCategoryColor(item.category);
     const categoryIcon = getCategoryIcon(item.category);
@@ -121,8 +158,8 @@ const HomeScreen = ({ navigation }) => {
                 color={categoryColor}
                 style={styles.categoryIcon}
               />
-              <Text style={[styles.categoryText, { color: categoryColor }]}>
-                {item.categoryLabel}
+              <Text style={[styles.categoryText, { color: categoryColor, textTransform: 'capitalize' }]}>
+                {getCategoryLabel(item.category)}
               </Text>
             </View>
             <Badge variant={item.status} />
@@ -194,6 +231,74 @@ const HomeScreen = ({ navigation }) => {
       paddingHorizontal: theme.spacing[4],
       paddingTop: theme.spacing[2],
       paddingBottom: theme.spacing[4],
+    },
+    toolbar: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      paddingHorizontal: theme.spacing[4],
+      paddingVertical: theme.spacing[3],
+      borderBottomWidth: 1,
+      borderBottomColor: theme.colors.border.default,
+      backgroundColor: theme.colors.neutral[0],
+    },
+    filterButton: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      paddingVertical: theme.spacing[2],
+      paddingHorizontal: theme.spacing[3],
+      borderRadius: theme.borderRadius.full,
+      borderWidth: 1,
+      borderColor: theme.colors.border.default,
+      backgroundColor: theme.colors.neutral[0],
+      marginRight: theme.spacing[2],
+    },
+    filterButtonActive: {
+      backgroundColor: theme.colors.primary[500],
+      borderColor: theme.colors.primary[500],
+    },
+    filterButtonText: {
+      ...theme.typography.body2,
+      color: theme.colors.text.primary,
+      fontWeight: theme.fontWeight.semibold,
+      marginLeft: theme.spacing[1],
+    },
+    filterButtonTextActive: {
+      color: theme.colors.neutral[0],
+    },
+    clearAllButton: {
+      marginRight: theme.spacing[2],
+    },
+    clearAllText: {
+      ...theme.typography.body2,
+      color: theme.colors.primary[500],
+      fontWeight: theme.fontWeight.semibold,
+    },
+    countText: {
+      ...theme.typography.caption,
+      color: theme.colors.text.secondary,
+      marginLeft: 'auto',
+    },
+    chipsRow: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      paddingHorizontal: theme.spacing[4],
+      paddingVertical: theme.spacing[2],
+      gap: theme.spacing[2],
+      backgroundColor: theme.colors.neutral[0],
+      borderBottomWidth: 1,
+      borderBottomColor: theme.colors.border.default,
+    },
+    chip: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      paddingVertical: theme.spacing[1],
+      paddingHorizontal: theme.spacing[2],
+      borderRadius: theme.borderRadius.full,
+      borderWidth: 1,
+    },
+    chipText: {
+      ...theme.typography.caption,
+      fontWeight: theme.fontWeight.semibold,
     },
     reportCard: {
       marginBottom: theme.spacing[4],
@@ -298,35 +403,110 @@ const HomeScreen = ({ navigation }) => {
     return <Loading />;
   }
 
-  if (reports.length === 0) {
-    return (
-      <ScreenContainer>
-        <EmptyState
-          icon="clipboard-alert"
-          title="No Reports Yet"
-          description="Be the first to report an issue in your community!"
-          actionLabel="Report an Issue"
-          onActionPress={() => navigation.navigate('Report')}
-        />
-      </ScreenContainer>
-    );
-  }
-
   return (
     <ScreenContainer edges={['left', 'right']}>
-      <FlatList
-        data={reports}
-        renderItem={renderReportCard}
-        keyExtractor={(item) => item.id}
-        contentContainerStyle={styles.container}
-        showsVerticalScrollIndicator={false}
-        refreshControl={
-          <RefreshControl
-            refreshing={refreshing}
-            onRefresh={onRefresh}
-            tintColor={theme.colors.primary.main}
+      {/* Filter toolbar */}
+      <View style={styles.toolbar}>
+        <TouchableOpacity
+          style={[
+            styles.filterButton,
+            selectedCategories.length > 0 && styles.filterButtonActive,
+          ]}
+          onPress={() => setFilterSheetVisible(true)}
+          activeOpacity={0.7}
+        >
+          <Icon
+            name="filter-variant"
+            size={theme.iconSize.sm}
+            color={
+              selectedCategories.length > 0
+                ? theme.colors.neutral[0]
+                : theme.colors.text.primary
+            }
           />
-        }
+          <Text
+            style={[
+              styles.filterButtonText,
+              selectedCategories.length > 0 && styles.filterButtonTextActive,
+            ]}
+          >
+            {selectedCategories.length > 0
+              ? `Filtered (${selectedCategories.length})`
+              : 'Filter'}
+          </Text>
+        </TouchableOpacity>
+
+        {selectedCategories.length > 0 && (
+          <TouchableOpacity
+            style={styles.clearAllButton}
+            onPress={() => setSelectedCategories([])}
+          >
+            <Text style={styles.clearAllText}>Clear All</Text>
+          </TouchableOpacity>
+        )}
+
+        <Text style={styles.countText}>
+          {filteredReports.length} report{filteredReports.length !== 1 ? 's' : ''}
+        </Text>
+      </View>
+
+      {/* Active filter chips */}
+      {selectedCategories.length > 0 && (
+        <View style={styles.chipsRow}>
+          {selectedCategories.map(id => {
+            const cat = ISSUE_CATEGORIES.find(c => c.id === id);
+            if (!cat) return null;
+            return (
+              <View key={id} style={[styles.chip, { backgroundColor: cat.color + '22', borderColor: cat.color + '55' }]}>
+                <Icon name={cat.icon} size={12} color={cat.color} style={{ marginRight: 4 }} />
+                <Text style={[styles.chipText, { color: cat.color }]}>{cat.label}</Text>
+                <TouchableOpacity onPress={() => removeFilter(id)} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
+                  <Icon name="close" size={12} color={cat.color} style={{ marginLeft: 4 }} />
+                </TouchableOpacity>
+              </View>
+            );
+          })}
+        </View>
+      )}
+
+      {filteredReports.length === 0 ? (
+        <EmptyState
+          icon="clipboard-search-outline"
+          title="No Reports Found"
+          description={
+            selectedCategories.length > 0
+              ? 'No reports match your current filters. Try adjusting or clearing them.'
+              : 'Be the first to report an issue in your community!'
+          }
+          actionLabel={selectedCategories.length > 0 ? 'Clear Filters' : 'Report an Issue'}
+          onActionPress={
+            selectedCategories.length > 0
+              ? () => setSelectedCategories([])
+              : () => navigation.navigate('Report')
+          }
+        />
+      ) : (
+        <FlatList
+          data={filteredReports}
+          renderItem={renderReportCard}
+          keyExtractor={(item) => item.id}
+          contentContainerStyle={styles.container}
+          showsVerticalScrollIndicator={false}
+          refreshControl={
+            <RefreshControl
+              refreshing={refreshing}
+              onRefresh={onRefresh}
+              tintColor={theme.colors.primary.main}
+            />
+          }
+        />
+      )}
+
+      <FilterSheet
+        visible={filterSheetVisible}
+        selectedCategories={selectedCategories}
+        onApply={handleApplyFilters}
+        onClose={() => setFilterSheetVisible(false)}
       />
     </ScreenContainer>
   );

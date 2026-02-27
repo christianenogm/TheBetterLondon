@@ -21,4 +21,5 @@ export { default as EmptyState } from './EmptyState/EmptyState';
 export { default as Alert } from './Alert/Alert';
 export { default as Badge } from './Badge/Badge';
 
-
+// Filters
+export { default as FilterSheet } from './FilterSheet/FilterSheet';
