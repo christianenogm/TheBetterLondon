@@ -1,0 +1,7089 @@
+{
+  "header": {
+    "gtfs_realtime_version": "2.0",
+    "incrementality": 0,
+    "timestamp": 1770243372
+  },
+  "entity": [
+    {
+      "id": "29",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2263832",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "10",
+          "direction_id": 11
+        },
+        "position": {
+          "latitude": 43.01547,
+          "longitude": -81.2316,
+          "bearing": 152,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 103,
+        "current_status": 2,
+        "timestamp": 1770243361,
+        "congestion_level": 0,
+        "stop_id": "2241",
+        "vehicle": {
+          "id": "3029",
+          "label": "29",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "30",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2270280",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "27",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.01969,
+          "longitude": -81.21586,
+          "bearing": 68,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 469,
+        "current_status": 2,
+        "timestamp": 1770243343,
+        "congestion_level": 0,
+        "stop_id": "2914",
+        "vehicle": {
+          "id": "3030",
+          "label": "30",
+          "license_plate": ""
+        },
+        "occupancy_status": 7,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "33",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2267799",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "17",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.9988,
+          "longitude": -81.24177,
+          "bearing": 68,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 754,
+        "current_status": 2,
+        "timestamp": 1770243349,
+        "congestion_level": 0,
+        "stop_id": "1260",
+        "vehicle": {
+          "id": "3033",
+          "label": "33",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "35",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2270858",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "31",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.00864,
+          "longitude": -81.33565,
+          "bearing": 252,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 554,
+        "current_status": 2,
+        "timestamp": 1770243350,
+        "congestion_level": 0,
+        "stop_id": "1653",
+        "vehicle": {
+          "id": "3035",
+          "label": "35",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "36",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2271295",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "33",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.9886,
+          "longitude": -81.27639,
+          "bearing": 68,
+          "odometer": 0,
+          "speed": 0.44704
+        },
+        "current_stop_sequence": 434,
+        "current_status": 2,
+        "timestamp": 1770243369,
+        "congestion_level": 0,
+        "stop_id": "372",
+        "vehicle": {
+          "id": "3036",
+          "label": "36",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "38",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2261244",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "04",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.98474,
+          "longitude": -81.25024,
+          "bearing": 335,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 749,
+        "current_status": 2,
+        "timestamp": 1770243352,
+        "congestion_level": 0,
+        "stop_id": "1501",
+        "vehicle": {
+          "id": "3038",
+          "label": "38",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "39",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2265724",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "13",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 42.9423,
+          "longitude": -81.20278,
+          "bearing": 132,
+          "odometer": 0,
+          "speed": 4.02336
+        },
+        "current_stop_sequence": 623,
+        "current_status": 0,
+        "timestamp": 1770243365,
+        "congestion_level": 0,
+        "stop_id": "1174",
+        "vehicle": {
+          "id": "3039",
+          "label": "39",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "40",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2264365",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "102",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 43.01015,
+          "longitude": -81.27319,
+          "bearing": 270,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 402,
+        "current_status": 2,
+        "timestamp": 1770243352,
+        "congestion_level": 0,
+        "stop_id": "1222",
+        "vehicle": {
+          "id": "3040",
+          "label": "40",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "312",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2267800",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "17",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.97558,
+          "longitude": -81.32026,
+          "bearing": 340,
+          "odometer": 0,
+          "speed": 1.78816
+        },
+        "current_stop_sequence": 699,
+        "current_status": 2,
+        "timestamp": 1770243347,
+        "congestion_level": 0,
+        "stop_id": "1363",
+        "vehicle": {
+          "id": "3312",
+          "label": "312",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "313",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2261174",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "04",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 42.97894,
+          "longitude": -81.24787,
+          "bearing": 255,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 642,
+        "current_status": 0,
+        "timestamp": 1770243342,
+        "congestion_level": 0,
+        "stop_id": "969",
+        "vehicle": {
+          "id": "3313",
+          "label": "313",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "319",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2259310",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "01",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 42.96202,
+          "longitude": -81.23118,
+          "bearing": 166,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 209,
+        "current_status": 0,
+        "timestamp": 1770243348,
+        "congestion_level": 0,
+        "stop_id": "1958",
+        "vehicle": {
+          "id": "3319",
+          "label": "319",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "320",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2273832",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "94",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.99284,
+          "longitude": -81.26521,
+          "bearing": 340,
+          "odometer": 0,
+          "speed": 8.9408
+        },
+        "current_stop_sequence": 91,
+        "current_status": 2,
+        "timestamp": 1770243353,
+        "congestion_level": 0,
+        "stop_id": "1222",
+        "vehicle": {
+          "id": "3320",
+          "label": "320",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "321",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2273325",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "92",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 42.96846,
+          "longitude": -81.22285,
+          "bearing": 135,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 61,
+        "current_status": 2,
+        "timestamp": 1770243367,
+        "congestion_level": 0,
+        "stop_id": "2284",
+        "vehicle": {
+          "id": "3321",
+          "label": "321",
+          "license_plate": ""
+        },
+        "occupancy_status": 7,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "323",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2272118",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "36",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.02749,
+          "longitude": -81.18735,
+          "bearing": 320,
+          "odometer": 0,
+          "speed": 1.78816
+        },
+        "current_stop_sequence": 593,
+        "current_status": 2,
+        "timestamp": 1770243341,
+        "congestion_level": 0,
+        "stop_id": "2943",
+        "vehicle": {
+          "id": "3323",
+          "label": "323",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "325",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2267090",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "16",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 42.97807,
+          "longitude": -81.22699,
+          "bearing": 164,
+          "odometer": 0,
+          "speed": 6.7056
+        },
+        "current_stop_sequence": 336,
+        "current_status": 2,
+        "timestamp": 1770243364,
+        "congestion_level": 0,
+        "stop_id": "445",
+        "vehicle": {
+          "id": "3325",
+          "label": "325",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "328",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2272742",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "90",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.99653,
+          "longitude": -81.25361,
+          "bearing": 340,
+          "odometer": 0,
+          "speed": 8.9408
+        },
+        "current_stop_sequence": 30,
+        "current_status": 2,
+        "timestamp": 1770243359,
+        "congestion_level": 0,
+        "stop_id": "1143",
+        "vehicle": {
+          "id": "3328",
+          "label": "328",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "330",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2269369",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "24",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.95944,
+          "longitude": -81.21479,
+          "bearing": 252,
+          "odometer": 0,
+          "speed": 0.44704
+        },
+        "current_stop_sequence": 700,
+        "current_status": 2,
+        "timestamp": 1770243352,
+        "congestion_level": 0,
+        "stop_id": "2284",
+        "vehicle": {
+          "id": "3330",
+          "label": "330",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "331",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2271561",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "34",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.02761,
+          "longitude": -81.29684,
+          "bearing": 236,
+          "odometer": 0,
+          "speed": 8.49376
+        },
+        "current_stop_sequence": 677,
+        "current_status": 2,
+        "timestamp": 1770243346,
+        "congestion_level": 0,
+        "stop_id": "2858",
+        "vehicle": {
+          "id": "3331",
+          "label": "331",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "334",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2262649",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "07",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.95537,
+          "longitude": -81.28322,
+          "bearing": 76,
+          "odometer": 0,
+          "speed": 2.2352
+        },
+        "current_stop_sequence": 205,
+        "current_status": 2,
+        "timestamp": 1770243349,
+        "congestion_level": 0,
+        "stop_id": "647",
+        "vehicle": {
+          "id": "3334",
+          "label": "334",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "336",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2273324",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "92",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 42.95856,
+          "longitude": -81.22247,
+          "bearing": 270,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 85,
+        "current_status": 2,
+        "timestamp": 1770243344,
+        "congestion_level": 0,
+        "stop_id": "2284",
+        "vehicle": {
+          "id": "3336",
+          "label": "336",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "337",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2267161",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "16",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.02932,
+          "longitude": -81.27374,
+          "bearing": 270,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 662,
+        "current_status": 2,
+        "timestamp": 1770243359,
+        "congestion_level": 0,
+        "stop_id": "1145",
+        "vehicle": {
+          "id": "3337",
+          "label": "337",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "338",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2262690",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "07",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.96945,
+          "longitude": -81.26183,
+          "bearing": 176,
+          "odometer": 0,
+          "speed": 11.176
+        },
+        "current_stop_sequence": 579,
+        "current_status": 2,
+        "timestamp": 1770243359,
+        "congestion_level": 0,
+        "stop_id": "648",
+        "vehicle": {
+          "id": "3338",
+          "label": "338",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "339",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2272741",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "90",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.97008,
+          "longitude": -81.23628,
+          "bearing": 332,
+          "odometer": 0,
+          "speed": 8.9408
+        },
+        "current_stop_sequence": 228,
+        "current_status": 2,
+        "timestamp": 1770243355,
+        "congestion_level": 0,
+        "stop_id": "1501",
+        "vehicle": {
+          "id": "3339",
+          "label": "339",
+          "license_plate": ""
+        },
+        "occupancy_status": 7,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "340",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2272167",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "36",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.01336,
+          "longitude": -81.19201,
+          "bearing": 248,
+          "odometer": 0,
+          "speed": 8.49376
+        },
+        "current_stop_sequence": 639,
+        "current_status": 0,
+        "timestamp": 1770243369,
+        "congestion_level": 0,
+        "stop_id": "1353",
+        "vehicle": {
+          "id": "3340",
+          "label": "340",
+          "license_plate": ""
+        },
+        "occupancy_status": 7,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "341",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2273810",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "94",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.97229,
+          "longitude": -81.10928,
+          "bearing": 90,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 91,
+        "current_status": 2,
+        "timestamp": 1770243367,
+        "congestion_level": 0,
+        "stop_id": "167",
+        "vehicle": {
+          "id": "3341",
+          "label": "341",
+          "license_plate": ""
+        },
+        "occupancy_status": 7,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "342",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2265797",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "13",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.95206,
+          "longitude": -81.20879,
+          "bearing": 256,
+          "odometer": 0,
+          "speed": 8.49376
+        },
+        "current_stop_sequence": 85,
+        "current_status": 2,
+        "timestamp": 1770243350,
+        "congestion_level": 0,
+        "stop_id": "1965",
+        "vehicle": {
+          "id": "3342",
+          "label": "342",
+          "license_plate": ""
+        },
+        "occupancy_status": 7,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "343",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2264441",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "102",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.98877,
+          "longitude": -81.26308,
+          "bearing": 336,
+          "odometer": 0,
+          "speed": 2.2352
+        },
+        "current_stop_sequence": 393,
+        "current_status": 2,
+        "timestamp": 1770243368,
+        "congestion_level": 0,
+        "stop_id": "2046",
+        "vehicle": {
+          "id": "3343",
+          "label": "343",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "344",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2260055",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "02",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.98595,
+          "longitude": -81.19249,
+          "bearing": 260,
+          "odometer": 0,
+          "speed": 2.2352
+        },
+        "current_stop_sequence": 602,
+        "current_status": 2,
+        "timestamp": 1770243341,
+        "congestion_level": 0,
+        "stop_id": "829",
+        "vehicle": {
+          "id": "3344",
+          "label": "344",
+          "license_plate": ""
+        },
+        "occupancy_status": 7,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "345",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2264726",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "106",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 42.98178,
+          "longitude": -81.25369,
+          "bearing": 164,
+          "odometer": 0,
+          "speed": 2.2352
+        },
+        "current_stop_sequence": 453,
+        "current_status": 2,
+        "timestamp": 1770243355,
+        "congestion_level": 0,
+        "stop_id": "2736",
+        "vehicle": {
+          "id": "3345",
+          "label": "345",
+          "license_plate": ""
+        },
+        "occupancy_status": 7,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "346",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2263858",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "10",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 42.99358,
+          "longitude": -81.20219,
+          "bearing": 315,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 569,
+        "current_status": 2,
+        "timestamp": 1770243342,
+        "congestion_level": 0,
+        "stop_id": "900",
+        "vehicle": {
+          "id": "3346",
+          "label": "346",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "349",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2268804",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "20",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.00787,
+          "longitude": -81.21101,
+          "bearing": 248,
+          "odometer": 0,
+          "speed": 6.25856
+        },
+        "current_stop_sequence": 644,
+        "current_status": 2,
+        "timestamp": 1770243361,
+        "congestion_level": 0,
+        "stop_id": "1218",
+        "vehicle": {
+          "id": "3349",
+          "label": "349",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "350",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2270283",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "27",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.98925,
+          "longitude": -81.2953,
+          "bearing": 315,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 435,
+        "current_status": 2,
+        "timestamp": 1770243356,
+        "congestion_level": 0,
+        "stop_id": "2097",
+        "vehicle": {
+          "id": "3350",
+          "label": "350",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "351",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2259377",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "01",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.97208,
+          "longitude": -81.23769,
+          "bearing": 336,
+          "odometer": 0,
+          "speed": 6.25856
+        },
+        "current_stop_sequence": 198,
+        "current_status": 0,
+        "timestamp": 1770243349,
+        "congestion_level": 0,
+        "stop_id": "1942",
+        "vehicle": {
+          "id": "3351",
+          "label": "351",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "352",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2270281",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "27",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.00841,
+          "longitude": -81.25449,
+          "bearing": 90,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 61,
+        "current_status": 2,
+        "timestamp": 1770243338,
+        "congestion_level": 0,
+        "stop_id": "39",
+        "vehicle": {
+          "id": "3352",
+          "label": "352",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "353",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2267861",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "17",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.99625,
+          "longitude": -81.25085,
+          "bearing": 255,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 704,
+        "current_status": 0,
+        "timestamp": 1770243363,
+        "congestion_level": 0,
+        "stop_id": "1357",
+        "vehicle": {
+          "id": "3353",
+          "label": "353",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "354",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2273481",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "93",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 42.93739,
+          "longitude": -81.2459,
+          "bearing": 176,
+          "odometer": 0,
+          "speed": 8.9408
+        },
+        "current_stop_sequence": 441,
+        "current_status": 2,
+        "timestamp": 1770243336,
+        "congestion_level": 0,
+        "stop_id": "1053",
+        "vehicle": {
+          "id": "3354",
+          "label": "354",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "355",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2270284",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "27",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.98371,
+          "longitude": -81.29656,
+          "bearing": 135,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 79,
+        "current_status": 2,
+        "timestamp": 1770243348,
+        "congestion_level": 0,
+        "stop_id": "2390",
+        "vehicle": {
+          "id": "3355",
+          "label": "355",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "356",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2263860",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "10",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 42.94057,
+          "longitude": -81.25878,
+          "bearing": 84,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 615,
+        "current_status": 2,
+        "timestamp": 1770243354,
+        "congestion_level": 0,
+        "stop_id": "2733",
+        "vehicle": {
+          "id": "3356",
+          "label": "356",
+          "license_plate": ""
+        },
+        "occupancy_status": 7,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "357",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2264440",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "102",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.00772,
+          "longitude": -81.26997,
+          "bearing": 12,
+          "odometer": 0,
+          "speed": 0.44704
+        },
+        "current_stop_sequence": 401,
+        "current_status": 2,
+        "timestamp": 1770243362,
+        "congestion_level": 0,
+        "stop_id": "1222",
+        "vehicle": {
+          "id": "3357",
+          "label": "357",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "360",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2273833",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "94",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.99706,
+          "longitude": -81.20332,
+          "bearing": 270,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 94,
+        "current_status": 2,
+        "timestamp": 1770243354,
+        "congestion_level": 0,
+        "stop_id": "578",
+        "vehicle": {
+          "id": "3360",
+          "label": "360",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "363",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2266412",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "15",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 43.02939,
+          "longitude": -81.19659,
+          "bearing": 270,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 691,
+        "current_status": 2,
+        "timestamp": 1770243369,
+        "congestion_level": 0,
+        "stop_id": "1010",
+        "vehicle": {
+          "id": "3363",
+          "label": "363",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "364",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2273044",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "91",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.98341,
+          "longitude": -81.29636,
+          "bearing": 148,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 241,
+        "current_status": 2,
+        "timestamp": 1770243361,
+        "congestion_level": 0,
+        "stop_id": "2390",
+        "vehicle": {
+          "id": "3364",
+          "label": "364",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "365",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2263859",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "10",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 42.94583,
+          "longitude": -81.19881,
+          "bearing": 84,
+          "odometer": 0,
+          "speed": 8.9408
+        },
+        "current_stop_sequence": 527,
+        "current_status": 2,
+        "timestamp": 1770243354,
+        "congestion_level": 0,
+        "stop_id": "449",
+        "vehicle": {
+          "id": "3365",
+          "label": "365",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "366",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2261773",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "05",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.94348,
+          "longitude": -81.33573,
+          "bearing": 176,
+          "odometer": 0,
+          "speed": 10.72896
+        },
+        "current_stop_sequence": 747,
+        "current_status": 2,
+        "timestamp": 1770243357,
+        "congestion_level": 0,
+        "stop_id": "2213",
+        "vehicle": {
+          "id": "3366",
+          "label": "366",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "367",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2273811",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "94",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.99234,
+          "longitude": -81.26515,
+          "bearing": 135,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 81,
+        "current_status": 2,
+        "timestamp": 1770243366,
+        "congestion_level": 0,
+        "stop_id": "2047",
+        "vehicle": {
+          "id": "3367",
+          "label": "367",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "368",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2266411",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "15",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 43.00492,
+          "longitude": -81.24478,
+          "bearing": 248,
+          "odometer": 0,
+          "speed": 8.9408
+        },
+        "current_stop_sequence": 173,
+        "current_status": 2,
+        "timestamp": 1770243354,
+        "congestion_level": 0,
+        "stop_id": "360",
+        "vehicle": {
+          "id": "3368",
+          "label": "368",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "372",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2271532",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "34",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 43.01267,
+          "longitude": -81.27391,
+          "bearing": 144,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 697,
+        "current_status": 1,
+        "timestamp": 1770243358,
+        "congestion_level": 0,
+        "stop_id": "1817",
+        "vehicle": {
+          "id": "3372",
+          "label": "372",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "376",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2263831",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "10",
+          "direction_id": 11
+        },
+        "position": {
+          "latitude": 42.94846,
+          "longitude": -81.19494,
+          "bearing": 164,
+          "odometer": 0,
+          "speed": 12.96416
+        },
+        "current_stop_sequence": 614,
+        "current_status": 2,
+        "timestamp": 1770243359,
+        "congestion_level": 0,
+        "stop_id": "1686",
+        "vehicle": {
+          "id": "3376",
+          "label": "376",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "377",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2273899",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "95",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.00981,
+          "longitude": -81.2036,
+          "bearing": 68,
+          "odometer": 0,
+          "speed": 11.176
+        },
+        "current_stop_sequence": 62,
+        "current_status": 2,
+        "timestamp": 1770243369,
+        "congestion_level": 0,
+        "stop_id": "2914",
+        "vehicle": {
+          "id": "3377",
+          "label": "377",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "378",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2271826",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "35",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 43.00292,
+          "longitude": -81.17371,
+          "bearing": 135,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 673,
+        "current_status": 2,
+        "timestamp": 1770243352,
+        "congestion_level": 0,
+        "stop_id": "166",
+        "vehicle": {
+          "id": "3378",
+          "label": "378",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "501",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2273092",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "91",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.0066,
+          "longitude": -81.21532,
+          "bearing": 248,
+          "odometer": 0,
+          "speed": 13.4112
+        },
+        "current_stop_sequence": 65,
+        "current_status": 2,
+        "timestamp": 1770243357,
+        "congestion_level": 0,
+        "stop_id": "1261",
+        "vehicle": {
+          "id": "3501",
+          "label": "501",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "502",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2259374",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "01",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.96123,
+          "longitude": -81.20325,
+          "bearing": 256,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 733,
+        "current_status": 2,
+        "timestamp": 1770243365,
+        "congestion_level": 0,
+        "stop_id": "2333",
+        "vehicle": {
+          "id": "3502",
+          "label": "502",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "503",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2263861",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "10",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 43.00405,
+          "longitude": -81.30298,
+          "bearing": 160,
+          "odometer": 0,
+          "speed": 11.176
+        },
+        "current_stop_sequence": 152,
+        "current_status": 2,
+        "timestamp": 1770243357,
+        "congestion_level": 0,
+        "stop_id": "2322",
+        "vehicle": {
+          "id": "3503",
+          "label": "503",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "504",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2270279",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "27",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.01207,
+          "longitude": -81.19755,
+          "bearing": 270,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 469,
+        "current_status": 2,
+        "timestamp": 1770243366,
+        "congestion_level": 0,
+        "stop_id": "2914",
+        "vehicle": {
+          "id": "3504",
+          "label": "504",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "505",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2264557",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "104",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.99863,
+          "longitude": -81.24234,
+          "bearing": 73,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 630,
+        "current_status": 0,
+        "timestamp": 1770243371,
+        "congestion_level": 0,
+        "stop_id": "1320",
+        "vehicle": {
+          "id": "3505",
+          "label": "505",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "506",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2263804",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "10",
+          "direction_id": 11
+        },
+        "position": {
+          "latitude": 42.93934,
+          "longitude": -81.27881,
+          "bearing": 266,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 533,
+        "current_status": 0,
+        "timestamp": 1770243349,
+        "congestion_level": 0,
+        "stop_id": "1714",
+        "vehicle": {
+          "id": "3506",
+          "label": "506",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 40,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "507",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2272687",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "90",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 43.02578,
+          "longitude": -81.28155,
+          "bearing": 150,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 249,
+        "current_status": 2,
+        "timestamp": 1770243342,
+        "congestion_level": 0,
+        "stop_id": "1143",
+        "vehicle": {
+          "id": "3507",
+          "label": "507",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 40,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "508",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2266484",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "15",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.9387,
+          "longitude": -81.28388,
+          "bearing": 90,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 748,
+        "current_status": 2,
+        "timestamp": 1770243362,
+        "congestion_level": 0,
+        "stop_id": "1891",
+        "vehicle": {
+          "id": "3508",
+          "label": "508",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "509",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2266410",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "15",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 42.98509,
+          "longitude": -81.25048,
+          "bearing": 160,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 707,
+        "current_status": 2,
+        "timestamp": 1770243370,
+        "congestion_level": 0,
+        "stop_id": "2742",
+        "vehicle": {
+          "id": "3509",
+          "label": "509",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "512",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2268318",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "19",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.02697,
+          "longitude": -81.28133,
+          "bearing": 72,
+          "odometer": 0,
+          "speed": 8.9408
+        },
+        "current_stop_sequence": 604,
+        "current_status": 2,
+        "timestamp": 1770243349,
+        "congestion_level": 0,
+        "stop_id": "706",
+        "vehicle": {
+          "id": "3512",
+          "label": "512",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "515",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2262691",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "07",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.98317,
+          "longitude": -81.24199,
+          "bearing": 252,
+          "odometer": 0,
+          "speed": 8.9408
+        },
+        "current_stop_sequence": 682,
+        "current_status": 2,
+        "timestamp": 1770243355,
+        "congestion_level": 0,
+        "stop_id": "1939",
+        "vehicle": {
+          "id": "3515",
+          "label": "515",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "516",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2272688",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "90",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 42.99986,
+          "longitude": -81.25551,
+          "bearing": 160,
+          "odometer": 0,
+          "speed": 8.49376
+        },
+        "current_stop_sequence": 222,
+        "current_status": 0,
+        "timestamp": 1770243357,
+        "congestion_level": 0,
+        "stop_id": "1513",
+        "vehicle": {
+          "id": "3516",
+          "label": "516",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "517",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2267860",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "17",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.98684,
+          "longitude": -81.28265,
+          "bearing": 248,
+          "odometer": 0,
+          "speed": 10.72896
+        },
+        "current_stop_sequence": 747,
+        "current_status": 2,
+        "timestamp": 1770243350,
+        "congestion_level": 0,
+        "stop_id": "1364",
+        "vehicle": {
+          "id": "3517",
+          "label": "517",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "518",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2269766",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "25",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 43.02652,
+          "longitude": -81.28239,
+          "bearing": 336,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 659,
+        "current_status": 2,
+        "timestamp": 1770243352,
+        "congestion_level": 0,
+        "stop_id": "682",
+        "vehicle": {
+          "id": "3518",
+          "label": "518",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "520",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2268803",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "20",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.98598,
+          "longitude": -81.24162,
+          "bearing": 252,
+          "odometer": 0,
+          "speed": 4.02336
+        },
+        "current_stop_sequence": 704,
+        "current_status": 0,
+        "timestamp": 1770243361,
+        "congestion_level": 0,
+        "stop_id": "615",
+        "vehicle": {
+          "id": "3520",
+          "label": "520",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "521",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2263888",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "10",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 42.94689,
+          "longitude": -81.289,
+          "bearing": 164,
+          "odometer": 0,
+          "speed": 4.4704
+        },
+        "current_stop_sequence": 147,
+        "current_status": 2,
+        "timestamp": 1770243357,
+        "congestion_level": 0,
+        "stop_id": "1668",
+        "vehicle": {
+          "id": "3521",
+          "label": "521",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "522",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2260017",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "02",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.99202,
+          "longitude": -81.17105,
+          "bearing": 90,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 576,
+        "current_status": 2,
+        "timestamp": 1770243359,
+        "congestion_level": 0,
+        "stop_id": "830",
+        "vehicle": {
+          "id": "3522",
+          "label": "522",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "523",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2266463",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "15",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.00984,
+          "longitude": -81.22691,
+          "bearing": 68,
+          "odometer": 0,
+          "speed": 8.9408
+        },
+        "current_stop_sequence": 670,
+        "current_status": 2,
+        "timestamp": 1770243369,
+        "congestion_level": 0,
+        "stop_id": "2241",
+        "vehicle": {
+          "id": "3523",
+          "label": "523",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "525",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2260019",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "02",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.00985,
+          "longitude": -81.27413,
+          "bearing": 248,
+          "odometer": 0,
+          "speed": 0.44704
+        },
+        "current_stop_sequence": 607,
+        "current_status": 2,
+        "timestamp": 1770243352,
+        "congestion_level": 0,
+        "stop_id": "2003",
+        "vehicle": {
+          "id": "3525",
+          "label": "525",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "526",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2261745",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "05",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.96423,
+          "longitude": -81.29187,
+          "bearing": 225,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 756,
+        "current_status": 2,
+        "timestamp": 1770243364,
+        "congestion_level": 0,
+        "stop_id": "1755",
+        "vehicle": {
+          "id": "3526",
+          "label": "526",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "529",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2263807",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "10",
+          "direction_id": 11
+        },
+        "position": {
+          "latitude": 42.99489,
+          "longitude": -81.20295,
+          "bearing": 156,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 190,
+        "current_status": 2,
+        "timestamp": 1770243342,
+        "congestion_level": 0,
+        "stop_id": "896",
+        "vehicle": {
+          "id": "3529",
+          "label": "529",
+          "license_plate": ""
+        },
+        "occupancy_status": 7,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "530",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2260090",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "02",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.9874,
+          "longitude": -81.23673,
+          "bearing": 270,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 656,
+        "current_status": 2,
+        "timestamp": 1770243352,
+        "congestion_level": 0,
+        "stop_id": "620",
+        "vehicle": {
+          "id": "3530",
+          "label": "530",
+          "license_plate": ""
+        },
+        "occupancy_status": 7,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "533",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2268359",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "19",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 42.99975,
+          "longitude": -81.33265,
+          "bearing": 160,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 664,
+        "current_status": 2,
+        "timestamp": 1770243354,
+        "congestion_level": 0,
+        "stop_id": "1030",
+        "vehicle": {
+          "id": "3533",
+          "label": "533",
+          "license_plate": ""
+        },
+        "occupancy_status": 7,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "535",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2269368",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "24",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.95595,
+          "longitude": -81.27962,
+          "bearing": 264,
+          "odometer": 0,
+          "speed": 8.9408
+        },
+        "current_stop_sequence": 720,
+        "current_status": 2,
+        "timestamp": 1770243367,
+        "congestion_level": 0,
+        "stop_id": "1997",
+        "vehicle": {
+          "id": "3535",
+          "label": "535",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "536",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2260825",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "03",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.98302,
+          "longitude": -81.24441,
+          "bearing": 160,
+          "odometer": 0,
+          "speed": 6.25856
+        },
+        "current_stop_sequence": 799,
+        "current_status": 0,
+        "timestamp": 1770243348,
+        "congestion_level": 0,
+        "stop_id": "2916",
+        "vehicle": {
+          "id": "3536",
+          "label": "536",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "538",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2272783",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "90",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.9343,
+          "longitude": -81.2233,
+          "bearing": 315,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 251,
+        "current_status": 2,
+        "timestamp": 1770243343,
+        "congestion_level": 0,
+        "stop_id": "1923",
+        "vehicle": {
+          "id": "3538",
+          "label": "538",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "539",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2264580",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "104",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 42.99736,
+          "longitude": -81.24719,
+          "bearing": 248,
+          "odometer": 0,
+          "speed": 4.02336
+        },
+        "current_stop_sequence": 602,
+        "current_status": 0,
+        "timestamp": 1770243370,
+        "congestion_level": 0,
+        "stop_id": "1355",
+        "vehicle": {
+          "id": "3539",
+          "label": "539",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "540",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2268360",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "19",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 43.02824,
+          "longitude": -81.27752,
+          "bearing": 270,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 713,
+        "current_status": 1,
+        "timestamp": 1770243363,
+        "congestion_level": 0,
+        "stop_id": "696",
+        "vehicle": {
+          "id": "3540",
+          "label": "540",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "541",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2262178",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "06",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 43.01252,
+          "longitude": -81.27381,
+          "bearing": 135,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 633,
+        "current_status": 2,
+        "timestamp": 1770243358,
+        "congestion_level": 0,
+        "stop_id": "1817",
+        "vehicle": {
+          "id": "3541",
+          "label": "541",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "543",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2271296",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "33",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.98689,
+          "longitude": -81.28982,
+          "bearing": 60,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 456,
+        "current_status": 2,
+        "timestamp": 1770243353,
+        "congestion_level": 0,
+        "stop_id": "717",
+        "vehicle": {
+          "id": "3543",
+          "label": "543",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "544",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2270212",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "27",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.01698,
+          "longitude": -81.20168,
+          "bearing": 315,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 47,
+        "current_status": 2,
+        "timestamp": 1770243357,
+        "congestion_level": 0,
+        "stop_id": "1010",
+        "vehicle": {
+          "id": "3544",
+          "label": "544",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "545",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2264755",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "106",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 42.98326,
+          "longitude": -81.26275,
+          "bearing": 180,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 17,
+        "current_status": 2,
+        "timestamp": 1770243366,
+        "congestion_level": 0,
+        "stop_id": "2736",
+        "vehicle": {
+          "id": "3545",
+          "label": "545",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "546",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2265727",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "13",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 43.00771,
+          "longitude": -81.26575,
+          "bearing": 76,
+          "odometer": 0,
+          "speed": 6.25856
+        },
+        "current_stop_sequence": 619,
+        "current_status": 0,
+        "timestamp": 1770243346,
+        "congestion_level": 0,
+        "stop_id": "1820",
+        "vehicle": {
+          "id": "3546",
+          "label": "546",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 40,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "547",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2259378",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "01",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.96305,
+          "longitude": -81.19626,
+          "bearing": 81,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 716,
+        "current_status": 2,
+        "timestamp": 1770243347,
+        "congestion_level": 0,
+        "stop_id": "1657",
+        "vehicle": {
+          "id": "3547",
+          "label": "547",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "549",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2263802",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "10",
+          "direction_id": 11
+        },
+        "position": {
+          "latitude": 43.02717,
+          "longitude": -81.28041,
+          "bearing": 84,
+          "odometer": 0,
+          "speed": 1.78816
+        },
+        "current_stop_sequence": 265,
+        "current_status": 0,
+        "timestamp": 1770243365,
+        "congestion_level": 0,
+        "stop_id": "2831",
+        "vehicle": {
+          "id": "3549",
+          "label": "549",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "550",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2273482",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "93",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 42.98387,
+          "longitude": -81.26288,
+          "bearing": 180,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 147,
+        "current_status": 2,
+        "timestamp": 1770243343,
+        "congestion_level": 0,
+        "stop_id": "2057",
+        "vehicle": {
+          "id": "3550",
+          "label": "550",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "551",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2260054",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "02",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.98295,
+          "longitude": -81.26226,
+          "bearing": 270,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 114,
+        "current_status": 2,
+        "timestamp": 1770243370,
+        "congestion_level": 0,
+        "stop_id": "2046",
+        "vehicle": {
+          "id": "3551",
+          "label": "551",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "553",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2259314",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "01",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 42.98891,
+          "longitude": -81.24188,
+          "bearing": 248,
+          "odometer": 0,
+          "speed": 6.25856
+        },
+        "current_stop_sequence": 739,
+        "current_status": 0,
+        "timestamp": 1770243364,
+        "congestion_level": 0,
+        "stop_id": "434",
+        "vehicle": {
+          "id": "3553",
+          "label": "553",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "555",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2272689",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "90",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 42.98303,
+          "longitude": -81.24712,
+          "bearing": 74,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 230,
+        "current_status": 2,
+        "timestamp": 1770243366,
+        "congestion_level": 0,
+        "stop_id": "1924",
+        "vehicle": {
+          "id": "3555",
+          "label": "555",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "556",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2264364",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "102",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 42.99757,
+          "longitude": -81.25434,
+          "bearing": 152,
+          "odometer": 0,
+          "speed": 4.4704
+        },
+        "current_stop_sequence": 415,
+        "current_status": 2,
+        "timestamp": 1770243360,
+        "congestion_level": 0,
+        "stop_id": "1495",
+        "vehicle": {
+          "id": "3556",
+          "label": "556",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "557",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2270209",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "27",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.01027,
+          "longitude": -81.27709,
+          "bearing": 268,
+          "odometer": 0,
+          "speed": 6.7056
+        },
+        "current_stop_sequence": 537,
+        "current_status": 2,
+        "timestamp": 1770243357,
+        "congestion_level": 0,
+        "stop_id": "1647",
+        "vehicle": {
+          "id": "3557",
+          "label": "557",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "558",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2273326",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "92",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 43.02856,
+          "longitude": -81.27575,
+          "bearing": 68,
+          "odometer": 0,
+          "speed": 11.176
+        },
+        "current_stop_sequence": 88,
+        "current_status": 2,
+        "timestamp": 1770243349,
+        "congestion_level": 0,
+        "stop_id": "32",
+        "vehicle": {
+          "id": "3558",
+          "label": "558",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "559",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2265796",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "13",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.97239,
+          "longitude": -81.23792,
+          "bearing": 322,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 653,
+        "current_status": 0,
+        "timestamp": 1770243343,
+        "congestion_level": 0,
+        "stop_id": "1942",
+        "vehicle": {
+          "id": "3559",
+          "label": "559",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "560",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2267798",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "17",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.01348,
+          "longitude": -81.19112,
+          "bearing": 72,
+          "odometer": 0,
+          "speed": 1.78816
+        },
+        "current_stop_sequence": 735,
+        "current_status": 0,
+        "timestamp": 1770243363,
+        "congestion_level": 0,
+        "stop_id": "1352",
+        "vehicle": {
+          "id": "3560",
+          "label": "560",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 40,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "562",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2264754",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "106",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 43.00607,
+          "longitude": -81.27703,
+          "bearing": 180,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 441,
+        "current_status": 2,
+        "timestamp": 1770243347,
+        "congestion_level": 0,
+        "stop_id": "2003",
+        "vehicle": {
+          "id": "3562",
+          "label": "562",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "563",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2273444",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "93",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.00329,
+          "longitude": -81.27652,
+          "bearing": 356,
+          "odometer": 0,
+          "speed": 11.176
+        },
+        "current_stop_sequence": 459,
+        "current_status": 2,
+        "timestamp": 1770243342,
+        "congestion_level": 0,
+        "stop_id": "1142",
+        "vehicle": {
+          "id": "3563",
+          "label": "563",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "565",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2270823",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "31",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.00623,
+          "longitude": -81.27545,
+          "bearing": 232,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 485,
+        "current_status": 2,
+        "timestamp": 1770243363,
+        "congestion_level": 0,
+        "stop_id": "142",
+        "vehicle": {
+          "id": "3565",
+          "label": "565",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "566",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2265418",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "127",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.99397,
+          "longitude": -81.29798,
+          "bearing": 160,
+          "odometer": 0,
+          "speed": 11.176
+        },
+        "current_stop_sequence": 37,
+        "current_status": 2,
+        "timestamp": 1770243346,
+        "congestion_level": 0,
+        "stop_id": "224",
+        "vehicle": {
+          "id": "3566",
+          "label": "566",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "567",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2261182",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "04",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 42.99732,
+          "longitude": -81.24727,
+          "bearing": 255,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 792,
+        "current_status": 0,
+        "timestamp": 1770243351,
+        "congestion_level": 0,
+        "stop_id": "1355",
+        "vehicle": {
+          "id": "3567",
+          "label": "567",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "568",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2268802",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "20",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.9857,
+          "longitude": -81.24802,
+          "bearing": 254,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 619,
+        "current_status": 0,
+        "timestamp": 1770243368,
+        "congestion_level": 0,
+        "stop_id": "1442",
+        "vehicle": {
+          "id": "3568",
+          "label": "568",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "569",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2263252",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "09",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.00671,
+          "longitude": -81.30493,
+          "bearing": 256,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 608,
+        "current_status": 1,
+        "timestamp": 1770243361,
+        "congestion_level": 0,
+        "stop_id": "757",
+        "vehicle": {
+          "id": "3569",
+          "label": "569",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "570",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2273445",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "93",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.94155,
+          "longitude": -81.24363,
+          "bearing": 356,
+          "odometer": 0,
+          "speed": 11.176
+        },
+        "current_stop_sequence": 517,
+        "current_status": 2,
+        "timestamp": 1770243352,
+        "congestion_level": 0,
+        "stop_id": "2015",
+        "vehicle": {
+          "id": "3570",
+          "label": "570",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "571",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2266464",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "15",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.95897,
+          "longitude": -81.26406,
+          "bearing": 90,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 694,
+        "current_status": 2,
+        "timestamp": 1770243361,
+        "congestion_level": 0,
+        "stop_id": "2194",
+        "vehicle": {
+          "id": "3571",
+          "label": "571",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "572",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2269715",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "25",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.01223,
+          "longitude": -81.1956,
+          "bearing": 68,
+          "odometer": 0,
+          "speed": 0.44704
+        },
+        "current_stop_sequence": 570,
+        "current_status": 2,
+        "timestamp": 1770243369,
+        "congestion_level": 0,
+        "stop_id": "1008",
+        "vehicle": {
+          "id": "3572",
+          "label": "572",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "573",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2260790",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "03",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.99136,
+          "longitude": -81.16941,
+          "bearing": 160,
+          "odometer": 0,
+          "speed": 8.9408
+        },
+        "current_stop_sequence": 713,
+        "current_status": 2,
+        "timestamp": 1770243356,
+        "congestion_level": 0,
+        "stop_id": "2659",
+        "vehicle": {
+          "id": "3573",
+          "label": "573",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "574",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2261236",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "04",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.00018,
+          "longitude": -81.23685,
+          "bearing": 68,
+          "odometer": 0,
+          "speed": 8.49376
+        },
+        "current_stop_sequence": 710,
+        "current_status": 2,
+        "timestamp": 1770243360,
+        "congestion_level": 0,
+        "stop_id": "1307",
+        "vehicle": {
+          "id": "3574",
+          "label": "574",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "575",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2267089",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "16",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 42.95745,
+          "longitude": -81.19114,
+          "bearing": 356,
+          "odometer": 0,
+          "speed": 11.176
+        },
+        "current_stop_sequence": 729,
+        "current_status": 2,
+        "timestamp": 1770243368,
+        "congestion_level": 0,
+        "stop_id": "452",
+        "vehicle": {
+          "id": "3575",
+          "label": "575",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "577",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2267859",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "17",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.9608,
+          "longitude": -81.33476,
+          "bearing": 224,
+          "odometer": 0,
+          "speed": 4.02336
+        },
+        "current_stop_sequence": 202,
+        "current_status": 1,
+        "timestamp": 1770243355,
+        "congestion_level": 0,
+        "stop_id": "843",
+        "vehicle": {
+          "id": "3577",
+          "label": "577",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "580",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2272367",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "38",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.97089,
+          "longitude": -81.15871,
+          "bearing": 340,
+          "odometer": 0,
+          "speed": 6.7056
+        },
+        "current_stop_sequence": 121,
+        "current_status": 2,
+        "timestamp": 1770243343,
+        "congestion_level": 0,
+        "stop_id": "166",
+        "vehicle": {
+          "id": "3580",
+          "label": "580",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "581",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2263803",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "10",
+          "direction_id": 11
+        },
+        "position": {
+          "latitude": 42.96487,
+          "longitude": -81.29324,
+          "bearing": 348,
+          "odometer": 0,
+          "speed": 13.4112
+        },
+        "current_stop_sequence": 73,
+        "current_status": 2,
+        "timestamp": 1770243366,
+        "congestion_level": 0,
+        "stop_id": "2122",
+        "vehicle": {
+          "id": "3581",
+          "label": "581",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "582",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2270208",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "27",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.99566,
+          "longitude": -81.29845,
+          "bearing": 270,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 468,
+        "current_status": 2,
+        "timestamp": 1770243358,
+        "congestion_level": 0,
+        "stop_id": "2390",
+        "vehicle": {
+          "id": "3582",
+          "label": "582",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "583",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2270282",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "27",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.00611,
+          "longitude": -81.2748,
+          "bearing": 90,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 521,
+        "current_status": 2,
+        "timestamp": 1770243344,
+        "congestion_level": 0,
+        "stop_id": "1104",
+        "vehicle": {
+          "id": "3583",
+          "label": "583",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "585",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2259373",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "01",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.99439,
+          "longitude": -81.24374,
+          "bearing": 340,
+          "odometer": 0,
+          "speed": 4.02336
+        },
+        "current_stop_sequence": 700,
+        "current_status": 0,
+        "timestamp": 1770243348,
+        "congestion_level": 0,
+        "stop_id": "432",
+        "vehicle": {
+          "id": "3585",
+          "label": "585",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "587",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2261782",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "05",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.9802,
+          "longitude": -81.21306,
+          "bearing": 96,
+          "odometer": 0,
+          "speed": 6.25856
+        },
+        "current_stop_sequence": 673,
+        "current_status": 0,
+        "timestamp": 1770243369,
+        "congestion_level": 0,
+        "stop_id": "851",
+        "vehicle": {
+          "id": "3587",
+          "label": "587",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "588",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2261173",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "04",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 42.93009,
+          "longitude": -81.22682,
+          "bearing": 348,
+          "odometer": 0,
+          "speed": 8.49376
+        },
+        "current_stop_sequence": 69,
+        "current_status": 2,
+        "timestamp": 1770243365,
+        "congestion_level": 0,
+        "stop_id": "2295",
+        "vehicle": {
+          "id": "3588",
+          "label": "588",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "589",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2268358",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "19",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 42.98145,
+          "longitude": -81.25354,
+          "bearing": 135,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 689,
+        "current_status": 2,
+        "timestamp": 1770243349,
+        "congestion_level": 0,
+        "stop_id": "1086",
+        "vehicle": {
+          "id": "3589",
+          "label": "589",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "590",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2268801",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "20",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.98916,
+          "longitude": -81.29759,
+          "bearing": 248,
+          "odometer": 0,
+          "speed": 8.49376
+        },
+        "current_stop_sequence": 685,
+        "current_status": 0,
+        "timestamp": 1770243360,
+        "congestion_level": 0,
+        "stop_id": "228",
+        "vehicle": {
+          "id": "3590",
+          "label": "590",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "591",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2269402",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "24",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.9582,
+          "longitude": -81.22938,
+          "bearing": 52,
+          "odometer": 0,
+          "speed": 0.44704
+        },
+        "current_stop_sequence": 706,
+        "current_status": 2,
+        "timestamp": 1770243345,
+        "congestion_level": 0,
+        "stop_id": "2284",
+        "vehicle": {
+          "id": "3591",
+          "label": "591",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "592",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2266393",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "15",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 42.95929,
+          "longitude": -81.26131,
+          "bearing": 264,
+          "odometer": 0,
+          "speed": 8.9408
+        },
+        "current_stop_sequence": 671,
+        "current_status": 2,
+        "timestamp": 1770243362,
+        "congestion_level": 0,
+        "stop_id": "1999",
+        "vehicle": {
+          "id": "3592",
+          "label": "592",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "593",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2260824",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "03",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.98485,
+          "longitude": -81.16587,
+          "bearing": 340,
+          "odometer": 0,
+          "speed": 1.78816
+        },
+        "current_stop_sequence": 781,
+        "current_status": 0,
+        "timestamp": 1770243361,
+        "congestion_level": 0,
+        "stop_id": "404",
+        "vehicle": {
+          "id": "3593",
+          "label": "593",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "595",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2264967",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "12",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.94005,
+          "longitude": -81.26662,
+          "bearing": 84,
+          "odometer": 0,
+          "speed": 0.44704
+        },
+        "current_stop_sequence": 683,
+        "current_status": 2,
+        "timestamp": 1770243342,
+        "congestion_level": 0,
+        "stop_id": "2592",
+        "vehicle": {
+          "id": "3595",
+          "label": "595",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "596",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2266481",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "15",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.99309,
+          "longitude": -81.25189,
+          "bearing": 315,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 705,
+        "current_status": 2,
+        "timestamp": 1770243348,
+        "congestion_level": 0,
+        "stop_id": "1494",
+        "vehicle": {
+          "id": "3596",
+          "label": "596",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "597",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2264966",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "12",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.98511,
+          "longitude": -81.24527,
+          "bearing": 340,
+          "odometer": 0,
+          "speed": 8.9408
+        },
+        "current_stop_sequence": 171,
+        "current_status": 2,
+        "timestamp": 1770243357,
+        "congestion_level": 0,
+        "stop_id": "2971",
+        "vehicle": {
+          "id": "3597",
+          "label": "597",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 40,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "599",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2263250",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "09",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.98238,
+          "longitude": -81.25719,
+          "bearing": 100,
+          "odometer": 0,
+          "speed": 11.176
+        },
+        "current_stop_sequence": 636,
+        "current_status": 2,
+        "timestamp": 1770243366,
+        "congestion_level": 0,
+        "stop_id": "1086",
+        "vehicle": {
+          "id": "3599",
+          "label": "599",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "600",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2270683",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "30",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.93074,
+          "longitude": -81.22266,
+          "bearing": 148,
+          "odometer": 0,
+          "speed": 0.44704
+        },
+        "current_stop_sequence": 152,
+        "current_status": 2,
+        "timestamp": 1770243347,
+        "congestion_level": 0,
+        "stop_id": "672",
+        "vehicle": {
+          "id": "3600",
+          "label": "600",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "601",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2264739",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "106",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 42.98157,
+          "longitude": -81.2536,
+          "bearing": 160,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 453,
+        "current_status": 2,
+        "timestamp": 1770243365,
+        "congestion_level": 0,
+        "stop_id": "2736",
+        "vehicle": {
+          "id": "3601",
+          "label": "601",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "602",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2273091",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "91",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.0078,
+          "longitude": -81.21116,
+          "bearing": 248,
+          "odometer": 0,
+          "speed": 8.9408
+        },
+        "current_stop_sequence": 215,
+        "current_status": 2,
+        "timestamp": 1770243350,
+        "congestion_level": 0,
+        "stop_id": "1261",
+        "vehicle": {
+          "id": "3602",
+          "label": "602",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 60,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "603",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2273043",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "91",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.99593,
+          "longitude": -81.25149,
+          "bearing": 68,
+          "odometer": 0,
+          "speed": 10.72896
+        },
+        "current_stop_sequence": 208,
+        "current_status": 2,
+        "timestamp": 1770243356,
+        "congestion_level": 0,
+        "stop_id": "1260",
+        "vehicle": {
+          "id": "3603",
+          "label": "603",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "604",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2265793",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "13",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.02169,
+          "longitude": -81.27996,
+          "bearing": 333,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 640,
+        "current_status": 0,
+        "timestamp": 1770243343,
+        "congestion_level": 0,
+        "stop_id": "1511",
+        "vehicle": {
+          "id": "3604",
+          "label": "604",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "607",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2270211",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "27",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.01843,
+          "longitude": -81.22072,
+          "bearing": 248,
+          "odometer": 0,
+          "speed": 8.9408
+        },
+        "current_stop_sequence": 441,
+        "current_status": 2,
+        "timestamp": 1770243360,
+        "congestion_level": 0,
+        "stop_id": "2786",
+        "vehicle": {
+          "id": "3607",
+          "label": "607",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 40,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "608",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2270617",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "28",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.9324,
+          "longitude": -81.22347,
+          "bearing": 130,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 151,
+        "current_status": 2,
+        "timestamp": 1770243361,
+        "congestion_level": 0,
+        "stop_id": "2062",
+        "vehicle": {
+          "id": "3608",
+          "label": "608",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "610",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2263251",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "09",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.00135,
+          "longitude": -81.27654,
+          "bearing": 176,
+          "odometer": 0,
+          "speed": 6.7056
+        },
+        "current_stop_sequence": 626,
+        "current_status": 2,
+        "timestamp": 1770243351,
+        "congestion_level": 0,
+        "stop_id": "1392",
+        "vehicle": {
+          "id": "3610",
+          "label": "610",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "611",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2261175",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "04",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 43.00874,
+          "longitude": -81.20745,
+          "bearing": 248,
+          "odometer": 0,
+          "speed": 6.25856
+        },
+        "current_stop_sequence": 242,
+        "current_status": 0,
+        "timestamp": 1770243365,
+        "congestion_level": 0,
+        "stop_id": "1310",
+        "vehicle": {
+          "id": "3611",
+          "label": "611",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 40,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "613",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2267102",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "16",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 43.01165,
+          "longitude": -81.24309,
+          "bearing": 152,
+          "odometer": 0,
+          "speed": 8.9408
+        },
+        "current_stop_sequence": 614,
+        "current_status": 2,
+        "timestamp": 1770243344,
+        "congestion_level": 0,
+        "stop_id": "25",
+        "vehicle": {
+          "id": "3613",
+          "label": "613",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "614",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2267862",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "17",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.01333,
+          "longitude": -81.19076,
+          "bearing": 333,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 713,
+        "current_status": 0,
+        "timestamp": 1770243361,
+        "congestion_level": 0,
+        "stop_id": "1771",
+        "vehicle": {
+          "id": "3614",
+          "label": "614",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 40,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "615",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2262648",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "07",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.97919,
+          "longitude": -81.2562,
+          "bearing": 68,
+          "odometer": 0,
+          "speed": 6.7056
+        },
+        "current_stop_sequence": 692,
+        "current_status": 2,
+        "timestamp": 1770243364,
+        "congestion_level": 0,
+        "stop_id": "1086",
+        "vehicle": {
+          "id": "3615",
+          "label": "615",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "616",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2267163",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "16",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.96081,
+          "longitude": -81.20602,
+          "bearing": 270,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 749,
+        "current_status": 2,
+        "timestamp": 1770243324,
+        "congestion_level": 0,
+        "stop_id": "82",
+        "vehicle": {
+          "id": "3616",
+          "label": "616",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "617",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2263887",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "10",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 42.93273,
+          "longitude": -81.2236,
+          "bearing": 180,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 162,
+        "current_status": 1,
+        "timestamp": 1770243354,
+        "congestion_level": 0,
+        "stop_id": "2733",
+        "vehicle": {
+          "id": "3617",
+          "label": "617",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "618",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2265795",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "13",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.99044,
+          "longitude": -81.25069,
+          "bearing": 356,
+          "odometer": 0,
+          "speed": 4.02336
+        },
+        "current_stop_sequence": 645,
+        "current_status": 0,
+        "timestamp": 1770243352,
+        "congestion_level": 0,
+        "stop_id": "2998",
+        "vehicle": {
+          "id": "3618",
+          "label": "618",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 60,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "619",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2271231",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "33",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.00261,
+          "longitude": -81.27666,
+          "bearing": 180,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 451,
+        "current_status": 2,
+        "timestamp": 1770243367,
+        "congestion_level": 0,
+        "stop_id": "2342",
+        "vehicle": {
+          "id": "3619",
+          "label": "619",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 40,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "620",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2259982",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "02",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.99647,
+          "longitude": -81.20487,
+          "bearing": 68,
+          "odometer": 0,
+          "speed": 6.7056
+        },
+        "current_stop_sequence": 640,
+        "current_status": 2,
+        "timestamp": 1770243354,
+        "congestion_level": 0,
+        "stop_id": "577",
+        "vehicle": {
+          "id": "3620",
+          "label": "620",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 40,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "621",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2261237",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "04",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.95361,
+          "longitude": -81.23634,
+          "bearing": 268,
+          "odometer": 0,
+          "speed": 4.02336
+        },
+        "current_stop_sequence": 206,
+        "current_status": 2,
+        "timestamp": 1770243359,
+        "congestion_level": 0,
+        "stop_id": "1540",
+        "vehicle": {
+          "id": "3621",
+          "label": "621",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "623",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2263865",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "10",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 43.02558,
+          "longitude": -81.28148,
+          "bearing": 180,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 566,
+        "current_status": 2,
+        "timestamp": 1770243359,
+        "congestion_level": 0,
+        "stop_id": "1144",
+        "vehicle": {
+          "id": "3623",
+          "label": "623",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "624",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2259311",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "01",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 43.01663,
+          "longitude": -81.22675,
+          "bearing": 248,
+          "odometer": 0,
+          "speed": 6.25856
+        },
+        "current_stop_sequence": 724,
+        "current_status": 0,
+        "timestamp": 1770243367,
+        "congestion_level": 0,
+        "stop_id": "300",
+        "vehicle": {
+          "id": "3624",
+          "label": "624",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "626",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2263181",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "09",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.9979,
+          "longitude": -81.30658,
+          "bearing": 220,
+          "odometer": 0,
+          "speed": 4.4704
+        },
+        "current_stop_sequence": 592,
+        "current_status": 2,
+        "timestamp": 1770243351,
+        "congestion_level": 0,
+        "stop_id": "756",
+        "vehicle": {
+          "id": "3626",
+          "label": "626",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 40,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "629",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2265420",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "127",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.01025,
+          "longitude": -81.27295,
+          "bearing": 270,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 407,
+        "current_status": 2,
+        "timestamp": 1770243353,
+        "congestion_level": 0,
+        "stop_id": "1222",
+        "vehicle": {
+          "id": "3629",
+          "label": "629",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "630",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2265344",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "127",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.99359,
+          "longitude": -81.29759,
+          "bearing": 340,
+          "odometer": 0,
+          "speed": 0.44704
+        },
+        "current_stop_sequence": 411,
+        "current_status": 2,
+        "timestamp": 1770243356,
+        "congestion_level": 0,
+        "stop_id": "1638",
+        "vehicle": {
+          "id": "3630",
+          "label": "630",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "631",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2266413",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "15",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 43.02758,
+          "longitude": -81.19231,
+          "bearing": 340,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 736,
+        "current_status": 2,
+        "timestamp": 1770243350,
+        "congestion_level": 0,
+        "stop_id": "1245",
+        "vehicle": {
+          "id": "3631",
+          "label": "631",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "632",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2265419",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "127",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.00191,
+          "longitude": -81.27714,
+          "bearing": 252,
+          "odometer": 0,
+          "speed": 4.4704
+        },
+        "current_stop_sequence": 477,
+        "current_status": 2,
+        "timestamp": 1770243343,
+        "congestion_level": 0,
+        "stop_id": "1647",
+        "vehicle": {
+          "id": "3632",
+          "label": "632",
+          "license_plate": ""
+        },
+        "occupancy_status": 2,
+        "occupancy_percentage": 60,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "634",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2268789",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "20",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.98484,
+          "longitude": -81.24511,
+          "bearing": 348,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 726,
+        "current_status": 0,
+        "timestamp": 1770243354,
+        "congestion_level": 0,
+        "stop_id": "1939",
+        "vehicle": {
+          "id": "3634",
+          "label": "634",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "635",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2263806",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "10",
+          "direction_id": 11
+        },
+        "position": {
+          "latitude": 42.93614,
+          "longitude": -81.20872,
+          "bearing": 168,
+          "odometer": 0,
+          "speed": 1.78816
+        },
+        "current_stop_sequence": 608,
+        "current_status": 2,
+        "timestamp": 1770243348,
+        "congestion_level": 0,
+        "stop_id": "2061",
+        "vehicle": {
+          "id": "3635",
+          "label": "635",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "636",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2269714",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "25",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.03514,
+          "longitude": -81.25417,
+          "bearing": 270,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 672,
+        "current_status": 2,
+        "timestamp": 1770243362,
+        "congestion_level": 0,
+        "stop_id": "684",
+        "vehicle": {
+          "id": "3636",
+          "label": "636",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "637",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2265725",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "13",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 42.95571,
+          "longitude": -81.22976,
+          "bearing": 166,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 604,
+        "current_status": 0,
+        "timestamp": 1770243346,
+        "congestion_level": 0,
+        "stop_id": "1933",
+        "vehicle": {
+          "id": "3637",
+          "label": "637",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "638",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2263805",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "10",
+          "direction_id": 11
+        },
+        "position": {
+          "latitude": 42.93126,
+          "longitude": -81.22149,
+          "bearing": 60,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 227,
+        "current_status": 2,
+        "timestamp": 1770243364,
+        "congestion_level": 0,
+        "stop_id": "1675",
+        "vehicle": {
+          "id": "3638",
+          "label": "638",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "639",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2272327",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "37",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.99885,
+          "longitude": -81.14794,
+          "bearing": 292,
+          "odometer": 0,
+          "speed": 4.4704
+        },
+        "current_stop_sequence": 118,
+        "current_status": 2,
+        "timestamp": 1770243370,
+        "congestion_level": 0,
+        "stop_id": "2315",
+        "vehicle": {
+          "id": "3639",
+          "label": "639",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "640",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2262177",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "06",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 42.96166,
+          "longitude": -81.23627,
+          "bearing": 164,
+          "odometer": 0,
+          "speed": 6.7056
+        },
+        "current_stop_sequence": 588,
+        "current_status": 2,
+        "timestamp": 1770243363,
+        "congestion_level": 0,
+        "stop_id": "1859",
+        "vehicle": {
+          "id": "3640",
+          "label": "640",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "641",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2267091",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "16",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 43.02593,
+          "longitude": -81.28208,
+          "bearing": 304,
+          "odometer": 0,
+          "speed": 0.44704
+        },
+        "current_stop_sequence": 762,
+        "current_status": 2,
+        "timestamp": 1770243365,
+        "congestion_level": 0,
+        "stop_id": "32",
+        "vehicle": {
+          "id": "3641",
+          "label": "641",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "642",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2259983",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "02",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.99671,
+          "longitude": -81.27523,
+          "bearing": 128,
+          "odometer": 0,
+          "speed": 0.44704
+        },
+        "current_stop_sequence": 678,
+        "current_status": 2,
+        "timestamp": 1770243316,
+        "congestion_level": 0,
+        "stop_id": "2047",
+        "vehicle": {
+          "id": "3642",
+          "label": "642",
+          "license_plate": ""
+        },
+        "occupancy_status": 5,
+        "occupancy_percentage": 320,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "643",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2262647",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "07",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.9964,
+          "longitude": -81.18056,
+          "bearing": 68,
+          "odometer": 0,
+          "speed": 8.9408
+        },
+        "current_stop_sequence": 583,
+        "current_status": 2,
+        "timestamp": 1770243361,
+        "congestion_level": 0,
+        "stop_id": "167",
+        "vehicle": {
+          "id": "3643",
+          "label": "643",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "644",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2268319",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "19",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.99118,
+          "longitude": -81.32827,
+          "bearing": 340,
+          "odometer": 0,
+          "speed": 15.6464
+        },
+        "current_stop_sequence": 668,
+        "current_status": 2,
+        "timestamp": 1770243369,
+        "congestion_level": 0,
+        "stop_id": "2419",
+        "vehicle": {
+          "id": "3644",
+          "label": "644",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "645",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2261735",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "05",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.97793,
+          "longitude": -81.19548,
+          "bearing": 280,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 730,
+        "current_status": 2,
+        "timestamp": 1770243356,
+        "congestion_level": 0,
+        "stop_id": "880",
+        "vehicle": {
+          "id": "3645",
+          "label": "645",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "646",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2268790",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "20",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.98455,
+          "longitude": -81.28006,
+          "bearing": 68,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 640,
+        "current_status": 2,
+        "timestamp": 1770243368,
+        "congestion_level": 0,
+        "stop_id": "378",
+        "vehicle": {
+          "id": "3646",
+          "label": "646",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "647",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2260091",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "02",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.00303,
+          "longitude": -81.17362,
+          "bearing": 0,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 632,
+        "current_status": 1,
+        "timestamp": 1770243361,
+        "congestion_level": 0,
+        "stop_id": "167",
+        "vehicle": {
+          "id": "3647",
+          "label": "647",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "648",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2260018",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "02",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.98262,
+          "longitude": -81.25893,
+          "bearing": 100,
+          "odometer": 0,
+          "speed": 8.9408
+        },
+        "current_stop_sequence": 553,
+        "current_status": 2,
+        "timestamp": 1770243364,
+        "congestion_level": 0,
+        "stop_id": "1086",
+        "vehicle": {
+          "id": "3648",
+          "label": "648",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "649",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2273915",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "95",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 42.93601,
+          "longitude": -81.2081,
+          "bearing": 264,
+          "odometer": 0,
+          "speed": 0.44704
+        },
+        "current_stop_sequence": 64,
+        "current_status": 2,
+        "timestamp": 1770243356,
+        "congestion_level": 0,
+        "stop_id": "2062",
+        "vehicle": {
+          "id": "3649",
+          "label": "649",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "651",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2264927",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "12",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 42.94685,
+          "longitude": -81.26445,
+          "bearing": 80,
+          "odometer": 0,
+          "speed": 4.4704
+        },
+        "current_stop_sequence": 732,
+        "current_status": 2,
+        "timestamp": 1770243367,
+        "congestion_level": 0,
+        "stop_id": "2594",
+        "vehicle": {
+          "id": "3651",
+          "label": "651",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "652",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2263180",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "09",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.01211,
+          "longitude": -81.32155,
+          "bearing": 270,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 159,
+        "current_status": 2,
+        "timestamp": 1770243340,
+        "congestion_level": 0,
+        "stop_id": "2835",
+        "vehicle": {
+          "id": "3652",
+          "label": "652",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "653",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2265726",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "13",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 42.98362,
+          "longitude": -81.24499,
+          "bearing": 68,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 668,
+        "current_status": 0,
+        "timestamp": 1770243345,
+        "congestion_level": 0,
+        "stop_id": "2916",
+        "vehicle": {
+          "id": "3653",
+          "label": "653",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "654",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2268788",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "20",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.99591,
+          "longitude": -81.22063,
+          "bearing": 334,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 617,
+        "current_status": 0,
+        "timestamp": 1770243352,
+        "congestion_level": 0,
+        "stop_id": "1438",
+        "vehicle": {
+          "id": "3654",
+          "label": "654",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 40,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "655",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2262692",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "07",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.00264,
+          "longitude": -81.17357,
+          "bearing": 135,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 183,
+        "current_status": 2,
+        "timestamp": 1770243362,
+        "congestion_level": 0,
+        "stop_id": "166",
+        "vehicle": {
+          "id": "3655",
+          "label": "655",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "656",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2261181",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "04",
+          "direction_id": 1
+        },
+        "position": {
+          "latitude": 42.96101,
+          "longitude": -81.24302,
+          "bearing": 151,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 813,
+        "current_status": 0,
+        "timestamp": 1770243348,
+        "congestion_level": 0,
+        "stop_id": "1533",
+        "vehicle": {
+          "id": "3656",
+          "label": "656",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 40,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "657",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2270210",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "27",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.00792,
+          "longitude": -81.26531,
+          "bearing": 270,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 453,
+        "current_status": 2,
+        "timestamp": 1770243346,
+        "congestion_level": 0,
+        "stop_id": "1821",
+        "vehicle": {
+          "id": "3657",
+          "label": "657",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "658",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2265794",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "13",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.0078,
+          "longitude": -81.26836,
+          "bearing": 280,
+          "odometer": 0,
+          "speed": 8.49376
+        },
+        "current_stop_sequence": 600,
+        "current_status": 0,
+        "timestamp": 1770243348,
+        "congestion_level": 0,
+        "stop_id": "1821",
+        "vehicle": {
+          "id": "3658",
+          "label": "658",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "659",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2262137",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "06",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.98105,
+          "longitude": -81.24829,
+          "bearing": 340,
+          "odometer": 0,
+          "speed": 4.4704
+        },
+        "current_stop_sequence": 540,
+        "current_status": 2,
+        "timestamp": 1770243348,
+        "congestion_level": 0,
+        "stop_id": "1490",
+        "vehicle": {
+          "id": "3659",
+          "label": "659",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "660",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2270616",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "28",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.90668,
+          "longitude": -81.28952,
+          "bearing": 240,
+          "odometer": 0,
+          "speed": 4.02336
+        },
+        "current_stop_sequence": 138,
+        "current_status": 0,
+        "timestamp": 1770243366,
+        "congestion_level": 0,
+        "stop_id": "2507",
+        "vehicle": {
+          "id": "3660",
+          "label": "660",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "662",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2263182",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "09",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 42.9829,
+          "longitude": -81.2619,
+          "bearing": 270,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 650,
+        "current_status": 2,
+        "timestamp": 1770243315,
+        "congestion_level": 0,
+        "stop_id": "1391",
+        "vehicle": {
+          "id": "3662",
+          "label": "662",
+          "license_plate": ""
+        },
+        "occupancy_status": 1,
+        "occupancy_percentage": 20,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    },
+    {
+      "id": "663",
+      "is_deleted": false,
+      "trip_update": null,
+      "vehicle": {
+        "trip": {
+          "trip_id": "2264631",
+          "start_time": "",
+          "start_date": "20260204",
+          "schedule_relationship": 0,
+          "route_id": "106",
+          "direction_id": 0
+        },
+        "position": {
+          "latitude": 43.00876,
+          "longitude": -81.26103,
+          "bearing": 320,
+          "odometer": 0,
+          "speed": 0
+        },
+        "current_stop_sequence": 472,
+        "current_status": 2,
+        "timestamp": 1770243343,
+        "congestion_level": 0,
+        "stop_id": "1222",
+        "vehicle": {
+          "id": "3663",
+          "label": "663",
+          "license_plate": ""
+        },
+        "occupancy_status": 0,
+        "occupancy_percentage": 0,
+        "multi_carriage_details": []
+      },
+      "alert": null,
+      "shape": null,
+      "trip": null,
+      "route": null,
+      "stop": null
+    }
+  ]
+}
