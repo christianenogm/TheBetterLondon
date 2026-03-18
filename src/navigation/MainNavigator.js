@@ -43,7 +43,15 @@ const TransitStack = ({ navigation }) => {
         headerShadowVisible: false,
       }}
     >
-      <Stack.Screen
+      <Tab.Screen 
+        name="TransitMap" 
+        component={TransitScreen}
+        options={{
+          title: 'Transit',
+          headerShown: false, // Let stack navigator handle headers
+        }}
+      />
+      {/* <Stack.Screen
         name="TransitMap"
         component={TransitScreen}
         options={({ navigation }) => ({
@@ -60,7 +68,7 @@ const TransitStack = ({ navigation }) => {
             </TouchableOpacity>
           ),
         })}
-      />
+      /> */}
       {/* <Stack.Screen
         name="NearbyStops"
         component={NearbyStopsScreen}

@@ -1,0 +1,542 @@
+[
+  {
+    "id": "01",
+    "shortName": "01",
+    "longName": "Route 1",
+    "color": "#70C2DA",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76335",
+      "76338",
+      "76340",
+      "76339",
+      "76337",
+      "76341",
+      "76342",
+      "76343",
+      "76344",
+      "76345"
+    ]
+  },
+  {
+    "id": "02",
+    "shortName": "02",
+    "longName": "Route 2",
+    "color": "#75AAAE",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76353",
+      "76364",
+      "76361",
+      "76360",
+      "76359",
+      "76358",
+      "76354",
+      "76367",
+      "76369",
+      "76375",
+      "76370",
+      "76371",
+      "76365"
+    ]
+  },
+  {
+    "id": "03",
+    "shortName": "03",
+    "longName": "Route 3",
+    "color": "#BCA387",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76377",
+      "76378",
+      "76382",
+      "76380"
+    ]
+  },
+  {
+    "id": "04",
+    "shortName": "04",
+    "longName": "Route 4",
+    "color": "#A685BC",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76386",
+      "76389",
+      "76390",
+      "76387",
+      "76396",
+      "76397",
+      "76391",
+      "76394",
+      "76393",
+      "76392"
+    ]
+  },
+  {
+    "id": "05",
+    "shortName": "05",
+    "longName": "Route 5",
+    "color": "#71BF44",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76400",
+      "76398",
+      "76401",
+      "76402",
+      "76403",
+      "76406",
+      "76407",
+      "76405",
+      "76404"
+    ]
+  },
+  {
+    "id": "06",
+    "shortName": "06",
+    "longName": "Route 6",
+    "color": "#D6DF21",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76409",
+      "76411",
+      "76412",
+      "76413",
+      "76408"
+    ]
+  },
+  {
+    "id": "07",
+    "shortName": "07",
+    "longName": "Route 7",
+    "color": "#00AD54",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76419",
+      "76420",
+      "76426",
+      "76425",
+      "76416"
+    ]
+  },
+  {
+    "id": "09",
+    "shortName": "09",
+    "longName": "Route 9",
+    "color": "#B98E90",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76428",
+      "76429",
+      "76431",
+      "76430",
+      "76427"
+    ]
+  },
+  {
+    "id": "10",
+    "shortName": "10",
+    "longName": "Route 10",
+    "color": "#6E9BCF",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76435",
+      "76436",
+      "76433",
+      "76434",
+      "76432",
+      "76442",
+      "76443",
+      "76439",
+      "76441"
+    ]
+  },
+  {
+    "id": "102",
+    "shortName": "102",
+    "longName": "Route 102",
+    "color": "#75AAAE",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76446",
+      "76445",
+      "76447"
+    ]
+  },
+  {
+    "id": "104",
+    "shortName": "104",
+    "longName": "Route 104",
+    "color": "#A685BC",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76450",
+      "76448",
+      "76451"
+    ]
+  },
+  {
+    "id": "106",
+    "shortName": "106",
+    "longName": "Route 106",
+    "color": "#D6DF21",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76454",
+      "76456",
+      "76455"
+    ]
+  },
+  {
+    "id": "12",
+    "shortName": "12",
+    "longName": "Route 12",
+    "color": "#C082AA",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76459",
+      "76463",
+      "76466",
+      "76464",
+      "76458"
+    ]
+  },
+  {
+    "id": "127",
+    "shortName": "127",
+    "longName": "Route 127",
+    "color": "#9F93A5",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76468",
+      "76467",
+      "76469"
+    ]
+  },
+  {
+    "id": "13",
+    "shortName": "13",
+    "longName": "Route 13",
+    "color": "#929EBC",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76470",
+      "76474",
+      "76475",
+      "76476",
+      "76481",
+      "76482",
+      "76485",
+      "76479",
+      "76480"
+    ]
+  },
+  {
+    "id": "15",
+    "shortName": "15",
+    "longName": "Route 15",
+    "color": "#03B9BD",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76490",
+      "76489",
+      "76487",
+      "76492",
+      "76493",
+      "76494",
+      "76496",
+      "76495"
+    ]
+  },
+  {
+    "id": "16",
+    "shortName": "16",
+    "longName": "Route 16",
+    "color": "#2BB572",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76501",
+      "76499",
+      "76498",
+      "76504",
+      "76503",
+      "76505",
+      "76497",
+      "76500"
+    ]
+  },
+  {
+    "id": "17",
+    "shortName": "17",
+    "longName": "Route 17",
+    "color": "#6BCFF6",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76516",
+      "76514",
+      "76507",
+      "76509",
+      "76537",
+      "76539",
+      "76527",
+      "76535",
+      "76532"
+    ]
+  },
+  {
+    "id": "19",
+    "shortName": "19",
+    "longName": "Route 19",
+    "color": "#B99355",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76544",
+      "76547",
+      "76545",
+      "76551",
+      "76549",
+      "76548",
+      "76550"
+    ]
+  },
+  {
+    "id": "20",
+    "shortName": "20",
+    "longName": "Route 20",
+    "color": "#01A7C1",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76554",
+      "76555",
+      "76552",
+      "76558",
+      "76561",
+      "76562",
+      "76553"
+    ]
+  },
+  {
+    "id": "24",
+    "shortName": "24",
+    "longName": "Route 24",
+    "color": "#F166A7",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76566",
+      "76567",
+      "76563",
+      "76565",
+      "76570",
+      "76569",
+      "76564"
+    ]
+  },
+  {
+    "id": "25",
+    "shortName": "25",
+    "longName": "Route 25",
+    "color": "#DDBD85",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76571",
+      "76573"
+    ]
+  },
+  {
+    "id": "27",
+    "shortName": "27",
+    "longName": "Route 27",
+    "color": "#9E91A1",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76574",
+      "76576",
+      "76577",
+      "76575"
+    ]
+  },
+  {
+    "id": "28",
+    "shortName": "28",
+    "longName": "Route 28",
+    "color": "#559FB9",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76579",
+      "76580",
+      "76583",
+      "76585",
+      "76582"
+    ]
+  },
+  {
+    "id": "30",
+    "shortName": "30",
+    "longName": "Route 30",
+    "color": "#E26FAC",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76586",
+      "76588"
+    ]
+  },
+  {
+    "id": "31",
+    "shortName": "31",
+    "longName": "Route 31",
+    "color": "#26AB6B",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76590",
+      "76591"
+    ]
+  },
+  {
+    "id": "33",
+    "shortName": "33",
+    "longName": "Route 33",
+    "color": "#C082AA",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76592",
+      "76593",
+      "76595",
+      "76594"
+    ]
+  },
+  {
+    "id": "34",
+    "shortName": "34",
+    "longName": "Route 34",
+    "color": "#CB9E9E",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76598",
+      "76597",
+      "76600"
+    ]
+  },
+  {
+    "id": "35",
+    "shortName": "35",
+    "longName": "Route 35",
+    "color": "#FED05B",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76602",
+      "76601",
+      "76604"
+    ]
+  },
+  {
+    "id": "36",
+    "shortName": "36",
+    "longName": "Route 36",
+    "color": "#B6DA9B",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76606",
+      "76605",
+      "76607",
+      "76608"
+    ]
+  },
+  {
+    "id": "37",
+    "shortName": "37",
+    "longName": "Route 37",
+    "color": "#2DA1D2",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76610",
+      "76611",
+      "76613",
+      "76612",
+      "76614"
+    ]
+  },
+  {
+    "id": "38",
+    "shortName": "38",
+    "longName": "Route 38",
+    "color": "#DB7DAE",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76615",
+      "76616"
+    ]
+  },
+  {
+    "id": "90",
+    "shortName": "90",
+    "longName": "Route 90",
+    "color": "#F89D53",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76654",
+      "76655",
+      "76657",
+      "76656"
+    ]
+  },
+  {
+    "id": "91",
+    "shortName": "91",
+    "longName": "Route 91",
+    "color": "#F89D53",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76662",
+      "76665"
+    ]
+  },
+  {
+    "id": "92",
+    "shortName": "92",
+    "longName": "Route 92",
+    "color": "#F89D53",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76666",
+      "76667"
+    ]
+  },
+  {
+    "id": "93",
+    "shortName": "93",
+    "longName": "Route 93",
+    "color": "#F89D53",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76669",
+      "76668",
+      "76670",
+      "76671"
+    ]
+  },
+  {
+    "id": "94",
+    "shortName": "94",
+    "longName": "Route 94",
+    "color": "#F89D53",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76672",
+      "76674"
+    ]
+  },
+  {
+    "id": "95",
+    "shortName": "95",
+    "longName": "Route 95",
+    "color": "#F89D53",
+    "textColor": "#FFFFFF",
+    "shapes": [
+      "76677",
+      "76675",
+      "76676",
+      "76680",
+      "76678",
+      "76679"
+    ]
+  }
+]
