@@ -23,6 +23,20 @@ import shapesData from '../gtfs/shapes.json';
 // Pre-compute once at module load — shapesData never changes at runtime
 const SHAPES_MAP = new Map(shapesData.map(shape => [shape.shapeId, shape.coordinates]));
 
+// Defined at module scope — recreating this object on every render would cause
+// MapView to re-animate to the initial region each time the component updates
+const LONDON_CENTER = {
+  latitude: 42.9849,
+  longitude: -81.2497,
+  latitudeDelta: 0.15,
+  longitudeDelta: 0.15,
+};
+
+// Stops are hidden at city-overview zoom to avoid rendering 1200+ markers.
+// Viewport culling kicks in once the user zooms past this threshold.
+// Viewport culling keeps the rendered count manageable at all zoom levels —
+// only stops within the visible bounds + 30% buffer are mounted.
+
 const TransitScreen = ({ navigation, route }) => {
   const theme = useTheme();
   const insets = useSafeAreaInsets();
@@ -56,22 +70,18 @@ const TransitScreen = ({ navigation, route }) => {
   const [refreshing, setRefreshing] = useState(false);
   const [showQuickActionsSheet, setShowQuickActionsSheet] = useState(false);
   const [isMapReloading, setIsMapReloading] = useState(false);
-
-  // London, Ontario center coordinates
-  const LONDON_CENTER = {
-    latitude: 42.9849,
-    longitude: -81.2497,
-    latitudeDelta: 0.15,
-    longitudeDelta: 0.15,
-  };
+  // Briefly true whenever filteredStops recomputes with items — drives the
+  // top-left rendering indicator so users know markers are being painted.
+  const [stopsRendering, setStopsRendering] = useState(false);
+  // Tracks the current visible map region — used for viewport culling in filteredStops
+  const [mapRegion, setMapRegion] = useState(LONDON_CENTER);
 
   useEffect(() => {
     loadTransitData();
     
-    // Load all routes
+    // Load all routes and show them all on initial launch
     const routes = loadRoutesData();
     setAllRoutes(routes);
-    // Initialize all routes as visible
     setVisibleRoutes(new Set(routes.map(r => r.id)));
   }, []);
 
@@ -108,9 +118,10 @@ const TransitScreen = ({ navigation, route }) => {
     };
 
     loadVehicles();
-    
-    // Poll every 15 seconds
-    const interval = setInterval(loadVehicles, 15000);
+
+    // Poll every 30 seconds — reduced from 15s to halve re-render frequency.
+    // Buses move slowly enough that 30s is still a good UX on Android.
+    const interval = setInterval(loadVehicles, 30000);
     
     return () => {
       clearInterval(interval);
@@ -506,22 +517,48 @@ const TransitScreen = ({ navigation, route }) => {
 
   // Filter stops based on selected route or visible routes
   const filteredStops = useMemo(() => {
-    // If route preview is active, show only stops for the selected route
+    // If route preview is active, show only the stops for that specific route
     if (selectedRouteId) {
       const selectedStopIds = getSelectedRouteStopIds();
       return busStops.filter(stop => selectedStopIds.includes(stop.id));
     }
-    
-    // Otherwise, use normal visibility filtering
+
+    // No routes toggled on yet
     if (visibleRoutes.size === 0) return [];
-    
+
+    // Viewport bounds with a 30% buffer so stops don't pop in abruptly at edges
+    const latBuf = mapRegion.latitudeDelta * 0.3;
+    const lngBuf = mapRegion.longitudeDelta * 0.3;
+    const minLat = mapRegion.latitude - mapRegion.latitudeDelta / 2 - latBuf;
+    const maxLat = mapRegion.latitude + mapRegion.latitudeDelta / 2 + latBuf;
+    const minLng = mapRegion.longitude - mapRegion.longitudeDelta / 2 - lngBuf;
+    const maxLng = mapRegion.longitude + mapRegion.longitudeDelta / 2 + lngBuf;
+
     return busStops.filter(stop => {
+      // Cull stops outside the visible region first — cheap coordinate compare
+      if (
+        stop.latitude  < minLat || stop.latitude  > maxLat ||
+        stop.longitude < minLng || stop.longitude > maxLng
+      ) return false;
+
       if (stop.routes && stop.routes.length > 0) {
         return stop.routes.some(routeId => visibleRoutes.has(routeId));
       }
       return true;
     });
-  }, [busStops, visibleRoutes, selectedRouteId, routeOptions]);
+  }, [busStops, visibleRoutes, selectedRouteId, routeOptions, mapRegion]);
+
+  // Auto-dismiss the rendering pill once filteredStops has settled.
+  // The pill is turned ON in handleRegionChangeComplete (before mapRegion updates)
+  // so it always leads the markers by at least one render cycle.
+  useEffect(() => {
+    if (filteredStops.length === 0) {
+      setStopsRendering(false);
+      return;
+    }
+    const t = setTimeout(() => setStopsRendering(false), 700);
+    return () => clearTimeout(t);
+  }, [filteredStops]);
 
   // Filter vehicles based on selected route or visible routes
   const filteredVehicles = useMemo(() => {
@@ -603,7 +640,7 @@ const TransitScreen = ({ navigation, route }) => {
     return R * c;
   };
 
-  const getNearbyStops = () => {
+  const getNearbyStops = useCallback(() => {
     if (!userLocation) {
       Alert.alert('Location Required', 'Please enable location services to find nearby stops.');
       return [];
@@ -622,7 +659,7 @@ const TransitScreen = ({ navigation, route }) => {
       .filter(stop => stop.distance <= 2) // Within 2km
       .sort((a, b) => a.distance - b.distance)
       .slice(0, 10);
-  };
+  }, [userLocation, busStops]);
 
   // Get user location
   useEffect(() => {
@@ -777,6 +814,12 @@ const TransitScreen = ({ navigation, route }) => {
           showsUserLocation
           showsMyLocationButton={false}
           customMapStyle={mapStyle}
+          onRegionChangeComplete={(region) => {
+            // Show pill before mapRegion state update so React schedules
+            // the indicator in the same batch — one frame ahead of markers.
+            setStopsRendering(true);
+            setMapRegion(region);
+          }}
         >
           {/* Route Polylines */}
           {routePolylines.map((polyline) => {
@@ -792,7 +835,7 @@ const TransitScreen = ({ navigation, route }) => {
             />
           )})}
 
-          {/* Bus Stops */}
+          {/* Bus Stops — viewport-culled, hidden above city-overview zoom */}
           {filteredStops.map((stop) => (
             <StopMarker
               key={`stop-${stop.id}`}
@@ -840,6 +883,17 @@ const TransitScreen = ({ navigation, route }) => {
             <View style={styles.mapLoadingCard}>
               <ActivityIndicator size="large" color="#1976D2" />
             </View>
+          </View>
+        )}
+
+        {/* Stop-rendering indicator — top-left pill, non-blocking */}
+        {stopsRendering && (
+          <View
+            style={[styles.stopsRenderingPill, { top: insets.top + 72 }]}
+            pointerEvents="none"
+          >
+            <ActivityIndicator size="small" color="#FFFFFF" />
+            <Text style={styles.stopsRenderingText}>Loading stops…</Text>
           </View>
         )}
 
@@ -1055,6 +1109,28 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 4,
     elevation: 5,
+  },
+  stopsRenderingPill: {
+    position: 'absolute',
+    left: 16,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    backgroundColor: 'rgba(25, 118, 210, 0.85)',
+    paddingHorizontal: 12,
+    paddingVertical: 7,
+    borderRadius: 20,
+    zIndex: 30,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 4,
+  },
+  stopsRenderingText: {
+    color: '#FFFFFF',
+    fontSize: 12,
+    fontWeight: '600',
   },
   timestampBadge: {
     position: 'absolute',
