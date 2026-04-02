@@ -24,6 +24,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Constants from 'expo-constants';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTheme } from '../context/ThemeContext';
+import OnboardingScreen from './OnboardingScreen';
 
 // ─── FAQ Data ─────────────────────────────────────────────────────────────────
 
@@ -350,6 +351,7 @@ const HelpScreen = () => {
   const [search,       setSearch]       = useState('');
   const [activeCategory, setActiveCategory] = useState('All');
   const [legalModal,   setLegalModal]   = useState(null); // 'terms' | 'privacy' | null
+  const [showTutorial, setShowTutorial] = useState(false);
 
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();
@@ -437,6 +439,22 @@ const HelpScreen = () => {
           </View>
         )}
 
+        {/* App Tutorial */}
+        <Text style={[s.sectionTitle, { color: theme.colors.text.primary }]}>
+          App Tutorial
+        </Text>
+        <View style={[s.legalRow, { backgroundColor: theme.colors.neutral[0], borderColor: theme.colors.border.default, marginBottom: 4 }]}>
+          <TouchableOpacity
+            style={s.legalItem}
+            onPress={() => setShowTutorial(true)}
+            activeOpacity={0.7}
+          >
+            <Icon name="play-circle-outline" size={20} color={theme.colors.primary[500]} />
+            <Text style={[s.legalLabel, { color: theme.colors.text.primary }]}>View App Tutorial</Text>
+            <Icon name="chevron-right" size={18} color={theme.colors.text.secondary} />
+          </TouchableOpacity>
+        </View>
+
         {/* Contact Support */}
         <Text style={[s.sectionTitle, { color: theme.colors.text.primary }]}>
           Contact Support
@@ -498,6 +516,12 @@ const HelpScreen = () => {
         onClose={() => setLegalModal(null)}
         theme={theme}
       />
+      {/* Inline tutorial overlay */}
+      {showTutorial && (
+        <View style={StyleSheet.absoluteFillObject}>
+          <OnboardingScreen onDone={() => setShowTutorial(false)} />
+        </View>
+      )}
     </View>
   );
 };
