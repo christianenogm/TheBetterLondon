@@ -18,6 +18,7 @@ import TransitScreen from '../screens/TransitScreen';
 // import NearbyStopsScreen from '../screens/Transit/NearbyStopsScreen';
 // import SearchTransitScreen from '../screens/Transit/SearchTransitScreen';
 import ProfileScreen from '../screens/ProfileScreen';
+import GarbageScreen from '../screens/GarbageScreen';
 import ReportDetailsScreen from '../screens/ReportDetailsScreen';
 import MyReportsScreen from '../screens/MyReportsScreen';
 
@@ -106,6 +107,9 @@ const TabNavigator = () => {
             case 'Transit':
               iconName = 'bus';
               break;
+            case 'Garbage':
+              iconName = 'trash-can-outline';
+              break;
             case 'Profile':
               iconName = theme.icons.profile;
               break;
@@ -171,6 +175,14 @@ const TabNavigator = () => {
         options={{
           title: 'Transit',
           headerShown: false, // Let stack navigator handle headers
+        }}
+      />
+      <Tab.Screen
+        name="Garbage"
+        component={GarbageScreen}
+        options={{
+          title: 'Garbage',
+          headerTitle: 'Garbage Collection',
         }}
       />
       <Tab.Screen 
