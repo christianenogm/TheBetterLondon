@@ -3,13 +3,13 @@
  * Vehicle marker component with callout showing route info
  */
 
-import React from 'react';
+import React, { memo } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Marker, Callout } from 'react-native-maps';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { getRouteDetails } from '../services/gtfsStaticService';
 
-const VehicleMarker = ({ vehicle, onPress }) => {
+const VehicleMarker = memo(({ vehicle, onPress }) => {
   const routeDetails = getRouteDetails(vehicle.routeId);
   const routeColor = vehicle.color || (routeDetails && routeDetails.color) || '#1976D2';
   const shortName = (routeDetails && routeDetails.shortName) || vehicle.routeId || '?';
@@ -24,7 +24,7 @@ const VehicleMarker = ({ vehicle, onPress }) => {
       anchor={{ x: 0.5, y: 0.5 }}
       flat={false}
       rotation={vehicle.bearing || 0}
-      tracksViewChanges={true}
+      tracksViewChanges={false}
       zIndex={1}
       onPress={onPress}
     >
@@ -46,7 +46,14 @@ const VehicleMarker = ({ vehicle, onPress }) => {
       </Callout>
     </Marker>
   );
-};
+}, (prev, next) =>
+  prev.vehicle.id === next.vehicle.id &&
+  prev.vehicle.latitude === next.vehicle.latitude &&
+  prev.vehicle.longitude === next.vehicle.longitude &&
+  prev.vehicle.bearing === next.vehicle.bearing
+);
+
+VehicleMarker.displayName = 'VehicleMarker';
 
 const styles = StyleSheet.create({
   busMarker: {
