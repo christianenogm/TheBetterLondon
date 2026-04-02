@@ -13,28 +13,21 @@ import {
   signInWithCredential,
 } from 'firebase/auth';
 import { auth } from '../config/firebase';
+import { generateUniqueDisplayName } from '../utils/displayNameUtils';
 import * as WebBrowser from 'expo-web-browser';
 
 // Complete the auth session for Google Sign-In
 WebBrowser.maybeCompleteAuthSession();
 
 /**
- * Sign up with email and password
- * @param {string} name - User's display name
+ * Sign up with email and password.
+ * Display name is auto-generated (unique adjective+animal+4digits).
  * @param {string} email - User email
  * @param {string} password - User password
  * @returns {Promise<Object>} Result object with success and user data
  */
-export const signUpWithEmail = async (name, email, password) => {
+export const signUpWithEmail = async (email, password) => {
   try {
-    // Validation
-    if (!name || name.trim().length < 2) {
-      return {
-        success: false,
-        error: 'Please enter a valid name (at least 2 characters)',
-      };
-    }
-
     if (!email || !email.includes('@')) {
       return {
         success: false,
@@ -49,18 +42,19 @@ export const signUpWithEmail = async (name, email, password) => {
       };
     }
 
+    // Generate a unique display name before creating the account
+    const displayName = await generateUniqueDisplayName();
+
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    
-    // Update user profile with display name
-    await updateProfile(userCredential.user, {
-      displayName: name,
-    });
-    
+
+    // Persist the generated display name in Firebase Auth
+    await updateProfile(userCredential.user, { displayName });
+
     return {
       success: true,
       user: {
         id: userCredential.user.uid,
-        name: name,
+        name: displayName,
         email: userCredential.user.email,
         photoURL: userCredential.user.photoURL,
         points: 0,

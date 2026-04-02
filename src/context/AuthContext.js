@@ -28,12 +28,16 @@ export const AuthProvider = ({ children }) => {
         const profile = await getUserProfile(firebaseUser.uid);
 
         setUser({
+          uid: firebaseUser.uid,
           id: firebaseUser.uid,
-          name: firebaseUser.displayName || 'User',
+          name: profile?.name || firebaseUser.displayName || 'User',
           email: firebaseUser.email,
           photoURL: firebaseUser.photoURL,
           points: profile?.points ?? 0,
           reportsCount: profile?.reportsCount ?? 0,
+          resolvedCount: profile?.resolvedCount ?? 0,
+          totalUpvotesReceived: profile?.totalUpvotesReceived ?? 0,
+          badges: profile?.badges ?? [],
         });
       } else {
         // User is signed out

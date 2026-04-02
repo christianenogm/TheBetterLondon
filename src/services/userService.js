@@ -16,11 +16,16 @@ import {
   query,
   orderBy,
   limit,
+  where,
+  writeBatch,
   serverTimestamp,
 } from 'firebase/firestore';
+import { updateProfile } from 'firebase/auth';
 import * as Notifications from 'expo-notifications';
 import { db } from '../config/firebase';
+import { auth } from '../config/firebase';
 import { getNewlyUnlockedBadges, getBadgeById } from './gamificationService';
+import { isDisplayNameAvailable } from '../utils/displayNameUtils';
 
 const USERS_COLLECTION = 'users';
 
@@ -183,5 +188,67 @@ export const getLeaderboard = async (limitCount = 50) => {
   } catch (error) {
     console.error('getLeaderboard error:', error);
     return [];
+  }
+};
+
+/**
+ * Update a user's display name.
+ * Validates uniqueness, updates Firestore user doc, Firebase Auth profile,
+ * and batch-updates userName on all of the user's reports.
+ *
+ * @returns {{ success: boolean, error?: string }}
+ */
+export const updateDisplayName = async (userId, newName) => {
+  if (!userId || !newName?.trim()) {
+    return { success: false, error: 'Invalid name.' };
+  }
+
+  const trimmed = newName.trim();
+
+  if (trimmed.length < 2 || trimmed.length > 30) {
+    return { success: false, error: 'Name must be between 2 and 30 characters.' };
+  }
+
+  try {
+    // Check uniqueness (skip check if the user is keeping their own name)
+    const userRef = doc(db, USERS_COLLECTION, userId);
+    const userSnap = await getDoc(userRef);
+    const currentName = userSnap.data()?.name;
+
+    if (trimmed !== currentName) {
+      const available = await isDisplayNameAvailable(trimmed);
+      if (!available) {
+        return { success: false, error: 'That username is already taken. Please choose another.' };
+      }
+    }
+
+    // 1. Update Firestore user profile
+    await updateDoc(userRef, { name: trimmed, updatedAt: serverTimestamp() });
+
+    // 2. Update Firebase Auth displayName
+    const currentUser = auth.currentUser;
+    if (currentUser) {
+      await updateProfile(currentUser, { displayName: trimmed });
+    }
+
+    // 3. Batch-update userName on all reports belonging to this user
+    const reportsQ = query(
+      collection(db, 'reports'),
+      where('userId', '==', userId)
+    );
+    const reportsSnap = await getDocs(reportsQ);
+
+    if (!reportsSnap.empty) {
+      const batch = writeBatch(db);
+      reportsSnap.docs.forEach(reportDoc => {
+        batch.update(reportDoc.ref, { userName: trimmed });
+      });
+      await batch.commit();
+    }
+
+    return { success: true };
+  } catch (error) {
+    console.error('updateDisplayName error:', error);
+    return { success: false, error: 'Failed to update username. Please try again.' };
   }
 };

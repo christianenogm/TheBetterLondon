@@ -20,7 +20,6 @@ const SignUpScreen = ({ navigation }) => {
   const theme = useTheme();
   const { signIn } = useAuth();
 
-  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -29,12 +28,6 @@ const SignUpScreen = ({ navigation }) => {
 
   const handleSignUp = async () => {
     setError('');
-
-    // Validation
-    if (!name.trim()) {
-      setError('Please enter your name');
-      return;
-    }
 
     if (!email.trim()) {
       setError('Please enter your email');
@@ -59,7 +52,7 @@ const SignUpScreen = ({ navigation }) => {
     setLoading(true);
 
     try {
-      const result = await signUpWithEmail(name, email, password);
+      const result = await signUpWithEmail(email, password);
 
       if (result.success) {
         await signIn(result.user);
@@ -147,23 +140,13 @@ const SignUpScreen = ({ navigation }) => {
         <View style={styles.header}>
           <Text style={styles.title}>Create Account</Text>
           <Text style={styles.subtitle}>
-            Join The Better London community and start reporting issues
+            Join The Better London community. A unique username will be generated for you automatically.
           </Text>
         </View>
 
         {error ? <Alert type="error" message={error} /> : null}
 
         <View style={styles.form}>
-          <TextInput
-            label="Full Name"
-            placeholder="Enter your name"
-            value={name}
-            onChangeText={setName}
-            leftIcon={theme.icons.profile}
-            autoCapitalize="words"
-            editable={!loading}
-          />
-
           <TextInput
             label="Email"
             placeholder="Enter your email"

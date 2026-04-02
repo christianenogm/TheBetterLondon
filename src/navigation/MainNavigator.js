@@ -24,6 +24,8 @@ import MyReportsScreen from '../screens/MyReportsScreen';
 import LeaderboardScreen from '../screens/LeaderboardScreen';
 import PointsHistoryScreen from '../screens/PointsHistoryScreen';
 import AllBadgesScreen from '../screens/AllBadgesScreen';
+import EditProfileScreen from '../screens/EditProfileScreen';
+import HelpScreen from '../screens/HelpScreen';
 
 
 const Tab = createBottomTabNavigator();
@@ -280,6 +282,38 @@ const MainNavigator = () => {
         component={AllBadgesScreen}
         options={{
           title: 'All Badges',
+          headerStyle: {
+            backgroundColor: theme.colors.neutral[0],
+          },
+          headerTintColor: theme.colors.text.primary,
+          headerTitleStyle: {
+            ...theme.typography.h3,
+            fontWeight: theme.fontWeight.semibold,
+          },
+          headerShadowVisible: false,
+        }}
+      />
+      <Stack.Screen
+        name="EditProfile"
+        component={EditProfileScreen}
+        options={{
+          title: 'Edit Profile',
+          headerStyle: {
+            backgroundColor: theme.colors.neutral[0],
+          },
+          headerTintColor: theme.colors.text.primary,
+          headerTitleStyle: {
+            ...theme.typography.h3,
+            fontWeight: theme.fontWeight.semibold,
+          },
+          headerShadowVisible: false,
+        }}
+      />
+      <Stack.Screen
+        name="Help"
+        component={HelpScreen}
+        options={{
+          title: 'Help & Support',
           headerStyle: {
             backgroundColor: theme.colors.neutral[0],
           },
