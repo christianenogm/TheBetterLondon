@@ -21,8 +21,9 @@ import {
   serverTimestamp,
 } from 'firebase/firestore';
 import { updateProfile } from 'firebase/auth';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import * as Notifications from 'expo-notifications';
-import { db } from '../config/firebase';
+import { db, storage } from '../config/firebase';
 import { auth } from '../config/firebase';
 import { getNewlyUnlockedBadges, getBadgeById } from './gamificationService';
 import { isDisplayNameAvailable } from '../utils/displayNameUtils';
@@ -188,6 +189,34 @@ export const getLeaderboard = async (limitCount = 50) => {
   } catch (error) {
     console.error('getLeaderboard error:', error);
     return [];
+  }
+};
+
+/**
+ * Upload a new profile photo, update Firebase Auth photoURL and Firestore.
+ * @returns {{ success: boolean, photoURL?: string, error?: string }}
+ */
+export const updateProfilePhoto = async (userId, photoUri) => {
+  if (!userId || !photoUri) return { success: false, error: 'Missing parameters.' };
+  try {
+    const response = await fetch(photoUri);
+    const blob = await response.blob();
+    const storageRef = ref(storage, `avatars/${userId}/profile.jpg`);
+    await uploadBytes(storageRef, blob, { contentType: 'image/jpeg' });
+    const downloadURL = await getDownloadURL(storageRef);
+
+    const currentUser = auth.currentUser;
+    if (currentUser) {
+      await updateProfile(currentUser, { photoURL: downloadURL });
+    }
+
+    const userRef = doc(db, USERS_COLLECTION, userId);
+    await updateDoc(userRef, { photoURL: downloadURL, updatedAt: serverTimestamp() });
+
+    return { success: true, photoURL: downloadURL };
+  } catch (error) {
+    console.error('updateProfilePhoto error:', error);
+    return { success: false, error: 'Failed to update profile photo. Please try again.' };
   }
 };
 

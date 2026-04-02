@@ -79,7 +79,7 @@ const ReportDetailsScreen = ({ route, navigation }) => {
   const handleShare = async () => {
     try {
       await Share.share({
-        message: `Check out this issue in London: ${report.title}\n${report.location.address}`,
+        message: `Check out this issue in London: ${report.title}\n${report.address || ''}`,
         title: report.title,
       });
     } catch (error) {
@@ -213,6 +213,13 @@ const ReportDetailsScreen = ({ route, navigation }) => {
     },
     map: {
       flex: 1,
+    },
+    avatarMini: {
+      width: 24, height: 24, borderRadius: 12, marginRight: 6, overflow: 'hidden',
+    },
+    avatarMiniFallback: {
+      backgroundColor: theme.colors.neutral[200],
+      alignItems: 'center', justifyContent: 'center',
     },
     addressRow: {
       flexDirection: 'row',
@@ -349,11 +356,13 @@ const ReportDetailsScreen = ({ route, navigation }) => {
             <Text style={styles.title}>{report.title}</Text>
 
             <View style={styles.metaRow}>
-              <Icon
-                name="account"
-                size={theme.iconSize.sm}
-                color={theme.colors.text.secondary}
-              />
+              {report.userPhotoURL ? (
+                <Image source={{ uri: report.userPhotoURL }} style={styles.avatarMini} />
+              ) : (
+                <View style={[styles.avatarMini, styles.avatarMiniFallback]}>
+                  <Icon name="account" size={14} color={theme.colors.text.secondary} />
+                </View>
+              )}
               <Text style={styles.metaText}>{report.userName}</Text>
               <Text style={styles.separator}>•</Text>
               <Text style={styles.metaText}>{formatTimeAgo(report.createdAt)}</Text>
@@ -398,7 +407,7 @@ const ReportDetailsScreen = ({ route, navigation }) => {
                 size={theme.iconSize.sm}
                 color={theme.colors.text.secondary}
               />
-              <Text style={styles.addressText}>{report.location.address}</Text>
+              <Text style={styles.addressText}>{report.address || 'Unknown location'}</Text>
             </View>
           </View>
 

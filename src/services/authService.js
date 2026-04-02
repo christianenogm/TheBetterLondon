@@ -11,6 +11,9 @@ import {
   updateProfile,
   GoogleAuthProvider,
   signInWithCredential,
+  EmailAuthProvider,
+  reauthenticateWithCredential,
+  updatePassword,
 } from 'firebase/auth';
 import { auth } from '../config/firebase';
 import { generateUniqueDisplayName } from '../utils/displayNameUtils';
@@ -187,6 +190,30 @@ export const resetPassword = async (email) => {
       success: false,
       error: handleAuthError(error),
     };
+  }
+};
+
+/**
+ * Change the current user's password after re-authenticating.
+ * Only works for email/password accounts.
+ * @returns {{ success: boolean, error?: string }}
+ */
+export const changePassword = async (currentPassword, newPassword) => {
+  const currentUser = auth.currentUser;
+  if (!currentUser) return { success: false, error: 'Not authenticated.' };
+
+  if (!newPassword || newPassword.length < 6) {
+    return { success: false, error: 'New password must be at least 6 characters.' };
+  }
+
+  try {
+    const credential = EmailAuthProvider.credential(currentUser.email, currentPassword);
+    await reauthenticateWithCredential(currentUser, credential);
+    await updatePassword(currentUser, newPassword);
+    return { success: true };
+  } catch (error) {
+    console.error('changePassword error:', error);
+    return { success: false, error: handleAuthError(error) };
   }
 };
 

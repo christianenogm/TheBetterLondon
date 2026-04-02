@@ -242,18 +242,20 @@ const HomeScreen = ({ navigation }) => {
               color={theme.colors.text.secondary}
             />
             <Text style={styles.locationText} numberOfLines={1}>
-              {item.location.address}
+              {item.address || 'Unknown location'}
             </Text>
           </View>
 
           {/* Footer */}
           <View style={styles.cardFooter}>
             <View style={styles.metaRow}>
-              <Icon
-                name="account"
-                size={theme.iconSize.sm}
-                color={theme.colors.text.secondary}
-              />
+              {item.userPhotoURL ? (
+                <Image source={{ uri: item.userPhotoURL }} style={styles.avatarMini} />
+              ) : (
+                <View style={[styles.avatarMini, styles.avatarMiniFallback]}>
+                  <Icon name="account" size={12} color={theme.colors.text.secondary} />
+                </View>
+              )}
               <Text style={styles.metaText}>{item.userName}</Text>
               <Text style={styles.separator}>•</Text>
               <Text style={styles.metaText}>{formatTimeAgo(item.createdAt)}</Text>
@@ -286,6 +288,13 @@ const HomeScreen = ({ navigation }) => {
       paddingHorizontal: theme.spacing[4],
       paddingTop: theme.spacing[2],
       paddingBottom: theme.spacing[4],
+    },
+    avatarMini: {
+      width: 20, height: 20, borderRadius: 10, marginRight: 4, overflow: 'hidden',
+    },
+    avatarMiniFallback: {
+      backgroundColor: theme.colors.neutral[200],
+      alignItems: 'center', justifyContent: 'center',
     },
     toolbar: {
       flexDirection: 'row',

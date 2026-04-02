@@ -22,6 +22,7 @@ import {
   Platform,
 } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTheme } from '../context/ThemeContext';
 import {
   searchPlaces,
@@ -40,6 +41,7 @@ const DestinationSearch = ({
   placeholder = 'Where to?',
 }) => {
   const theme = useTheme();
+  const insets = useSafeAreaInsets();
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
   const [recentSearches, setRecentSearches] = useState([]);
@@ -247,7 +249,7 @@ const DestinationSearch = ({
   const displayData = showRecent ? recentSearches : results;
 
   return (
-    <View style={[styles.container, { backgroundColor: theme.colors.background }]}>
+    <View style={[styles.container, { backgroundColor: theme.colors.background, paddingTop: insets.top }]}>
       {/* Search Input */}
       <View style={[styles.searchBar, { backgroundColor: theme.colors.surface }]}>
         <MaterialCommunityIcons 

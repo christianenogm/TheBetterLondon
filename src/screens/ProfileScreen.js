@@ -33,7 +33,7 @@ const ProfileScreen = ({ navigation }) => {
   { label: 'My Reports',   icon: 'file-document',  onPress: () => navigation.navigate('MyReports') },
   { label: 'All Badges',   icon: 'trophy-outline', onPress: () => navigation.navigate('AllBadges') },
   { label: 'Leaderboard',  icon: 'podium',         onPress: () => navigation.navigate('Leaderboard') },
-  { label: 'Settings',     icon: icons.settings,   onPress: () => navigation.navigate('Settings') },
+  // { label: 'Settings',     icon: icons.settings,   onPress: () => navigation.navigate('Settings') },
   { label: 'Help & Support', icon: icons.help,     onPress: () => navigation.navigate('Help') },
 ];
 
