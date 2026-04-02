@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Alert, ScrollView, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
@@ -16,6 +16,7 @@ import {
   SecondaryButton,
 } from '../components';
 import { icons } from '../theme/icons';
+import { getRankForPoints, getBadgeById, BADGES } from '../services/gamificationService';
 
 const ProfileScreen = ({ navigation }) => {
   const theme = useTheme();
@@ -24,13 +25,16 @@ const ProfileScreen = ({ navigation }) => {
   const totalReports = user?.reportsCount || 0;
   const points = user?.points || 0;
   const badges = user?.badges || [];
+  const rank = getRankForPoints(points);
 
   // Menu options
     const menuItems = [
-  { label: 'Edit Profile',  icon: icons.edit, onPress: () => navigation.navigate('EditProfile') },
-  { label: 'My Reports', icon: 'file-document', onPress: () => navigation.navigate('MyReports') },
-  { label: 'Settings', icon: icons.settings, onPress: () => navigation.navigate('Settings') },
-  { label: 'Help & Support', icon: icons.help, onPress: () => navigation.navigate('Help') },
+  { label: 'Edit Profile',  icon: icons.edit,     onPress: () => navigation.navigate('EditProfile') },
+  { label: 'My Reports',   icon: 'file-document',  onPress: () => navigation.navigate('MyReports') },
+  { label: 'All Badges',   icon: 'trophy-outline', onPress: () => navigation.navigate('AllBadges') },
+  { label: 'Leaderboard',  icon: 'podium',         onPress: () => navigation.navigate('Leaderboard') },
+  { label: 'Settings',     icon: icons.settings,   onPress: () => navigation.navigate('Settings') },
+  { label: 'Help & Support', icon: icons.help,     onPress: () => navigation.navigate('Help') },
 ];
 
 const styles = StyleSheet.create({
@@ -119,6 +123,56 @@ const styles = StyleSheet.create({
       fontSize: theme.iconSize.md,
       color: theme.colors.text.primary,
     },
+    rankBadge: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 5,
+      borderWidth: 1,
+      borderRadius: 20,
+      paddingHorizontal: 12,
+      paddingVertical: 4,
+      marginBottom: theme.spacing[4],
+      marginTop: theme.spacing[1],
+    },
+    rankText: {
+      fontSize: 13,
+      fontWeight: '700',
+    },
+    badgesSection: {
+      width: '100%',
+      borderRadius: theme.borderRadius.lg,
+      borderWidth: 1,
+      padding: theme.spacing[3],
+      marginBottom: theme.spacing[4],
+    },
+    badgesSectionTitle: {
+      fontSize: 11,
+      fontWeight: '700',
+      letterSpacing: 0.5,
+      textTransform: 'uppercase',
+    },
+    badgesEmpty: {
+      fontSize: 13,
+      marginTop: 8,
+      textAlign: 'center',
+      paddingVertical: 4,
+    },
+    badgePill: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 5,
+      borderWidth: 1,
+      borderRadius: 20,
+      paddingHorizontal: 10,
+      paddingVertical: 5,
+    },
+    badgePillEmoji: {
+      fontSize: 14,
+    },
+    badgePillTitle: {
+      fontSize: 12,
+      fontWeight: '600',
+    },
   });
 
   return (
@@ -140,6 +194,12 @@ const styles = StyleSheet.create({
         <Text style={styles.name}>{user?.name || 'Your Name'}</Text>
         <Text style={styles.email}>{user?.email || 'you@example.com'}</Text>
 
+        {/* Rank badge */}
+        <View style={[styles.rankBadge, { backgroundColor: rank.color + '22', borderColor: rank.color + '66' }]}>
+          <Icon name="shield-star" size={14} color={rank.color} />
+          <Text style={[styles.rankText, { color: rank.color }]}>{rank.label}</Text>
+        </View>
+
         {/* Stats */}
         <View style={styles.statsContainer}>
           <Card style={styles.statCard}>
@@ -151,11 +211,15 @@ const styles = StyleSheet.create({
                 <Text style={styles.statLabel}>Reports</Text>
               </View>
 
-              {/* Points */}
-              <View style={{ flex: 1, alignItems: 'center' }}>
+              {/* Points — tappable → Points History */}
+              <TouchableOpacity
+                style={{ flex: 1, alignItems: 'center' }}
+                onPress={() => navigation.navigate('PointsHistory')}
+                activeOpacity={0.7}
+              >
                 <Text style={[styles.statValue, { color: theme.colors.primary[500] }]}>{points}</Text>
                 <Text style={styles.statLabel}>Points</Text>
-              </View>
+              </TouchableOpacity>
 
               {/* Badges */}
               <View style={{ flex: 1, alignItems: 'center' }}>
@@ -165,6 +229,38 @@ const styles = StyleSheet.create({
 
             </View>
           </Card>
+        </View>
+
+        {/* Earned badges section */}
+        <View style={[styles.badgesSection, { backgroundColor: theme.colors.neutral[0], borderColor: theme.colors.border.default }]}>
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+            <Text style={[styles.badgesSectionTitle, { color: theme.colors.text.secondary }]}>
+              BADGES — {badges.length} / {BADGES.length}
+            </Text>
+            <TouchableOpacity onPress={() => navigation.navigate('AllBadges')} activeOpacity={0.7}>
+              <Text style={{ fontSize: 12, color: theme.colors.primary[500], fontWeight: '600' }}>View All →</Text>
+            </TouchableOpacity>
+          </View>
+          {badges.length === 0 ? (
+            <Text style={[styles.badgesEmpty, { color: theme.colors.text.secondary }]}>
+              Submit a report to earn your first badge! 👣
+            </Text>
+          ) : (
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginTop: 8 }}>
+              <View style={{ flexDirection: 'row', gap: 8, paddingHorizontal: 2, paddingBottom: 4 }}>
+                {badges.map(id => {
+                  const b = getBadgeById(id);
+                  if (!b) return null;
+                  return (
+                    <View key={id} style={[styles.badgePill, { backgroundColor: theme.colors.primary[50], borderColor: theme.colors.primary[200] }]}>
+                      <Text style={styles.badgePillEmoji}>{b.emoji}</Text>
+                      <Text style={[styles.badgePillTitle, { color: theme.colors.primary[700] }]}>{b.title}</Text>
+                    </View>
+                  );
+                })}
+              </View>
+            </ScrollView>
+          )}
         </View>
 
         {/* Menu */}

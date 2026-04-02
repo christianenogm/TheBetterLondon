@@ -21,6 +21,9 @@ import ProfileScreen from '../screens/ProfileScreen';
 import GarbageScreen from '../screens/GarbageScreen';
 import ReportDetailsScreen from '../screens/ReportDetailsScreen';
 import MyReportsScreen from '../screens/MyReportsScreen';
+import LeaderboardScreen from '../screens/LeaderboardScreen';
+import PointsHistoryScreen from '../screens/PointsHistoryScreen';
+import AllBadgesScreen from '../screens/AllBadgesScreen';
 
 
 const Tab = createBottomTabNavigator();
@@ -229,6 +232,54 @@ const MainNavigator = () => {
         component={MyReportsScreen}
         options={{
           title: 'My Reports',
+          headerStyle: {
+            backgroundColor: theme.colors.neutral[0],
+          },
+          headerTintColor: theme.colors.text.primary,
+          headerTitleStyle: {
+            ...theme.typography.h3,
+            fontWeight: theme.fontWeight.semibold,
+          },
+          headerShadowVisible: false,
+        }}
+      />
+      <Stack.Screen
+        name="Leaderboard"
+        component={LeaderboardScreen}
+        options={{
+          title: 'Leaderboard',
+          headerStyle: {
+            backgroundColor: theme.colors.neutral[0],
+          },
+          headerTintColor: theme.colors.text.primary,
+          headerTitleStyle: {
+            ...theme.typography.h3,
+            fontWeight: theme.fontWeight.semibold,
+          },
+          headerShadowVisible: false,
+        }}
+      />
+      <Stack.Screen
+        name="PointsHistory"
+        component={PointsHistoryScreen}
+        options={{
+          title: 'Points History',
+          headerStyle: {
+            backgroundColor: theme.colors.neutral[0],
+          },
+          headerTintColor: theme.colors.text.primary,
+          headerTitleStyle: {
+            ...theme.typography.h3,
+            fontWeight: theme.fontWeight.semibold,
+          },
+          headerShadowVisible: false,
+        }}
+      />
+      <Stack.Screen
+        name="AllBadges"
+        component={AllBadgesScreen}
+        options={{
+          title: 'All Badges',
           headerStyle: {
             backgroundColor: theme.colors.neutral[0],
           },
