@@ -12,6 +12,7 @@ import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
 import { ScreenContainer, Card, Badge, EmptyState, Loading, FilterSheet, SortSheet } from '../components';
 import { getAllReports, upvoteReport } from '../services/reportsService';
+import AnnouncementBanner from '../components/AnnouncementBanner';
 import { formatTimeAgo, haversineDistance } from '../utils/helpers';
 import { ISSUE_CATEGORIES } from '../utils/constants';
 import { SORT_OPTIONS } from '../components/SortSheet/SortSheet';
@@ -469,6 +470,9 @@ const HomeScreen = ({ navigation }) => {
 
   return (
     <ScreenContainer edges={['left', 'right']}>
+      {/* Admin-controlled announcement banner */}
+      <AnnouncementBanner />
+
       {/* Filter + Sort toolbar */}
       <View style={styles.toolbar}>
         <TouchableOpacity

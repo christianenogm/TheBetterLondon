@@ -66,10 +66,38 @@ export const initUserProfile = async (userId, { name, email }) => {
       resolvedCount: 0,
       totalUpvotesReceived: 0,
       badges: [],
+      pushToken: null,
+      transitAlertsEnabled: false,
       createdAt: serverTimestamp(),
     });
   } catch (error) {
     console.error('initUserProfile error:', error);
+  }
+};
+
+/**
+ * Save a push token to the user's Firestore document.
+ */
+export const savePushToken = async (userId, token) => {
+  if (!userId || !token) return;
+  try {
+    const ref = doc(db, USERS_COLLECTION, userId);
+    await updateDoc(ref, { pushToken: token });
+  } catch (error) {
+    console.error('savePushToken error:', error);
+  }
+};
+
+/**
+ * Remove the push token from the user's Firestore document (on sign-out).
+ */
+export const removePushToken = async (userId) => {
+  if (!userId) return;
+  try {
+    const ref = doc(db, USERS_COLLECTION, userId);
+    await updateDoc(ref, { pushToken: null });
+  } catch (error) {
+    console.error('removePushToken error:', error);
   }
 };
 

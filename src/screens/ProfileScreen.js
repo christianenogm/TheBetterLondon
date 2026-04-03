@@ -4,8 +4,8 @@
  * US-105: View My Profile and Stats (partial) - DONE
  */
 
-import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Alert, ScrollView, Image } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, Alert, ScrollView, Image, Switch } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
@@ -17,6 +17,8 @@ import {
 } from '../components';
 import { icons } from '../theme/icons';
 import { getRankForPoints, getBadgeById, BADGES } from '../services/gamificationService';
+import { doc, updateDoc } from 'firebase/firestore';
+import { db } from '../config/firebase';
 
 const ProfileScreen = ({ navigation }) => {
   const theme = useTheme();
@@ -26,6 +28,20 @@ const ProfileScreen = ({ navigation }) => {
   const points = user?.points || 0;
   const badges = user?.badges || [];
   const rank = getRankForPoints(points);
+  const [transitAlertsEnabled, setTransitAlertsEnabled] = useState(
+    user?.transitAlertsEnabled ?? false
+  );
+
+  const handleTransitAlertsToggle = async (value) => {
+    setTransitAlertsEnabled(value);
+    try {
+      const userRef = doc(db, 'users', user.uid);
+      await updateDoc(userRef, { transitAlertsEnabled: value });
+    } catch (error) {
+      console.error('Failed to update transit alerts preference:', error);
+      setTransitAlertsEnabled(!value); // revert on failure
+    }
+  };
 
   // Menu options
     const menuItems = [
@@ -173,6 +189,29 @@ const styles = StyleSheet.create({
       fontSize: 12,
       fontWeight: '600',
     },
+    toggleRow: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      paddingVertical: theme.spacing[2],
+      paddingHorizontal: theme.spacing[1],
+    },
+    toggleLeft: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      flex: 1,
+      marginRight: theme.spacing[3],
+    },
+    toggleLabel: {
+      ...theme.typography.body1,
+      color: theme.colors.text.primary,
+      fontWeight: '600',
+    },
+    toggleSubLabel: {
+      ...theme.typography.body2,
+      color: theme.colors.text.secondary,
+      marginTop: 2,
+    },
   });
 
   return (
@@ -286,6 +325,25 @@ const styles = StyleSheet.create({
               />
             </TouchableOpacity>
           ))}
+        </View>
+      </Card>
+
+      {/* Notifications Settings */}
+      <Card style={{ width: '100%', marginBottom: theme.spacing[4] }}>
+        <View style={styles.toggleRow}>
+          <View style={styles.toggleLeft}>
+            <Icon name="bus-alert" size={theme.iconSize.md} color={theme.colors.text.primary} />
+            <View style={{ marginLeft: theme.spacing[3] }}>
+              <Text style={styles.toggleLabel}>Transit Alerts</Text>
+              <Text style={styles.toggleSubLabel}>Get notified about service disruptions</Text>
+            </View>
+          </View>
+          <Switch
+            value={transitAlertsEnabled}
+            onValueChange={handleTransitAlertsToggle}
+            trackColor={{ false: theme.colors.neutral[300], true: theme.colors.primary[500] }}
+            thumbColor={theme.colors.neutral[0]}
+          />
         </View>
       </Card>
 
