@@ -6,7 +6,8 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../config/firebase';
-import { getUserProfile, initUserProfile } from '../services/userService';
+import { getUserProfile, initUserProfile, savePushToken, removePushToken } from '../services/userService';
+import { registerForPushNotifications } from '../services/pushNotificationService';
 
 const AuthContext = createContext(null);
 
@@ -28,13 +29,24 @@ export const AuthProvider = ({ children }) => {
         const profile = await getUserProfile(firebaseUser.uid);
 
         setUser({
+          uid: firebaseUser.uid,
           id: firebaseUser.uid,
-          name: firebaseUser.displayName || 'User',
+          name: profile?.name || firebaseUser.displayName || 'User',
           email: firebaseUser.email,
           photoURL: firebaseUser.photoURL,
           points: profile?.points ?? 0,
           reportsCount: profile?.reportsCount ?? 0,
+          resolvedCount: profile?.resolvedCount ?? 0,
+          totalUpvotesReceived: profile?.totalUpvotesReceived ?? 0,
+          badges: profile?.badges ?? [],
+          transitAlertsEnabled: profile?.transitAlertsEnabled ?? false,
         });
+
+        // Register for push notifications and persist token
+        const token = await registerForPushNotifications();
+        if (token) {
+          await savePushToken(firebaseUser.uid, token);
+        }
       } else {
         // User is signed out
         setUser(null);
@@ -51,7 +63,11 @@ export const AuthProvider = ({ children }) => {
     setUser(userData);
   };
 
-  const signOut = () => {
+  const signOut = async () => {
+    // Remove push token before signing out
+    if (user?.uid) {
+      await removePushToken(user.uid);
+    }
     // Firebase sign out is handled in authService
     setUser(null);
   };

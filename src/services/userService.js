@@ -9,9 +9,24 @@ import {
   setDoc,
   updateDoc,
   increment,
+  arrayUnion,
+  collection,
+  addDoc,
+  getDocs,
+  query,
+  orderBy,
+  limit,
+  where,
+  writeBatch,
   serverTimestamp,
 } from 'firebase/firestore';
-import { db } from '../config/firebase';
+import { updateProfile } from 'firebase/auth';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import * as Notifications from 'expo-notifications';
+import { db, storage } from '../config/firebase';
+import { auth } from '../config/firebase';
+import { getNewlyUnlockedBadges, getBadgeById } from './gamificationService';
+import { isDisplayNameAvailable } from '../utils/displayNameUtils';
 
 const USERS_COLLECTION = 'users';
 
@@ -48,6 +63,11 @@ export const initUserProfile = async (userId, { name, email }) => {
       email,
       points: 0,
       reportsCount: 0,
+      resolvedCount: 0,
+      totalUpvotesReceived: 0,
+      badges: [],
+      pushToken: null,
+      transitAlertsEnabled: false,
       createdAt: serverTimestamp(),
     });
   } catch (error) {
@@ -56,24 +76,236 @@ export const initUserProfile = async (userId, { name, email }) => {
 };
 
 /**
- * Award points to a user and/or increment their report count.
- * All fields are optional — pass only the ones you want to change.
- *
- * @param {string} userId
- * @param {{ points?: number, reportsCount?: number }} delta
+ * Save a push token to the user's Firestore document.
  */
-export const updateUserStats = async (userId, { points = 0, reportsCount = 0 }) => {
+export const savePushToken = async (userId, token) => {
+  if (!userId || !token) return;
+  try {
+    const ref = doc(db, USERS_COLLECTION, userId);
+    await updateDoc(ref, { pushToken: token });
+  } catch (error) {
+    console.error('savePushToken error:', error);
+  }
+};
+
+/**
+ * Remove the push token from the user's Firestore document (on sign-out).
+ */
+export const removePushToken = async (userId) => {
   if (!userId) return;
   try {
     const ref = doc(db, USERS_COLLECTION, userId);
+    await updateDoc(ref, { pushToken: null });
+  } catch (error) {
+    console.error('removePushToken error:', error);
+  }
+};
 
+/**
+ * Increment one or more stat counters on a user document.
+ * All fields are optional — pass only the ones you want to change.
+ *
+ * @param {string} userId
+ * @param {{ points?: number, reportsCount?: number, resolvedCount?: number, totalUpvotesReceived?: number }} delta
+ */
+export const updateUserStats = async (userId, {
+  points = 0,
+  reportsCount = 0,
+  resolvedCount = 0,
+  totalUpvotesReceived = 0,
+} = {}) => {
+  if (!userId) return;
+  try {
+    const ref = doc(db, USERS_COLLECTION, userId);
     const updates = { updatedAt: serverTimestamp() };
-    if (points !== 0) updates.points = increment(points);
-    if (reportsCount !== 0) updates.reportsCount = increment(reportsCount);
-
-    // Use setDoc merge so the doc is created automatically if missing
+    if (points !== 0)               updates.points               = increment(points);
+    if (reportsCount !== 0)         updates.reportsCount         = increment(reportsCount);
+    if (resolvedCount !== 0)        updates.resolvedCount        = increment(resolvedCount);
+    if (totalUpvotesReceived !== 0) updates.totalUpvotesReceived = increment(totalUpvotesReceived);
     await setDoc(ref, updates, { merge: true });
   } catch (error) {
     console.error('updateUserStats error:', error);
+  }
+};
+
+/**
+ * Award points and log the transaction to the pointsHistory sub-collection.
+ */
+export const awardPoints = async (userId, { points, reason }) => {
+  if (!userId || !points) return;
+  try {
+    await updateUserStats(userId, { points });
+    const histRef = collection(db, USERS_COLLECTION, userId, 'pointsHistory');
+    await addDoc(histRef, {
+      points,
+      reason,
+      createdAt: serverTimestamp(),
+    });
+  } catch (error) {
+    console.error('awardPoints error:', error);
+  }
+};
+
+/**
+ * Checks the user's current stats against all badge requirements and awards
+ * any newly unlocked badges. Returns the array of newly unlocked badge IDs.
+ */
+export const checkAndAwardBadges = async (userId) => {
+  if (!userId) return [];
+  try {
+    const profile = await getUserProfile(userId);
+    if (!profile) return [];
+    const newBadgeIds = getNewlyUnlockedBadges(profile);
+    if (newBadgeIds.length === 0) return [];
+    const ref = doc(db, USERS_COLLECTION, userId);
+    await updateDoc(ref, { badges: arrayUnion(...newBadgeIds) });
+
+    // Fire an immediate local notification for each newly unlocked badge
+    for (const id of newBadgeIds) {
+      const badge = getBadgeById(id);
+      if (badge) {
+        await Notifications.scheduleNotificationAsync({
+          content: {
+            title: '🏆 Badge Unlocked!',
+            body: `${badge.emoji} ${badge.title} — ${badge.description}`,
+            sound: true,
+          },
+          trigger: null,
+        }).catch(() => {}); // Ignore if notifications not permitted
+      }
+    }
+
+    return newBadgeIds;
+  } catch (error) {
+    console.error('checkAndAwardBadges error:', error);
+    return [];
+  }
+};
+
+/**
+ * Fetch a user's points transaction history, newest first.
+ */
+export const getPointsHistory = async (userId) => {
+  if (!userId) return [];
+  try {
+    const histRef = collection(db, USERS_COLLECTION, userId, 'pointsHistory');
+    const q = query(histRef, orderBy('createdAt', 'desc'));
+    const snapshot = await getDocs(q);
+    return snapshot.docs.map(d => ({
+      id: d.id,
+      ...d.data(),
+      createdAt: d.data().createdAt?.toDate?.()?.toISOString() ?? new Date().toISOString(),
+    }));
+  } catch (error) {
+    console.error('getPointsHistory error:', error);
+    return [];
+  }
+};
+
+/**
+ * Fetch the top contributors sorted by points for the leaderboard.
+ */
+export const getLeaderboard = async (limitCount = 50) => {
+  try {
+    const q = query(
+      collection(db, USERS_COLLECTION),
+      orderBy('points', 'desc'),
+      limit(limitCount)
+    );
+    const snapshot = await getDocs(q);
+    return snapshot.docs.map(d => ({ id: d.id, ...d.data() }));
+  } catch (error) {
+    console.error('getLeaderboard error:', error);
+    return [];
+  }
+};
+
+/**
+ * Upload a new profile photo, update Firebase Auth photoURL and Firestore.
+ * @returns {{ success: boolean, photoURL?: string, error?: string }}
+ */
+export const updateProfilePhoto = async (userId, photoUri) => {
+  if (!userId || !photoUri) return { success: false, error: 'Missing parameters.' };
+  try {
+    const response = await fetch(photoUri);
+    const blob = await response.blob();
+    const storageRef = ref(storage, `avatars/${userId}/profile.jpg`);
+    await uploadBytes(storageRef, blob, { contentType: 'image/jpeg' });
+    const downloadURL = await getDownloadURL(storageRef);
+
+    const currentUser = auth.currentUser;
+    if (currentUser) {
+      await updateProfile(currentUser, { photoURL: downloadURL });
+    }
+
+    const userRef = doc(db, USERS_COLLECTION, userId);
+    await updateDoc(userRef, { photoURL: downloadURL, updatedAt: serverTimestamp() });
+
+    return { success: true, photoURL: downloadURL };
+  } catch (error) {
+    console.error('updateProfilePhoto error:', error);
+    return { success: false, error: 'Failed to update profile photo. Please try again.' };
+  }
+};
+
+/**
+ * Update a user's display name.
+ * Validates uniqueness, updates Firestore user doc, Firebase Auth profile,
+ * and batch-updates userName on all of the user's reports.
+ *
+ * @returns {{ success: boolean, error?: string }}
+ */
+export const updateDisplayName = async (userId, newName) => {
+  if (!userId || !newName?.trim()) {
+    return { success: false, error: 'Invalid name.' };
+  }
+
+  const trimmed = newName.trim();
+
+  if (trimmed.length < 2 || trimmed.length > 30) {
+    return { success: false, error: 'Name must be between 2 and 30 characters.' };
+  }
+
+  try {
+    // Check uniqueness (skip check if the user is keeping their own name)
+    const userRef = doc(db, USERS_COLLECTION, userId);
+    const userSnap = await getDoc(userRef);
+    const currentName = userSnap.data()?.name;
+
+    if (trimmed !== currentName) {
+      const available = await isDisplayNameAvailable(trimmed);
+      if (!available) {
+        return { success: false, error: 'That username is already taken. Please choose another.' };
+      }
+    }
+
+    // 1. Update Firestore user profile
+    await updateDoc(userRef, { name: trimmed, updatedAt: serverTimestamp() });
+
+    // 2. Update Firebase Auth displayName
+    const currentUser = auth.currentUser;
+    if (currentUser) {
+      await updateProfile(currentUser, { displayName: trimmed });
+    }
+
+    // 3. Batch-update userName on all reports belonging to this user
+    const reportsQ = query(
+      collection(db, 'reports'),
+      where('userId', '==', userId)
+    );
+    const reportsSnap = await getDocs(reportsQ);
+
+    if (!reportsSnap.empty) {
+      const batch = writeBatch(db);
+      reportsSnap.docs.forEach(reportDoc => {
+        batch.update(reportDoc.ref, { userName: trimmed });
+      });
+      await batch.commit();
+    }
+
+    return { success: true };
+  } catch (error) {
+    console.error('updateDisplayName error:', error);
+    return { success: false, error: 'Failed to update username. Please try again.' };
   }
 };

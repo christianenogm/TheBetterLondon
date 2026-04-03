@@ -11,30 +11,26 @@ import {
   updateProfile,
   GoogleAuthProvider,
   signInWithCredential,
+  EmailAuthProvider,
+  reauthenticateWithCredential,
+  updatePassword,
 } from 'firebase/auth';
 import { auth } from '../config/firebase';
+import { generateUniqueDisplayName } from '../utils/displayNameUtils';
 import * as WebBrowser from 'expo-web-browser';
 
 // Complete the auth session for Google Sign-In
 WebBrowser.maybeCompleteAuthSession();
 
 /**
- * Sign up with email and password
- * @param {string} name - User's display name
+ * Sign up with email and password.
+ * Display name is auto-generated (unique adjective+animal+4digits).
  * @param {string} email - User email
  * @param {string} password - User password
  * @returns {Promise<Object>} Result object with success and user data
  */
-export const signUpWithEmail = async (name, email, password) => {
+export const signUpWithEmail = async (email, password) => {
   try {
-    // Validation
-    if (!name || name.trim().length < 2) {
-      return {
-        success: false,
-        error: 'Please enter a valid name (at least 2 characters)',
-      };
-    }
-
     if (!email || !email.includes('@')) {
       return {
         success: false,
@@ -49,18 +45,19 @@ export const signUpWithEmail = async (name, email, password) => {
       };
     }
 
+    // Generate a unique display name before creating the account
+    const displayName = await generateUniqueDisplayName();
+
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    
-    // Update user profile with display name
-    await updateProfile(userCredential.user, {
-      displayName: name,
-    });
-    
+
+    // Persist the generated display name in Firebase Auth
+    await updateProfile(userCredential.user, { displayName });
+
     return {
       success: true,
       user: {
         id: userCredential.user.uid,
-        name: name,
+        name: displayName,
         email: userCredential.user.email,
         photoURL: userCredential.user.photoURL,
         points: 0,
@@ -193,6 +190,30 @@ export const resetPassword = async (email) => {
       success: false,
       error: handleAuthError(error),
     };
+  }
+};
+
+/**
+ * Change the current user's password after re-authenticating.
+ * Only works for email/password accounts.
+ * @returns {{ success: boolean, error?: string }}
+ */
+export const changePassword = async (currentPassword, newPassword) => {
+  const currentUser = auth.currentUser;
+  if (!currentUser) return { success: false, error: 'Not authenticated.' };
+
+  if (!newPassword || newPassword.length < 6) {
+    return { success: false, error: 'New password must be at least 6 characters.' };
+  }
+
+  try {
+    const credential = EmailAuthProvider.credential(currentUser.email, currentPassword);
+    await reauthenticateWithCredential(currentUser, credential);
+    await updatePassword(currentUser, newPassword);
+    return { success: true };
+  } catch (error) {
+    console.error('changePassword error:', error);
+    return { success: false, error: handleAuthError(error) };
   }
 };
 

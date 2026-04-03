@@ -10,11 +10,11 @@ import React, { useState, useEffect, useCallback } from 'react';
 import {
   View,
   Text,
+  Image,
   StyleSheet,
   FlatList,
   TouchableOpacity,
   RefreshControl,
-  Image,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useTheme } from '../context/ThemeContext';
@@ -134,13 +134,20 @@ const MyReportsScreen = ({ navigation }) => {
               color={theme.colors.text.secondary}
             />
             <Text style={styles.locationText} numberOfLines={1}>
-              {item.location?.address || 'Unknown location'}
+              {item.address || 'Unknown location'}
             </Text>
           </View>
 
           {/* Footer: timestamp + upvotes (own reports can't be upvoted) */}
           <View style={styles.cardFooter}>
             <View style={styles.metaRow}>
+              {item.userPhotoURL ? (
+                <Image source={{ uri: item.userPhotoURL }} style={styles.avatarMini} />
+              ) : (
+                <View style={[styles.avatarMini, styles.avatarMiniFallback]}>
+                  <Icon name="account" size={12} color={theme.colors.text.secondary} />
+                </View>
+              )}
               <Icon
                 name="clock-outline"
                 size={theme.iconSize.sm}
@@ -196,6 +203,13 @@ const MyReportsScreen = ({ navigation }) => {
     },
     filterChipTextActive: {
       color: theme.colors.neutral[0],
+    },
+    avatarMini: {
+      width: 20, height: 20, borderRadius: 10, marginRight: 4, overflow: 'hidden',
+    },
+    avatarMiniFallback: {
+      backgroundColor: theme.colors.neutral[200],
+      alignItems: 'center', justifyContent: 'center',
     },
     listContent: {
       paddingHorizontal: theme.spacing[4],

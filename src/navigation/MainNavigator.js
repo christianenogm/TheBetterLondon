@@ -18,8 +18,14 @@ import TransitScreen from '../screens/TransitScreen';
 // import NearbyStopsScreen from '../screens/Transit/NearbyStopsScreen';
 // import SearchTransitScreen from '../screens/Transit/SearchTransitScreen';
 import ProfileScreen from '../screens/ProfileScreen';
+import GarbageScreen from '../screens/GarbageScreen';
 import ReportDetailsScreen from '../screens/ReportDetailsScreen';
 import MyReportsScreen from '../screens/MyReportsScreen';
+import LeaderboardScreen from '../screens/LeaderboardScreen';
+import PointsHistoryScreen from '../screens/PointsHistoryScreen';
+import AllBadgesScreen from '../screens/AllBadgesScreen';
+import EditProfileScreen from '../screens/EditProfileScreen';
+import HelpScreen from '../screens/HelpScreen';
 
 
 const Tab = createBottomTabNavigator();
@@ -106,6 +112,9 @@ const TabNavigator = () => {
             case 'Transit':
               iconName = 'bus';
               break;
+            case 'Garbage':
+              iconName = 'trash-can-outline';
+              break;
             case 'Profile':
               iconName = theme.icons.profile;
               break;
@@ -173,6 +182,14 @@ const TabNavigator = () => {
           headerShown: false, // Let stack navigator handle headers
         }}
       />
+      <Tab.Screen
+        name="Garbage"
+        component={GarbageScreen}
+        options={{
+          title: 'Garbage',
+          headerTitle: 'Garbage Collection',
+        }}
+      />
       <Tab.Screen 
         name="Profile" 
         component={ProfileScreen}
@@ -217,6 +234,86 @@ const MainNavigator = () => {
         component={MyReportsScreen}
         options={{
           title: 'My Reports',
+          headerStyle: {
+            backgroundColor: theme.colors.neutral[0],
+          },
+          headerTintColor: theme.colors.text.primary,
+          headerTitleStyle: {
+            ...theme.typography.h3,
+            fontWeight: theme.fontWeight.semibold,
+          },
+          headerShadowVisible: false,
+        }}
+      />
+      <Stack.Screen
+        name="Leaderboard"
+        component={LeaderboardScreen}
+        options={{
+          title: 'Leaderboard',
+          headerStyle: {
+            backgroundColor: theme.colors.neutral[0],
+          },
+          headerTintColor: theme.colors.text.primary,
+          headerTitleStyle: {
+            ...theme.typography.h3,
+            fontWeight: theme.fontWeight.semibold,
+          },
+          headerShadowVisible: false,
+        }}
+      />
+      <Stack.Screen
+        name="PointsHistory"
+        component={PointsHistoryScreen}
+        options={{
+          title: 'Points History',
+          headerStyle: {
+            backgroundColor: theme.colors.neutral[0],
+          },
+          headerTintColor: theme.colors.text.primary,
+          headerTitleStyle: {
+            ...theme.typography.h3,
+            fontWeight: theme.fontWeight.semibold,
+          },
+          headerShadowVisible: false,
+        }}
+      />
+      <Stack.Screen
+        name="AllBadges"
+        component={AllBadgesScreen}
+        options={{
+          title: 'All Badges',
+          headerStyle: {
+            backgroundColor: theme.colors.neutral[0],
+          },
+          headerTintColor: theme.colors.text.primary,
+          headerTitleStyle: {
+            ...theme.typography.h3,
+            fontWeight: theme.fontWeight.semibold,
+          },
+          headerShadowVisible: false,
+        }}
+      />
+      <Stack.Screen
+        name="EditProfile"
+        component={EditProfileScreen}
+        options={{
+          title: 'Edit Profile',
+          headerStyle: {
+            backgroundColor: theme.colors.neutral[0],
+          },
+          headerTintColor: theme.colors.text.primary,
+          headerTitleStyle: {
+            ...theme.typography.h3,
+            fontWeight: theme.fontWeight.semibold,
+          },
+          headerShadowVisible: false,
+        }}
+      />
+      <Stack.Screen
+        name="Help"
+        component={HelpScreen}
+        options={{
+          title: 'Help & Support',
           headerStyle: {
             backgroundColor: theme.colors.neutral[0],
           },

@@ -55,11 +55,13 @@ const ReviewSubmitScreen = ({ route, navigation }) => {
       const reportData = {
         userId: user.id,
         userName: user.name,
+        userPhotoURL: user.photoURL || null,
         category: category.id,
         categoryLabel: category.label,
         title,
         description,
         location,
+        address: address || '',
         photos: photos.map(photo => photo.uri),
       };
 
@@ -169,7 +171,7 @@ const ReviewSubmitScreen = ({ route, navigation }) => {
             navigation.navigate('TakePhotos', {
               ...route.params,
               photos,
-              // onUpdatePhotos: (updatedPhotos) => navigation.setParams({ photos: updatedPhotos }),
+              goToReview: true,
             })
           }
         >

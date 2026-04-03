@@ -18,22 +18,14 @@ const TakePhotosScreen = ({ navigation, route}) => {
 
   // const category = route.params?.category; 
   const { category } = route.params || {};
-  const [photos, setPhotos] = useState([]);
+  const [photos, setPhotos] = useState(route.params?.photos || []);
   const [limitReached, setLimitReached] = useState(false);
 
   useEffect(() => {
-    takePhoto();
+    if ((route.params?.photos || []).length === 0) {
+      takePhoto();
+    }
   }, []);
-
-  useEffect(() => {
-    navigation.setParams({ photos });
-  }, [photos]);
-
-  useEffect(() => {
-    if (route.params?.photos) {
-      setPhotos(route.params.photos);
-    } 
-  }, [route.params?.photos]);
 
   const checkPhotoLimit = () => {
     if (photos.length >= MAX_PHOTOS) {
@@ -126,7 +118,13 @@ const continueHandler = () => {
     Alert.alert('At least one photo is required');
     return;
   }
-  navigation.navigate('AddLocation', { photos, category });
+
+  const goToReview = route.params?.goToReview || false;
+  if (goToReview) {
+    navigation.navigate('ReviewSubmit', { ...route.params, photos });
+  } else {
+    navigation.navigate('AddLocation', { photos, category });
+  }
 };
 
 return (

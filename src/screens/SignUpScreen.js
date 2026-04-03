@@ -4,228 +4,165 @@
  */
 
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Alert as RNAlert } from 'react-native';
+import {
+  View, Text, StyleSheet, TouchableOpacity,
+  KeyboardAvoidingView, ScrollView, Platform, StatusBar,
+} from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
 import { signUpWithEmail } from '../services/authService';
-import {
-  ScreenContainer,
-  TextInput,
-  PrimaryButton,
-  GoogleSignInButton,
-  Alert,
-} from '../components';
+import { TextInput, PrimaryButton, GoogleSignInButton, Alert } from '../components';
+
+const GRADIENT = ['#1B5E20', '#2E7D32', '#43A047'];
 
 const SignUpScreen = ({ navigation }) => {
   const theme = useTheme();
+  const insets = useSafeAreaInsets();
   const { signIn } = useAuth();
 
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail]                   = useState('');
+  const [password, setPassword]             = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [loading, setLoading]               = useState(false);
+  const [error, setError]                   = useState('');
 
   const handleSignUp = async () => {
     setError('');
-
-    // Validation
-    if (!name.trim()) {
-      setError('Please enter your name');
-      return;
-    }
-
-    if (!email.trim()) {
-      setError('Please enter your email');
-      return;
-    }
-
-    if (!password) {
-      setError('Please enter a password');
-      return;
-    }
-
-    if (password.length < 6) {
-      setError('Password must be at least 6 characters');
-      return;
-    }
-
-    if (password !== confirmPassword) {
-      setError('Passwords do not match');
-      return;
-    }
-
+    if (!email.trim())              { setError('Please enter your email'); return; }
+    if (!password)                  { setError('Please enter a password'); return; }
+    if (password.length < 6)        { setError('Password must be at least 6 characters'); return; }
+    if (password !== confirmPassword) { setError('Passwords do not match'); return; }
     setLoading(true);
-
     try {
-      const result = await signUpWithEmail(name, email, password);
-
+      const result = await signUpWithEmail(email, password);
       if (result.success) {
         await signIn(result.user);
-        // Navigation will be handled by AuthContext
       } else {
         setError(result.error);
       }
-    } catch (err) {
+    } catch {
       setError('An unexpected error occurred. Please try again.');
     } finally {
       setLoading(false);
     }
   };
 
-  const handleGoogleSignIn = async (user) => {
-    try {
-      await signIn(user);
-      // Navigation will be handled by AuthContext
-    } catch (err) {
-      setError('Failed to sign in with Google. Please try again.');
-    }
-  };
-
-  const handleGoogleError = (errorMessage) => {
-    setError(errorMessage);
-  };
-
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      paddingHorizontal: theme.spacing[4],
-    },
-    header: {
-      marginTop: theme.spacing[8],
-      marginBottom: theme.spacing[8],
-    },
-    title: {
-      ...theme.typography.h1,
-      color: theme.colors.text.primary,
-      marginBottom: theme.spacing[2],
-    },
-    subtitle: {
-      ...theme.typography.body1,
-      color: theme.colors.text.secondary,
-    },
-    form: {
-      marginBottom: theme.spacing[4],
-    },
-    divider: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      marginVertical: theme.spacing[6],
-    },
-    dividerLine: {
-      flex: 1,
-      height: 1,
-      backgroundColor: theme.colors.border.default,
-    },
-    dividerText: {
-      ...theme.typography.body2,
-      color: theme.colors.text.hint,
-      marginHorizontal: theme.spacing[4],
-    },
-    footer: {
-      flexDirection: 'row',
-      justifyContent: 'center',
-      alignItems: 'center',
-      marginTop: theme.spacing[4],
-    },
-    footerText: {
-      ...theme.typography.body1,
-      color: theme.colors.text.secondary,
-    },
-    footerLink: {
-      ...theme.typography.body1,
-      color: theme.colors.primary[500],
-      fontWeight: theme.fontWeight.semibold,
-      marginLeft: theme.spacing[1],
-    },
-  });
-
   return (
-    <ScreenContainer scrollable>
-      <View style={styles.container}>
-        <View style={styles.header}>
-          <Text style={styles.title}>Create Account</Text>
-          <Text style={styles.subtitle}>
-            Join The Better London community and start reporting issues
-          </Text>
+    <View style={s.root}>
+      <LinearGradient colors={GRADIENT} start={{ x: 0.3, y: 0 }} end={{ x: 0.7, y: 1 }} style={StyleSheet.absoluteFillObject} />
+      <StatusBar barStyle="light-content" translucent backgroundColor="transparent" />
+
+      {/* ── Hero ── */}
+      <View style={[s.hero, { paddingTop: insets.top + 24 }]}>
+        <View style={s.logoBadge}>
+          <Icon name="city" size={34} color="#4CAF50" />
         </View>
-
-        {error ? <Alert type="error" message={error} /> : null}
-
-        <View style={styles.form}>
-          <TextInput
-            label="Full Name"
-            placeholder="Enter your name"
-            value={name}
-            onChangeText={setName}
-            leftIcon={theme.icons.profile}
-            autoCapitalize="words"
-            editable={!loading}
-          />
-
-          <TextInput
-            label="Email"
-            placeholder="Enter your email"
-            value={email}
-            onChangeText={setEmail}
-            leftIcon={theme.icons.email}
-            keyboardType="email-address"
-            autoCapitalize="none"
-            editable={!loading}
-          />
-
-          <TextInput
-            label="Password"
-            placeholder="Enter your password"
-            value={password}
-            onChangeText={setPassword}
-            leftIcon={theme.icons.password}
-            secureTextEntry
-            helperText="At least 6 characters"
-            editable={!loading}
-          />
-
-          <TextInput
-            label="Confirm Password"
-            placeholder="Confirm your password"
-            value={confirmPassword}
-            onChangeText={setConfirmPassword}
-            leftIcon={theme.icons.password}
-            secureTextEntry
-            editable={!loading}
-          />
-
-          <PrimaryButton
-            title="Create Account"
-            onPress={handleSignUp}
-            loading={loading}
-            disabled={loading}
-            style={{ marginTop: theme.spacing[4] }}
-          />
-        </View>
-
-        <View style={styles.divider}>
-          <View style={styles.dividerLine} />
-          <Text style={styles.dividerText}>OR</Text>
-          <View style={styles.dividerLine} />
-        </View>
-
-        <GoogleSignInButton
-          onSuccess={handleGoogleSignIn}
-          onError={handleGoogleError}
-          disabled={loading}
-        />
-
-        <View style={styles.footer}>
-          <Text style={styles.footerText}>Already have an account?</Text>
-          <TouchableOpacity onPress={() => navigation.navigate('SignIn')}>
-            <Text style={styles.footerLink}>Sign In</Text>
-          </TouchableOpacity>
-        </View>
+        <Text style={s.appName}>The Better London</Text>
+        <Text style={s.tagline}>Join the community</Text>
       </View>
-    </ScreenContainer>
+
+      {/* ── White card ── */}
+      <View style={s.card}>
+        <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+          <ScrollView
+            contentContainerStyle={[s.cardContent, { paddingBottom: insets.bottom + 28 }]}
+            keyboardShouldPersistTaps="handled"
+            showsVerticalScrollIndicator={false}
+          >
+            <Text style={s.cardTitle}>Create Account</Text>
+            <Text style={s.cardSub}>A unique username will be generated for you automatically.</Text>
+
+            {!!error && <Alert type="error" message={error} style={s.alert} />}
+
+            <TextInput
+              label="Email"
+              placeholder="Enter your email"
+              value={email}
+              onChangeText={(v) => { setEmail(v); setError(''); }}
+              leftIcon={theme.icons.email}
+              keyboardType="email-address"
+              autoCapitalize="none"
+              editable={!loading}
+            />
+            <TextInput
+              label="Password"
+              placeholder="At least 6 characters"
+              value={password}
+              onChangeText={(v) => { setPassword(v); setError(''); }}
+              leftIcon={theme.icons.password}
+              secureTextEntry
+              editable={!loading}
+            />
+            <TextInput
+              label="Confirm Password"
+              placeholder="Repeat your password"
+              value={confirmPassword}
+              onChangeText={(v) => { setConfirmPassword(v); setError(''); }}
+              leftIcon={theme.icons.password}
+              secureTextEntry
+              editable={!loading}
+            />
+
+            <PrimaryButton
+              title="Create Account"
+              onPress={handleSignUp}
+              loading={loading}
+              disabled={loading}
+              style={{ marginTop: 16 }}
+            />
+
+            <View style={s.divider}>
+              <View style={[s.divLine, { backgroundColor: theme.colors.border.default }]} />
+              <Text style={[s.divText, { color: theme.colors.text.hint }]}>OR</Text>
+              <View style={[s.divLine, { backgroundColor: theme.colors.border.default }]} />
+            </View>
+
+            <GoogleSignInButton
+              onSuccess={async (user) => { try { await signIn(user); } catch { setError('Failed to sign in with Google.'); } }}
+              onError={(msg) => setError(msg)}
+              disabled={loading}
+            />
+
+            <View style={s.footer}>
+              <Text style={[s.footerText, { color: theme.colors.text.secondary }]}>Already have an account?</Text>
+              <TouchableOpacity onPress={() => navigation.navigate('SignIn')}>
+                <Text style={[s.footerLink, { color: theme.colors.primary[700] }]}> Sign In</Text>
+              </TouchableOpacity>
+            </View>
+          </ScrollView>
+        </KeyboardAvoidingView>
+      </View>
+    </View>
   );
 };
+
+const s = StyleSheet.create({
+  root:      { flex: 1, backgroundColor: '#1B5E20' },
+  hero:      { alignItems: 'center', paddingBottom: 24 },
+  logoBadge: {
+    width: 68, height: 68, borderRadius: 34,
+    backgroundColor: '#fff',
+    alignItems: 'center', justifyContent: 'center',
+    marginBottom: 12,
+    shadowColor: '#000', shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.2, shadowRadius: 10, elevation: 10,
+  },
+  appName:   { fontSize: 22, fontWeight: '800', color: '#fff', letterSpacing: 0.3, marginBottom: 4 },
+  tagline:   { fontSize: 12, color: 'rgba(255,255,255,0.72)', fontWeight: '500', letterSpacing: 1.4 },
+  card:      { flex: 1, backgroundColor: '#fff', borderTopLeftRadius: 28, borderTopRightRadius: 28 },
+  cardContent: { paddingHorizontal: 24, paddingTop: 28 },
+  cardTitle: { fontSize: 26, fontWeight: '700', color: '#212121', marginBottom: 4 },
+  cardSub:   { fontSize: 13, color: '#757575', marginBottom: 20, lineHeight: 19 },
+  alert:     { marginBottom: 12 },
+  divider:   { flexDirection: 'row', alignItems: 'center', marginVertical: 18 },
+  divLine:   { flex: 1, height: 1 },
+  divText:   { marginHorizontal: 12, fontSize: 12, fontWeight: '600' },
+  footer:    { flexDirection: 'row', justifyContent: 'center', marginTop: 20 },
+  footerText: { fontSize: 14 },
+  footerLink: { fontSize: 14, fontWeight: '700' },
+});
 
 export default SignUpScreen;

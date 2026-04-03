@@ -20,7 +20,8 @@ import {
 } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { db, storage } from '../config/firebase';
-import { updateUserStats } from './userService';
+import { updateUserStats, awardPoints, checkAndAwardBadges, getUserProfile } from './userService';
+import { getMilestoneBonusForReportCount } from './gamificationService';
 
 const REPORTS_COLLECTION = 'reports';
 
@@ -95,8 +96,10 @@ export const createReport = async (reportData) => {
       description: reportData.description,
       category: reportData.category,
       location: reportData.location,
+      address: reportData.address || '',
       userId: reportData.userId,
       userName: reportData.userName,
+      userPhotoURL: reportData.userPhotoURL || null,
       photos: photoURLs,
       status: 'pending',
       upvotes: 0,
@@ -107,8 +110,20 @@ export const createReport = async (reportData) => {
     
     const docRef = await addDoc(reportsRef, reportDoc);
 
-    // Award points for submitting a report
-    await updateUserStats(reportData.userId, { points: 10, reportsCount: 1 });
+    // Award points for submitting a report (+ check for milestone bonus)
+    const profile = await getUserProfile(reportData.userId);
+    const oldCount = profile?.reportsCount ?? 0;
+    const newCount = oldCount + 1;
+
+    await awardPoints(reportData.userId, { points: 10, reason: 'Report submitted' });
+    await updateUserStats(reportData.userId, { reportsCount: 1 });
+
+    const milestone = getMilestoneBonusForReportCount(oldCount, newCount);
+    if (milestone) {
+      await awardPoints(reportData.userId, { points: milestone.bonus, reason: milestone.reason });
+    }
+
+    await checkAndAwardBadges(reportData.userId);
 
     // Return the created report with ID
     return {
@@ -234,13 +249,42 @@ export const upvoteReport = async (reportId, userId) => {
       updatedAt: serverTimestamp(),
     });
 
-    // Award +5 points to the report author for receiving an upvote
-    await updateUserStats(current.userId, { points: 5 });
+    // Award +1 point to the report author for receiving an upvote
+    await awardPoints(current.userId, { points: 1, reason: 'Report upvoted' });
+    await updateUserStats(current.userId, { totalUpvotesReceived: 1 });
+    await checkAndAwardBadges(current.userId);
 
     const updatedReport = await getReportById(reportId);
     return updatedReport;
   } catch (error) {
     console.error('Failed to upvote report:', error);
+    throw error;
+  }
+};
+
+/**
+ * US-1301: Mark a report as resolved and award the author +5 bonus points.
+ * Increments resolvedCount and checks for newly unlocked badges.
+ */
+export const resolveReport = async (reportId) => {
+  try {
+    const report = await getReportById(reportId);
+    if (!report) throw new Error('Report not found');
+
+    const reportRef = doc(db, REPORTS_COLLECTION, reportId);
+    await updateDoc(reportRef, {
+      status: 'resolved',
+      resolvedAt: serverTimestamp(),
+      updatedAt: serverTimestamp(),
+    });
+
+    await awardPoints(report.userId, { points: 5, reason: 'Report resolved' });
+    await updateUserStats(report.userId, { resolvedCount: 1 });
+    await checkAndAwardBadges(report.userId);
+
+    return await getReportById(reportId);
+  } catch (error) {
+    console.error('Failed to resolve report:', error);
     throw error;
   }
 };
@@ -251,4 +295,5 @@ export default {
   getReportById,
   getUserReports,
   upvoteReport,
+  resolveReport,
 };

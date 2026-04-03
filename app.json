@@ -36,7 +36,21 @@
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      "expo-font"
+      "expo-font",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/icon.png",
+          "color": "#4CAF50",
+          "sounds": []
+        }
+      ],
+      [
+        "expo-calendar",
+        {
+          "calendarPermission": "Allow TheBetterLondon to add garbage collection days to your calendar."
+        }
+      ]
     ],
     "extra": {
       "eas": {
