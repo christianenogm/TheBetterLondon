@@ -1,38 +1,38 @@
 # The Better London
 
-Aplicativo móvel desenvolvido para facilitar o acesso a serviços urbanos de London, Ontario, incluindo transporte público, coleta de lixo e comunicação de problemas municipais.
+A mobile application designed to improve access to urban services in London, Ontario, including public transit, garbage collection, and municipal issue reporting.
 
-## 🎬 Demonstrações do projeto
+## 🎬 Project Demonstrations
 
-Selecione uma demonstração para assistir ou baixar:
+Select a demonstration to watch or download:
 
-- [▶️ Sprint 01 — Assistir ou baixar](https://github.com/christianenogm/TheBetterLondon/raw/refs/heads/main/demo/Sprint-01.mp4)
-- [▶️ Sprint 02 — Assistir ou baixar](https://github.com/christianenogm/TheBetterLondon/raw/refs/heads/main/demo/Sprint-02.mp4)
-- [▶️ Sprint 03 — Assistir ou baixar](https://github.com/christianenogm/TheBetterLondon/raw/refs/heads/main/demo/Sprint-03.mp4)
+- [▶️ Sprint 01 — Watch or download](https://github.com/christianenogm/TheBetterLondon/raw/refs/heads/main/demo/Sprint-01.mp4)
+- [▶️ Sprint 02 — Watch or download](https://github.com/christianenogm/TheBetterLondon/raw/refs/heads/main/demo/Sprint-02.mp4)
+- [▶️ Sprint 03 — Watch or download](https://github.com/christianenogm/TheBetterLondon/raw/refs/heads/main/demo/Sprint-03.mp4)
 
-> Os vídeos utilizam Git LFS e podem ser abertos diretamente ou baixados pelo link. Caso o navegador não reproduza automaticamente, baixe o arquivo e abra no player do computador ou celular.
+> The videos use Git LFS and can be opened directly or downloaded from the links. If the browser does not play a video automatically, download the file and open it with a video player on your computer or phone.
 
-## Principais tecnologias
+## Main Technologies
 
 - React Native
 - Expo
 - React Navigation
-- Firebase Authentication e Firestore
+- Firebase Authentication and Firestore
 - Google Maps
-- Expo Location e Notifications
+- Expo Location and Notifications
 
-## Executar localmente
+## Run Locally
 
-1. Instale as dependências:
+1. Install the dependencies:
 
    `npm install`
 
-2. Configure as variáveis de ambiente usando `.env.sample` como modelo.
+2. Configure the environment variables using `.env.sample` as a template.
 
-3. Inicie o aplicativo:
+3. Start the application:
 
    `npm start`
 
-4. Abra o projeto pelo Expo Go ou pelo emulador Android/iOS.
+4. Open the project with Expo Go or an Android/iOS emulator.
 
-Consulte o [guia de build e testes](./documents/build-guide.md) para instruções detalhadas.
+See the [build and testing guide](./documents/build-guide.md) for detailed instructions.
