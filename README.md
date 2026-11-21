@@ -6,11 +6,11 @@ Aplicativo móvel desenvolvido para facilitar o acesso a serviços urbanos de Lo
 
 Selecione uma demonstração para assistir ou baixar:
 
-- [Sprint 01 — Demonstração](./demo/Sprint-01.mp4)
-- [Sprint 02 — Demonstração](./demo/Sprint-02.mp4)
-- [Sprint 03 — Demonstração](./demo/Sprint-03.mp4)
+- [▶️ Sprint 01 — Assistir ou baixar](https://github.com/christianenogm/TheBetterLondon/raw/refs/heads/main/demo/Sprint-01.mp4)
+- [▶️ Sprint 02 — Assistir ou baixar](https://github.com/christianenogm/TheBetterLondon/raw/refs/heads/main/demo/Sprint-02.mp4)
+- [▶️ Sprint 03 — Assistir ou baixar](https://github.com/christianenogm/TheBetterLondon/raw/refs/heads/main/demo/Sprint-03.mp4)
 
-> Se o vídeo não iniciar diretamente no navegador do GitHub, utilize **Download raw file** para baixá-lo e abrir localmente.
+> Os vídeos utilizam Git LFS e podem ser abertos diretamente ou baixados pelo link. Caso o navegador não reproduza automaticamente, baixe o arquivo e abra no player do computador ou celular.
 
 ## Principais tecnologias
 
